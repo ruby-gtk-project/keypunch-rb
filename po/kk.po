@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Keypunch main\n"
 "Report-Msgid-Bugs-To: https://github.com/bragefuglseth/keypunch/issues\n"
-"POT-Creation-Date: 2025-04-26 12:47+0000\n"
-"PO-Revision-Date: 2026-01-25 21:13+0500\n"
+"POT-Creation-Date: 2026-06-30 23:18+0000\n"
+"PO-Revision-Date: 2026-07-27 16:38+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <Kazakh>\n"
 "Language: kk\n"
@@ -16,11 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: data/dev.bragefuglseth.Keypunch.desktop.in.in:2
-#: data/dev.bragefuglseth.Keypunch.metainfo.xml.in.in:7
-#: src/widgets/window.blp:24
+#: data/dev.bragefuglseth.Keypunch.metainfo.xml.in.in:7 src/widgets/window.blp:24
 msgid "Keypunch"
 msgstr "Keypunch"
 
@@ -31,8 +30,7 @@ msgstr "Теру дағдыларын жаттықтыру"
 
 #: data/dev.bragefuglseth.Keypunch.desktop.in.in:9
 msgid ""
-"typing;trainer;touch typing;keyboard;speed;wpm;words per "
-"minute;accuracy;test;"
+"typing;trainer;touch typing;keyboard;speed;wpm;words per minute;accuracy;test;"
 msgstr ""
 "теру;жаттықтырғыш;соқыр теру;пернетақта;жылдамдық;жми;минутына "
 "сөздер;дәлдік;тест;"
@@ -43,18 +41,17 @@ msgid ""
 "digital age. Typing fast and accurately gives you more opportunities, more "
 "time for what matters to you, and a sense of self-accomplishment."
 msgstr ""
-"Цифрлық дәуірде пернетақтада теру маңызды дағды екеніне күмән жоқ. Жылдам "
-"және дәл теру сізге көбірек мүмкіндіктер, сіз үшін маңызды нәрселерге "
-"көбірек уақыт және өзіңізге деген сенімділік береді."
+"Цифрлық дәуірде пернетақтада теру маңызды дағды екеніне күмән жоқ. Жылдам және "
+"дәл теру сізге көбірек мүмкіндіктер, сіз үшін маңызды нәрселерге көбірек уақыт "
+"және өзіңізге деген сенімділік береді."
 
 #: data/dev.bragefuglseth.Keypunch.metainfo.xml.in.in:18
 msgid ""
-"Keypunch lets you practice typing. Thanks to fast-paced sessions with "
-"instant feedback afterwards and a plethora of available languages, you "
-"might even have a little fun doing so. With determination, proper technique "
-"and some time, you will observe a noticeable increase in both the speed and "
-"the accuracy of which your thoughts and ideas are put into words on the "
-"screen."
+"Keypunch lets you practice typing. Thanks to fast-paced sessions with instant "
+"feedback afterwards and a plethora of available languages, you might even have "
+"a little fun doing so. With determination, proper technique and some time, you "
+"will observe a noticeable increase in both the speed and the accuracy of which "
+"your thoughts and ideas are put into words on the screen."
 msgstr ""
 "Keypunch теруді жаттықтыруға мүмкіндік береді. Соңынан жедел кері байланыс "
 "берілетін қарқынды сеанстар мен көптеген қолжетімді тілдердің арқасында сіз "
@@ -65,12 +62,12 @@ msgstr ""
 #: data/dev.bragefuglseth.Keypunch.metainfo.xml.in.in:25
 msgid ""
 "If you are already a racer at typing, Keypunch still has something for you. "
-"Try practicing with numbers and punctuation, or choose your own text to "
-"type out as fast as you can."
+"Try practicing with numbers and punctuation, or choose your own text to type "
+"out as fast as you can."
 msgstr ""
-"Егер сіз теру шебері болсаңыз да, Keypunch-та сіз үшін қызықты нәрселер "
-"бар. Сандармен және тыныс белгілерімен жаттығып көріңіз немесе өз "
-"мәтініңізді таңдап, оны мүмкіндігінше жылдам теріңіз."
+"Егер сіз теру шебері болсаңыз да, Keypunch-та сіз үшін қызықты нәрселер бар. "
+"Сандармен және тыныс белгілерімен жаттығып көріңіз немесе өз мәтініңізді "
+"таңдап, оны мүмкіндігінше жылдам теріңіз."
 
 #: data/dev.bragefuglseth.Keypunch.metainfo.xml.in.in:30
 msgid "Get ready to accelerate your typing!"
@@ -79,8 +76,8 @@ msgstr "Теру жылдамдығын арттыруға дайын болың
 #: data/dev.bragefuglseth.Keypunch.metainfo.xml.in.in:33
 msgid ""
 "Keypunch is proudly part of GNOME Circle, an initiative that champions the "
-"great software that is available for the GNOME platform. For more "
-"information, visit the GNOME Circle website."
+"great software that is available for the GNOME platform. For more information, "
+"visit the GNOME Circle website."
 msgstr ""
 "Keypunch - GNOME платформасына арналған тамаша бағдарламалық қамтаманы "
 "қолдайтын GNOME Circle бастамасының мүшесі. Қосымша ақпарат алу үшін GNOME "
@@ -186,38 +183,37 @@ msgid ""
 "The current highest amount of WPM received for each session type / duration "
 "and language"
 msgstr ""
-"Әрбір сеанс түрі / ұзақтығы және тілі үшін алынған ағымдағы ең жоғары ЖМИ "
-"мәні"
+"Әрбір сеанс түрі / ұзақтығы және тілі үшін алынған ағымдағы ең жоғары ЖМИ мәні"
 
-#: data/resources/gtk/help-overlay.ui:11
-msgctxt "shortcut window"
+#: data/resources/shortcuts-dialog.ui:6
+msgctxt "shortcut dialog"
 msgid "General"
 msgstr "Жалпы"
 
-#: data/resources/gtk/help-overlay.ui:14
-msgctxt "shortcut window"
+#: data/resources/shortcuts-dialog.ui:9
+msgctxt "shortcut dialog"
+msgid "Open Menu"
+msgstr "Мәзірді ашу"
+
+#: data/resources/shortcuts-dialog.ui:15 data/resources/shortcuts-dialog.ui:39
+msgctxt "shortcut dialog"
 msgid "Text Language"
 msgstr "Мәтін тілі"
 
-#: data/resources/gtk/help-overlay.ui:20
-msgctxt "shortcut window"
-msgid "Cancel Session"
-msgstr "Сеанстан бас тарту"
+#: data/resources/shortcuts-dialog.ui:21
+msgctxt "shortcut dialog"
+msgid "Cancel Test"
+msgstr "Сынақтан бас тарту"
 
-#: data/resources/gtk/help-overlay.ui:26
-msgctxt "shortcut window"
+#: data/resources/shortcuts-dialog.ui:27
+msgctxt "shortcut dialog"
 msgid "Keyboard Shortcuts"
 msgstr "Пернетақта жарлықтары"
 
-#: data/resources/gtk/help-overlay.ui:32
-msgctxt "shortcut window"
+#: data/resources/shortcuts-dialog.ui:33
+msgctxt "shortcut dialog"
 msgid "Close Window"
 msgstr "Терезені жабу"
-
-#: data/resources/gtk/help-overlay.ui:38
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Шығу"
 
 #: src/widgets/custom_text_dialog.blp:56
 msgid "Insert custom text…"
@@ -381,68 +377,61 @@ msgstr "_Енгізуді іске қосу"
 msgid "Results"
 msgstr "Нәтижелер"
 
-#: src/widgets/window.blp:298 src/widgets/window.blp:344
+#: src/widgets/window.blp:298 src/widgets/window.blp:334
 msgid "_Continue"
 msgstr "_Жалғастыру"
 
-#. Translators: "Frustration Relief" is the name of the functionality
-#. that automatically cancels a test when random key mashing is detected,
-#. and displays a recommendation to take a break.
+#: src/widgets/window.blp:325
+msgid "Test Cancelled"
+msgstr "Сынақ болдырылмады"
+
 #: src/widgets/window.blp:326
-msgid "Frustration Relief"
-msgstr "Ашуды басу"
-
-#: src/widgets/window.blp:332
-msgid "Frustration Detected"
-msgstr "Ашуланғаныңыз байқалды"
-
-#. Translators: Make sure to convey this as politely and sensitively as
-#. possible,
-#. since it is likely to be shown to people while they are in a state of
-#. self-disappointment / anger
-#: src/widgets/window.blp:336
 msgid ""
-"You learn faster in a calm state of mind. Consider taking a break. The test "
-"has been cancelled, and will not affect your typing statistics."
+"The test has been cancelled due to an excessive amount of invalid keystrokes. "
+"This will not affect your typing statistics."
 msgstr ""
-"Сабырлы күйде тезірек үйренесіз. Үзіліс жасауды қарастырыңыз. Тесттен бас "
-"тартылды және ол теру статистикаңызға әсер етпейді."
+"Жарамсыз пернелердің шамадан тыс көп басылуына байланысты сынақ болдырылмады. "
+"Бұл теру статистикаңызға әсер етпейді."
 
-#: src/widgets/window.blp:378
+#: src/widgets/window.blp:368
 msgid "Text _Language"
 msgstr "Мәтін _тілі"
 
-#: src/widgets/window.blp:383
+#: src/widgets/window.blp:373
 msgid "_Keyboard Shortcuts"
 msgstr "_Пернетақта жарлықтары"
 
-#: src/widgets/window.blp:388
+#: src/widgets/window.blp:378
 msgid "_About Keypunch"
 msgstr "Keypunch _туралы"
 
-#: src/widgets/window.rs:196
+#: src/widgets/window.rs:195
+msgid "Donate"
+msgstr "Демеушілік ету"
+
+#: src/widgets/window.rs:198
 msgid "Orthography by"
 msgstr "Орфография авторы:"
 
 #. Translators: Replace "translator-credits" with your names, one name per
 #. line
-#: src/widgets/window.rs:214
+#: src/widgets/window.rs:216
 msgid "translator-credits"
 msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
 
-#: src/widgets/window.rs:219
+#: src/widgets/window.rs:221
 msgid "Special thanks to"
 msgstr "Ерекше алғыс:"
 
 #. Translators: Metainfo for the app Fretboard.
 #. <https://github.com/bragefuglseth/fretboard>
-#: src/widgets/window.rs:226
+#: src/widgets/window.rs:228
 msgid "Fretboard"
 msgstr "Fretboard"
 
 #. Translators: Metainfo for the app Fretboard.
 #. <https://github.com/bragefuglseth/fretboard>
-#: src/widgets/window.rs:228
+#: src/widgets/window.rs:230
 msgid "Look up guitar chords"
 msgstr "Гитара аккордтарын іздеу"
 
@@ -465,3 +454,24 @@ msgstr "Ағымдағы теру тесті"
 #, rust-format
 msgid "{}∶{}"
 msgstr "{}∶{}"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Text Language"
+#~ msgstr "Мәтін тілі"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Quit"
+#~ msgstr "Шығу"
+
+#~ msgid "Frustration Relief"
+#~ msgstr "Ашуды басу"
+
+#~ msgid "Frustration Detected"
+#~ msgstr "Ашуланғаныңыз байқалды"
+
+#~ msgid ""
+#~ "You learn faster in a calm state of mind. Consider taking a break. The test "
+#~ "has been cancelled, and will not affect your typing statistics."
+#~ msgstr ""
+#~ "Сабырлы күйде тезірек үйренесіз. Үзіліс жасауды қарастырыңыз. Тесттен бас "
+#~ "тартылды және ол теру статистикаңызға әсер етпейді."
