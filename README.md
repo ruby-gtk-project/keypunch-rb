@@ -2,7 +2,7 @@
 
 # Keypunch
 
-[![Available on Flathub](https://img.shields.io/flathub/downloads/dev.bragefuglseth.Keypunch?logo=flathub&labelColor=77767b&color=4a90d9)](https://flathub.org/apps/dev.bragefuglseth.Keypunch)
+[![Available on Flathub](https://img.shields.io/flathub/downloads/no.bragefuglseth.Keypunch?logo=flathub&labelColor=77767b&color=4a90d9)](https://flathub.org/apps/no.bragefuglseth.Keypunch)
 [![Chat on Matrix](https://img.shields.io/badge/chat-%23keypunch%3Agnome.org-mediumorchid?style=flat&logo=matrix)](https://matrix.to/#/#keypunch:gnome.org)
 [![Proudly part of GNOME Circle](https://circle.gnome.org/assets/button/badge.svg)](https://circle.gnome.org)
 [![Please do not theme this app](https://stopthemingmy.app/badge.svg)](https://stopthemingmy.app)
@@ -21,7 +21,7 @@ Get ready to accelerate your typing!
 
 Keypunch is available on Flathub.
 
-[<img width="240" alt="Download on Flathub" src="https://flathub.org/api/badge?svg&locale=en"/>](https://flathub.org/apps/dev.bragefuglseth.Keypunch)
+[<img width="240" alt="Download on Flathub" src="https://flathub.org/api/badge?svg&locale=en"/>](https://flathub.org/apps/no.bragefuglseth.Keypunch)
 
 ## GNOME Circle
 
