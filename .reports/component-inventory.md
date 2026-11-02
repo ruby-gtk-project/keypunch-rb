@@ -1,7 +1,8 @@
 # Keypunch — upstream component inventory
 
 Survey of `origin/main` (Rust + blueprint, libadwaita 1.8) against `lib/` on the
-`ruby` branch. No app code was written in this step.
+`ruby` branch. The survey itself writes no app code; the presence column and the
+blocker statuses are kept current as the port lands.
 
 Upstream is 5 widget classes (`KpWindow`, `KpTextView`, `KpResultsView`,
 `KpCustomTextDialog`, `KpTextLanguageDialog`), one application class, two
@@ -9,11 +10,12 @@ standalone declarative objects with no backing widget class (`primary_menu`,
 `shortcuts-dialog.ui`), one dialog built entirely in source (the About dialog),
 and five non-widget support modules.
 
-`lib/` currently holds `lib/keypunch.rb` (entry point) and
-`lib/keypunch/application.rb` (a placeholder `Adwaita::StatusPage` saying the
-port has not been written). **No user-facing component exists yet.** The port
-file names below follow the pilot shape in `gnome-contacts-rb`: one upstream
-source file (or `.rs` + `.blp` pair) per flat `lib/<thing>.rb`.
+`lib/` now holds every component below as its own flat file (22 files, ~4.7k
+lines), following the pilot shape in `gnome-contacts-rb`: one upstream source
+file (or `.rs` + `.blp` pair) per flat `lib/<thing>.rb`. The vendored data —
+`data/style.css`, `data/word_lists/` (46 files), `data/assets/multilingual.svg`
+and `data/icons/hicolor/` — is in place too. **The one component still absent is
+the translation layer: there is no `po/` and no `lib/translations.rb`.**
 
 Dev-shell probe (`nix develop --command xvfb-run -a ruby`): GTK 4.22.4, and
 every Adwaita and Gtk class upstream uses is present in the bindings —
@@ -27,7 +29,7 @@ every Adwaita and Gtk class upstream uses is present in the bindings —
 
 ## src/application.rs + src/main.rs — the application: actions, accels, settings
 
-→ `lib/keypunch/application.rb` — **exists (placeholder only)**
+→ `lib/keypunch/application.rb` — **exists** (117 lines)
 
 | Widget | × | CSS | Signals | Notes |
 |---|---:|---|---|---|
@@ -51,7 +53,7 @@ Repeaters: none. Conditional: none.
 
 ## src/widgets/window.blp + src/widgets/window.rs (+ `window/ui_state.rs`, empty) — the main window: three top-level screens
 
-→ `lib/window.rb` — **missing**
+→ `lib/window.rb` — **exists** (525 lines)
 
 | Widget | × | CSS | Signals | Notes |
 |---|---:|---|---|---|
@@ -102,7 +104,7 @@ dialogs all refuse to open while a test is running or another dialog is visible.
 
 ## src/widgets/window/typing_test.rs — test lifecycle: ready / start / finish / cancel
 
-→ `lib/typing_test_session.rb` — **missing**
+→ `lib/typing_test_session.rb` — **exists** (509 lines)
 
 No widgets of its own; it drives `lib/window.rb`'s. Worth its own port file
 because it is 733 lines of upstream's largest module.
@@ -122,7 +124,7 @@ because it is 733 lines of upstream's largest module.
 
 ## src/widgets/window/focus.rs — the "enable entry" focus affordance
 
-→ `lib/window_focus.rb` — **missing**
+→ `lib/window_focus.rb` — **exists** (74 lines)
 
 | Component | × | CSS | Signals | Notes |
 |---|---:|---|---|---|
@@ -132,7 +134,7 @@ because it is 733 lines of upstream's largest module.
 
 ## src/widgets/window/inhibit.rs — logout inhibitor
 
-→ `lib/session_inhibitor.rb` — **missing**
+→ `lib/session_inhibitor.rb` — **exists** (41 lines)
 
 No widgets. `Gtk.ApplicationInhibitFlags::LOGOUT` with a cookie, uninhibited on
 test end. `Gtk::Application#inhibit` is present in the bindings.
@@ -141,7 +143,7 @@ test end. `Gtk::Application#inhibit` is present in the bindings.
 
 ## src/widgets/text_view.blp + text_view.rs + text_view/{input,colors,caret,scrolling,accessibility}.rs — the typing surface
 
-→ `lib/text_view.rb` — **missing** (consider `lib/text_view_colors.rb` for the 251-line colour table)
+→ `lib/text_view.rb` — **exists** (634 lines); the colour table was split out to `lib/text_view_colors.rb` (213 lines), **exists**
 
 | Widget | × | CSS | Signals | Notes |
 |---|---:|---|---|---|
@@ -172,7 +174,7 @@ time a word boundary is crossed.
 
 ## src/widgets/results_view.blp + results_view.rs — the WPM / accuracy readout
 
-→ `lib/results_view.rb` — **missing**
+→ `lib/results_view.rb` — **exists** (284 lines)
 
 | Widget | × | CSS | Signals | Notes |
 |---|---:|---|---|---|
@@ -196,7 +198,7 @@ Strings: _("Custom"/"Simple"/"Advanced"); durations `{}m {}s`, `{} minute(s)`,
 
 ## src/widgets/custom_text_dialog.blp + custom_text_dialog.rs — editing the custom text
 
-→ `lib/custom_text_dialog.rb` — **missing**
+→ `lib/custom_text_dialog.rb` — **exists** (187 lines)
 
 | Widget | × | CSS | Signals | Notes |
 |---|---:|---|---|---|
@@ -215,7 +217,7 @@ Strings: _("Custom"/"Simple"/"Advanced"); durations `{}m {}s`, `{} minute(s)`,
 
 ## src/widgets/text_language_dialog.blp + text_language_dialog.rs — picking the text language
 
-→ `lib/text_language_dialog.rb` — **missing** (language row is a repeater; `lib/language_row.rb` optional)
+→ `lib/text_language_dialog.rb` — **exists** (459 lines); the repeated row was extracted to `lib/language_row.rb` (40 lines), **exists**
 
 | Widget | × | CSS | Signals | Notes |
 |---|---:|---|---|---|
@@ -249,7 +251,7 @@ Search normalises with `unidecode` + lowercase and sorts by display name.
 
 ## src/widgets/window.blp (`menu primary_menu`) — the main menu
 
-→ `lib/primary_menu.rb` — **missing** (or inline in `lib/window.rb`)
+→ `lib/primary_menu.rb` — **exists** (31 lines, its own file rather than inline)
 
 One section, three items: _("Text _Language") → `win.text-language-dialog`;
 _("_Keyboard Shortcuts") → `app.shortcuts`; _("_About Keypunch") → `win.about`.
@@ -258,7 +260,7 @@ _("_Keyboard Shortcuts") → `app.shortcuts`; _("_About Keypunch") → `win.abou
 
 ## data/resources/shortcuts-dialog.ui — the keyboard shortcuts dialog
 
-→ `lib/shortcuts_dialog.rb` — **missing**
+→ `lib/shortcuts_dialog.rb` — **exists** (59 lines)
 
 | Widget | × | CSS | Signals | Notes |
 |---|---:|---|---|---|
@@ -270,7 +272,7 @@ _("_Keyboard Shortcuts") → `app.shortcuts`; _("_About Keypunch") → `win.abou
 
 ## src/widgets/window.rs (`show_about_dialog`) + data/…metainfo.xml.in.in — the About dialog
 
-→ `lib/about_dialog.rb` — **missing**
+→ `lib/about_dialog.rb` — **exists** (81 lines)
 
 | Widget | × | CSS | Signals | Notes |
 |---|---:|---|---|---|
@@ -286,7 +288,7 @@ Fretboard (_("Fretboard") / _("Look up guitar chords")) with icon
 
 ## data/resources/style.css — the app stylesheet
 
-→ `lib/style.rb` (a `Gtk::CssProvider` loading a vendored `data/style.css`) — **missing**
+→ `lib/style.rb` (a `Gtk::CssProvider` loading the vendored `data/style.css`) — **exists** (48 lines)
 
 Nine rules defining `KpTextView` (+ `.unfocused`, `> textview`),
 `KpResultsView .key-number`, the `headerbar.test .start/.end` fade under
@@ -299,12 +301,12 @@ Nine rules defining `KpTextView` (+ `.unfocused`, `> textview`),
 
 | Upstream | → port file | Kind | Present |
 |---|---|---|---|
-| `src/settings.rs` + `data/no.bragefuglseth.Keypunch.gschema.xml.in` | `lib/settings.rb` | settings schema + dropdown↔enum binding | missing |
-| `src/typing_test_utils.rs` | `lib/typing_test_utils.rb` | test config / duration / summary, WPM + accuracy | missing |
-| `src/text_utils.rs` | `lib/text_utils.rb` | grapheme validation, replacements, word/line offsets | missing |
-| `src/text_generation.rs` + `data/word_lists/*.txt` (46 files) | `lib/text_generation.rb` + vendored `data/word_lists/` | 43-language word lists, punctuation/capitalisation generator, 400-grapheme chunks | missing |
-| `src/discord_rpc.rs` | `lib/discord_rpc.rb` | Discord IPC rich presence (Ready / Typing / Results) | missing |
-| `po/` (37 locales, `LINGUAS`, `keypunch.pot`, `POTFILES.in`) | `po/` + `lib/translations.rb` | gettext catalogue | missing |
+| `src/settings.rs` + `data/no.bragefuglseth.Keypunch.gschema.xml.in` | `lib/settings.rb` | settings schema + dropdown↔enum binding | **exists** (151 lines; file-backed shim, no compiled schema) |
+| `src/typing_test_utils.rs` | `lib/typing_test_utils.rb` | test config / duration / summary, WPM + accuracy | **exists** (198 lines) |
+| `src/text_utils.rs` | `lib/text_utils.rb` | grapheme validation, replacements, word/line offsets | **exists** (340 lines) |
+| `src/text_generation.rs` + `data/word_lists/*.txt` (46 files) | `lib/text_generation.rb` + vendored `data/word_lists/` | 43-language word lists, punctuation/capitalisation generator, 400-grapheme chunks | **exists** (508 lines; all 46 lists vendored) |
+| `src/discord_rpc.rs` | `lib/discord_rpc.rb` | Discord IPC rich presence (Ready / Typing / Results) | **exists** (220 lines) |
+| `po/` (37 locales, `LINGUAS`, `keypunch.pot`, `POTFILES.in`) | `po/` + `lib/translations.rb` | gettext catalogue | **missing — the only gap left** |
 
 GSettings keys: `window-width` (900), `window-height` (450),
 `window-maximized`, `session-type` enum (Simple/Advanced/Custom, default
@@ -316,33 +318,37 @@ Simple), `session-duration` enum (Sec15/Sec30/Min1/Min5/Min10, default Sec30),
 
 ## Blockers
 
-1. **`app.shortcuts` is libadwaita magic.** Upstream never installs it; libadwaita
-   1.8 auto-installs it because `shortcuts-dialog.ui` lives at the GResource base
-   path. The port has no GResource, so it must install its own `app.shortcuts`
-   action and build the `Adwaita::ShortcutsDialog` in Ruby.
+Status as of this revision of the inventory — the port has since been written,
+so each blocker below carries how it was settled.
+
+1. **`app.shortcuts` is libadwaita magic.** Upstream never installs it;
+   libadwaita 1.8 auto-installs it because `shortcuts-dialog.ui` lives at the
+   GResource base path. **Settled:** the port installs its own `app.shortcuts`
+   and builds the dialog in Ruby (`lib/shortcuts_dialog.rb`).
 2. **Custom GObject signals do not work as upstream uses them.**
-   `GLib::Object.define_signal` failed in the dev shell (`g_signal_newv failed`).
-   `KpTextView`'s `typed-text-changed` and `KpCustomTextDialog`'s `discard` must
-   become plain Ruby callback blocks passed in at construction.
+   `GLib::Object.define_signal` fails in the dev shell (`g_signal_newv failed`).
+   **Settled:** `KpTextView`'s `typed-text-changed` and `KpCustomTextDialog`'s
+   `discard` are plain Ruby callback blocks passed in at construction.
 3. **Two components are `Gtk.Widget` subclasses with custom vfuncs.**
-   `KpTextView` overrides `measure`, `size_allocate` and `snapshot` (and draws
-   its caret in `snapshot`); `KpResultsView` sets a `Gtk.BinLayout` and implements
-   `Gtk.Orientable`. Ruby subclassing of `Gtk::Widget` via `type_register` works,
-   but each vfunc override and each custom property needs verifying before the
-   port commits to this shape.
-4. **No compiled GSettings schema.** Every component reads settings, and
-   `personal-best` is `a(sssu)`. The port needs the schema compiled into the dev
-   shell or a file-backed settings shim.
-5. **Blueprint property bindings and breakpoint setters.** `bind
-   template.show-personal-best`, the three `orientation`/`spacing` bindings in
-   `KpResultsView`, the two header-bar `show-title` scroll bindings, and the
-   `Adw.Breakpoint` setters all have to be hand-wired with `bind_property` or
-   notify handlers.
-6. **Word lists are vendored data, not code.** 46 `.txt` files under
-   `data/word_lists` (upstream embeds them at compile time with `include_dir!`);
-   the port must copy them and load from disk.
-7. **Discord rich presence has no Ruby equivalent in the lockfile.** Likely a
-   no-op shim for `lib/discord_rpc.rb`.
-8. **No gettext wiring.** 37 locales upstream; the port currently has no
-   translation layer, and several strings carry translator comments and special
-   Unicode characters (`⁄`, `∶`) that must survive.
+   `KpTextView` overrides `measure`, `size_allocate` and `snapshot`;
+   `KpResultsView` sets a `Gtk.BinLayout` and implements `Gtk.Orientable`.
+   **Settled:** both are `Gtk::Widget` subclasses via `type_register` in
+   `lib/text_view.rb` and `lib/results_view.rb`.
+4. **No compiled GSettings schema.** **Settled:** `lib/settings.rb` is a
+   file-backed shim with the same keys and defaults; nothing compiles a schema,
+   so `personal-best` (`a(sssu)`) is stored as plain Ruby data rather than a
+   GVariant. Worth re-checking if the app is ever packaged as a Flatpak.
+5. **Blueprint property bindings and breakpoint setters.** **Settled:** wired by
+   hand with `bind_property` and `notify::` handlers in `lib/window.rb` and
+   `lib/results_view.rb`.
+6. **Word lists are vendored data, not code.** **Settled:** all 46 `.txt` files
+   copied to `data/word_lists/` and loaded from disk by `lib/text_generation.rb`.
+7. **Discord rich presence has no Ruby equivalent in the lockfile.**
+   **Settled:** `lib/discord_rpc.rb` speaks the IPC socket protocol directly;
+   it degrades to a no-op when no Discord socket is present.
+8. **No gettext wiring — STILL OPEN.** 37 locales upstream. The fork has no
+   `po/` and no `lib/translations.rb`; user-visible strings are plain Ruby
+   literals. The special Unicode characters (`⁄`, `∶`) and the plural
+   duration forms in `lib/typing_test_utils.rb` and `lib/results_view.rb` are
+   the parts that need care when the catalogue is added. This is the one
+   remaining full-parity gap.
