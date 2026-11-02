@@ -17,10 +17,17 @@ class SessionInhibitor
     @cookie = nil
   end
 
+  # A session manager that refuses the request, or no session manager at all,
+  # answers with a cookie of 0; uninhibiting with that is an error, so it is
+  # not worth keeping.
   def inhibit(reason)
     end_existing
 
-    @cookie = @application.inhibit(@window, Gtk::ApplicationInhibitFlags::LOGOUT, reason)
+    @application.inhibit(@window, Gtk::ApplicationInhibitFlags::LOGOUT, reason).then do |cookie|
+      if cookie.positive?
+        @cookie = cookie
+      end
+    end
   end
 
   def end_existing

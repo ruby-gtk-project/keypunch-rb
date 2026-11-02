@@ -13,6 +13,13 @@ require "gtk4"
 module Style
   PATH = File.expand_path("../data/style.css", __dir__)
 
+  # Upstream's custom symbolic icons, which it ships inside its GResource
+  # bundle; GTK finds them there through the application's resource base path.
+  # Without a bundle they are a search path on the display's icon theme
+  # instead, which is the same lookup by a different route — a search path
+  # wants the theme directory in the middle, so they sit under hicolor/.
+  ICON_PATH = File.expand_path("../data/icons", __dir__)
+
   # The style class the composed text view's root widget carries, standing in
   # for upstream's `KpTextView` CSS name.
   TEXT_VIEW_CLASS = "kp-text-view"
@@ -29,6 +36,8 @@ module Style
       provider,
       Gtk::StyleProvider::PRIORITY_APPLICATION,
     )
+
+    Gtk::IconTheme.get_for_display(Gdk::Display.default).add_search_path(ICON_PATH)
   end
 
   def provider
