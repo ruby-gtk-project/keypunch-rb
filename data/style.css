@@ -1,0 +1,59 @@
+/* Ported from upstream's data/resources/style.css.
+ *
+ * Upstream's KpTextView and KpResultsView are GtkWidget subclasses with CSS
+ * names set by `set_css_name`. The Ruby bindings cannot override a widget
+ * class's layout virtual functions, so this port composes both out of stock
+ * widgets, and the two element selectors became the style classes those Ruby
+ * classes add to their root widget. Everything else is unchanged.
+ */
+
+.kp-text-view {
+  transition: filter 200ms;
+}
+
+.kp-text-view.unfocused {
+  filter: blur(3px);
+}
+
+.kp-text-view textview {
+  font-size: 1.5rem;
+  line-height: 50px; /* This needs to mirror LINE_HEIGHT in `lib/text_view.rb` */
+  background: none;
+  font-variant-ligatures: none;
+}
+
+.kp-results-view .key-number {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+headerbar .start,
+headerbar .end,
+window.hide-controls headerbar.test:focus-within .start,
+window.hide-controls headerbar.test:focus-within .end {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+window.hide-controls headerbar.test .start,
+window.hide-controls headerbar.test .end {
+  opacity: 0;
+}
+
+.card-text-view {
+  padding: 12px;
+  color: var(--card-fg-color);
+  background: var(--card-bg-color);
+}
+
+.toolbar-thick {
+  padding: 12px;
+}
+
+.status-icon {
+  -gtk-icon-size: 96px;
+}
+
+.pill-entry {
+  border-radius: 9999px;
+}
