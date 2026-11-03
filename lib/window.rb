@@ -8,6 +8,7 @@ require_relative "results_view"
 require_relative "session_inhibitor"
 require_relative "settings"
 require_relative "text_view"
+require_relative "translations"
 require_relative "typing_test_session"
 require_relative "window_focus"
 
@@ -31,6 +32,7 @@ require_relative "window_focus"
 # changes instead.
 #
 class Window
+  include Translations::Helpers
   include TypingTestSession
   include WindowFocus
 
@@ -39,19 +41,23 @@ class Window
   WIDTH_REQUEST = 360
   HEIGHT_REQUEST = 296
 
-  TEST_TYPE_LABELS = ["Simple", "Advanced", "Custom"].freeze
+  # The dropdown contents. They are msgids here and translated where the
+  # dropdowns are built, because a constant is frozen before the catalogue is
+  # bound.
+  TEST_TYPE_LABELS = [N_("Simple"), N_("Advanced"), N_("Custom")].freeze
 
   DURATION_LABELS = [
-    "15 seconds",
-    "30 seconds",
-    "1 minute",
-    "5 minutes",
-    "10 minutes",
+    N_("15 seconds"),
+    N_("30 seconds"),
+    N_("1 minute"),
+    N_("5 minutes"),
+    N_("10 minutes"),
   ].freeze
 
-  CANCELLED_DESCRIPTION =
+  CANCELLED_DESCRIPTION = N_(
     "The test has been cancelled due to an excessive amount of invalid keystrokes. " \
-    "This will not affect your typing statistics."
+    "This will not affect your typing statistics.",
+  )
 
   attr_reader :settings, :application
 
@@ -110,7 +116,7 @@ class Window
 
   def window
     @window ||= Adwaita::ApplicationWindow.new(@application).tap do |win|
-      win.title = "Keypunch"
+      win.title = _("Keypunch")
       win.width_request = WIDTH_REQUEST
       win.height_request = HEIGHT_REQUEST
     end
@@ -171,7 +177,7 @@ class Window
   def stop_button
     @stop_button ||= Gtk::Button.new.tap do |button|
       button.icon_name = "arrow-circular-top-right-symbolic"
-      button.tooltip_text = "Restart"
+      button.tooltip_text = _("Restart")
     end
   end
 
@@ -185,16 +191,16 @@ class Window
   def ready_status_box = @ready_status_box ||= Gtk::Box.new(:horizontal, 6)
 
   def test_type_dropdown
-    @test_type_dropdown ||= Gtk::DropDown.new(Gtk::StringList.new(TEST_TYPE_LABELS)).tap do |dropdown|
-      dropdown.tooltip_text = "Test Type"
+    @test_type_dropdown ||= Gtk::DropDown.new(string_list(TEST_TYPE_LABELS)).tap do |dropdown|
+      dropdown.tooltip_text = _("Test Type")
     end
   end
 
   def secondary_config_stack = @secondary_config_stack ||= Gtk::Stack.new
 
   def duration_dropdown
-    @duration_dropdown ||= Gtk::DropDown.new(Gtk::StringList.new(DURATION_LABELS)).tap do |dropdown|
-      dropdown.tooltip_text = "Test Duration"
+    @duration_dropdown ||= Gtk::DropDown.new(string_list(DURATION_LABELS)).tap do |dropdown|
+      dropdown.tooltip_text = _("Test Duration")
     end
   end
 
@@ -209,7 +215,7 @@ class Window
     @custom_button_content ||= Adwaita::ButtonContent.new.tap do |content|
       content.use_underline = true
       content.icon_name = "edit-symbolic"
-      content.label = "_Edit Text"
+      content.label = _("_Edit Text")
     end
   end
 
@@ -225,7 +231,7 @@ class Window
     @menu_button ||= Gtk::MenuButton.new.tap do |button|
       button.primary = true
       button.icon_name = "open-menu-symbolic"
-      button.tooltip_text = "Main Menu"
+      button.tooltip_text = _("Main Menu")
       button.menu_model = PrimaryMenu.build
     end
   end
@@ -247,14 +253,14 @@ class Window
   end
 
   def just_start_typing
-    @just_start_typing ||= Gtk::Label.new("Just Start Typing").tap do |label|
+    @just_start_typing ||= Gtk::Label.new(_("Just Start Typing")).tap do |label|
       label.add_css_class("dim-label")
     end
   end
 
-  # Translators: "Entry" here is the act of entering text
   def focus_button
-    @focus_button ||= Gtk::Button.new(label: "_Enable Entry").tap do |button|
+    # Translators: "Entry" here is the act of entering text
+    @focus_button ||= Gtk::Button.new(label: _("_Enable Entry")).tap do |button|
       button.use_underline = true
       button.add_css_class("pill")
       button.add_css_class("suggested-action")
@@ -269,7 +275,7 @@ class Window
 
   def results_header_bar = @results_header_bar ||= Adwaita::HeaderBar.new
 
-  def results_window_title = @results_window_title ||= Adwaita::WindowTitle.new("Results", "")
+  def results_window_title = @results_window_title ||= Adwaita::WindowTitle.new(_("Results"), "")
 
   def results_scrolled_window
     @results_scrolled_window ||= Gtk::ScrolledWindow.new.tap do |window|
@@ -298,8 +304,8 @@ class Window
   def cancelled_status_page
     @cancelled_status_page ||= Adwaita::StatusPage.new.tap do |page|
       page.icon_name = "warning-outline-symbolic"
-      page.title = "Test Cancelled"
-      page.description = CANCELLED_DESCRIPTION
+      page.title = _("Test Cancelled")
+      page.description = _(CANCELLED_DESCRIPTION)
     end
   end
 
@@ -314,6 +320,11 @@ class Window
   def inhibitor = @inhibitor ||= SessionInhibitor.new(@application, window)
 
   private
+
+    # The dropdown models hold translated text, not msgids.
+    def string_list(labels)
+      Gtk::StringList.new(labels.map { |label| _(label) })
+    end
 
     def edge_to_edge_toolbar_view
       Adwaita::ToolbarView.new.tap do |view|
@@ -348,7 +359,7 @@ class Window
     end
 
     def continue_button
-      Gtk::Button.new(label: "_Continue").tap do |button|
+      Gtk::Button.new(label: _("_Continue")).tap do |button|
         button.use_underline = true
         button.add_css_class("pill")
         button.add_css_class("suggested-action")

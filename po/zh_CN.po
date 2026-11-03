@@ -1,0 +1,438 @@
+# Chinese (China) translation for Keypunch.
+# Copyright (C) 2025 Keypunch's COPYRIGHT HOLDER
+# This file is distributed under the same license as the Keypunch package.
+# lumingzh <lumingzh@qq.com>, 2025-2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Keypunch main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-03 00:11+0000\n"
+"PO-Revision-Date: 2026-08-15 17:41+0800\n"
+"Last-Translator: lumingzh <lumingzh@qq.com>\n"
+"Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Gtranslator 50.0\n"
+
+#: lib/about_dialog.rb:24 lib/window.rb:119
+msgid "Keypunch"
+msgstr "Keypunch"
+
+#: lib/about_dialog.rb:27
+msgid "Practice your typing skills"
+msgstr "练习您的打字技能"
+
+#: lib/about_dialog.rb:57
+msgid "Fretboard"
+msgstr "Fretboard"
+
+#: lib/about_dialog.rb:58
+msgid "Look up guitar chords"
+msgstr "查找吉他和弦"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: lib/about_dialog.rb:61
+msgid "translator-credits"
+msgstr "lumingzh <lumingzh@qq.com>, 2025-2026"
+
+#: lib/about_dialog.rb:84
+msgid "Donate"
+msgstr "捐助"
+
+#: lib/about_dialog.rb:85
+msgid "Orthography by"
+msgstr "校正"
+
+#: lib/about_dialog.rb:86
+msgid "Special thanks to"
+msgstr "特别感谢"
+
+#: lib/custom_text_dialog.rb:35 lib/custom_text_dialog.rb:116
+msgid "Custom Text"
+msgstr "自定义文本"
+
+#: lib/custom_text_dialog.rb:125
+msgid "Insert custom text…"
+msgstr "插入自定义文本…"
+
+#: lib/custom_text_dialog.rb:154
+msgid "_Save"
+msgstr "保存(_S)"
+
+#: lib/primary_menu.rb:19
+msgid "Text _Language"
+msgstr "文本语言(_L)"
+
+#: lib/primary_menu.rb:20
+msgid "_Keyboard Shortcuts"
+msgstr "键盘快捷键(_K)"
+
+#: lib/primary_menu.rb:21
+msgid "_About Keypunch"
+msgstr "关于 Keypunch(_A)"
+
+#. Translators: The percentage label format of the results page. The `{}`
+#. block will be replaced with the percentage number, do not translate it!
+#: lib/results_view.rb:116
+msgid "{}%"
+msgstr "{}%"
+
+#: lib/results_view.rb:126 lib/window.rb:47
+msgid "Custom"
+msgstr "自定义"
+
+#. Translators: The `{}` blocks will be replaced with the number of
+#. minutes and seconds. Do not translate them!
+#: lib/results_view.rb:140
+msgid "{}m {}s"
+msgstr "{}m {}s"
+
+#. Translators: The `{}` block will be replaced with the number of
+#. minutes. Do not translate it!
+#: lib/results_view.rb:144
+msgid "{} minute"
+msgid_plural "{} minutes"
+msgstr[0] "{} 分"
+
+#. Translators: The `{}` block will be replaced with the number of
+#. seconds. Do not translate it!
+#: lib/results_view.rb:148
+msgid "{} second"
+msgid_plural "{} seconds"
+msgstr[0] "{} 秒"
+
+#: lib/results_view.rb:195
+msgid "New Personal Best for Configuration"
+msgstr "配置的新个人最佳"
+
+#: lib/results_view.rb:202
+msgid "Words per Minute"
+msgstr "每分钟打字"
+
+#: lib/results_view.rb:222
+msgid "Accuracy"
+msgstr "正确率"
+
+#: lib/results_view.rb:237 lib/window.rb:195
+msgid "Test Type"
+msgstr "测试类型"
+
+#: lib/results_view.rb:248 lib/window.rb:203
+msgid "Test Duration"
+msgstr "测试时长"
+
+#: lib/results_view.rb:259 lib/text_language_dialog.rb:52
+#: lib/text_language_dialog.rb:102 lib/text_language_dialog.rb:137
+msgid "Text Language"
+msgstr "文本语言"
+
+#. Translators: Insert the language code of your language here, for example "nb" for Norwegian Bokmaal. Do not remove the quotation marks. It's doesn't matter if there isn't a word list for the language in `data/word_lists` right now, the app will fall back to English in that case and start using the list if it becomes available in the future.
+#: lib/settings.rb:51
+msgid "\"en\""
+msgstr "\"zh_CN\""
+
+#. Translators: This is the default text for custom typing sessions. Do not translate it literally, and do not remove the quotation marks. Replace it with an appropriate "sample sentence" from your language instead. The original text is an English pangram, so you can e.g. find a pangram in your language: https://clagnut.com/blog/2380
+#: lib/settings.rb:54
+msgid "\"The quick brown fox jumps over the lazy dog.\""
+msgstr "\"我能吞下玻璃而不伤身体。\""
+
+#: lib/shortcuts_dialog.rb:33
+msgctxt "shortcut dialog"
+msgid "General"
+msgstr "常规"
+
+#: lib/shortcuts_dialog.rb:51
+msgctxt "shortcut dialog"
+msgid "Open Menu"
+msgstr "打开菜单"
+
+#: lib/shortcuts_dialog.rb:52 lib/shortcuts_dialog.rb:56
+msgctxt "shortcut dialog"
+msgid "Text Language"
+msgstr "文本语言"
+
+#: lib/shortcuts_dialog.rb:53
+msgctxt "shortcut dialog"
+msgid "Cancel Test"
+msgstr "取消测试"
+
+#: lib/shortcuts_dialog.rb:54
+msgctxt "shortcut dialog"
+msgid "Keyboard Shortcuts"
+msgstr "键盘快捷键"
+
+#: lib/shortcuts_dialog.rb:55
+msgctxt "shortcut dialog"
+msgid "Close Window"
+msgstr "关闭窗口"
+
+#: lib/text_language_dialog.rb:39
+msgid ""
+"You can help add a new text language to Keypunch by submitting a language "
+"request on GitHub. A GitHub account and some language knowledge is required."
+msgstr ""
+"您可以通过在 GitHub 上提交语言申请来帮助向 Keypunch 添加新的文本语言。需要 "
+"GitHub 账户和一些语言知识。"
+
+#: lib/text_language_dialog.rb:114 lib/text_language_dialog.rb:234
+#: lib/text_language_dialog.rb:277
+msgid "Add Language"
+msgstr "添加语言"
+
+#: lib/text_language_dialog.rb:151
+msgid "Search languages…"
+msgstr "搜索语言…"
+
+#. Translators: Recent languages in text languages list
+#: lib/text_language_dialog.rb:176
+msgid "Recent"
+msgstr "最近"
+
+#. Translators: Other languages in text languages list
+#: lib/text_language_dialog.rb:184
+msgid "Other"
+msgstr "其他"
+
+#: lib/text_language_dialog.rb:226
+msgid "No Matches"
+msgstr "无匹配项"
+
+#: lib/text_language_dialog.rb:231
+msgid "Try a different search"
+msgstr "尝试不同的搜索"
+
+#: lib/text_language_dialog.rb:307
+msgid "_Create Request"
+msgstr "创建申请(_C)"
+
+#. Translators: This is shown as a warning by GNOME Shell before logging out
+#. or shutting off the system in the middle of a typing test
+#: lib/typing_test_session.rb:46
+msgid "Ongoing typing test"
+msgstr "打字测试正在进行"
+
+#. Translators: The format of the word counter. The `{}` blocks will be
+#. replaced with the number of the word being typed and the number of
+#. words in the text. Do not translate them. The `⁄` sign is a fraction
+#. slash, not the ASCII slash it resembles; if your language doesn't
+#. use something completely different, you should probably copy and
+#. paste it from the original string.
+#: lib/typing_test_session.rb:355
+msgid "{} ⁄ {}"
+msgstr "{} ⁄ {}"
+
+#: lib/typing_test_session.rb:407
+msgid "Changes discarded"
+msgstr "更改已丢弃"
+
+#: lib/typing_test_session.rb:408
+msgid "Restore"
+msgstr "恢复"
+
+#. Translators: The format of the timer. The first `{}` block will be
+#. replaced with the minutes passed, and the second one will be replaced
+#. with the seconds passed. Do not translate the `{}` blocks. Note that
+#. the `∶` sign is a special Unicode character; if your language doesn't
+#. use something completely different, you should probably copy and paste
+#. it from the original string.
+#: lib/typing_test_session.rb:462
+msgid "{}∶{}"
+msgstr "{}∶{}"
+
+#: lib/typing_test_utils.rb:31 lib/window.rb:47
+msgid "Simple"
+msgstr "简单"
+
+#: lib/typing_test_utils.rb:32 lib/window.rb:47
+msgid "Advanced"
+msgstr "高级"
+
+#: lib/typing_test_utils.rb:68 lib/window.rb:50
+msgid "15 seconds"
+msgstr "15 秒"
+
+#: lib/typing_test_utils.rb:69 lib/window.rb:51
+msgid "30 seconds"
+msgstr "30 秒"
+
+#: lib/typing_test_utils.rb:70 lib/window.rb:52
+msgid "1 minute"
+msgstr "1 分钟"
+
+#: lib/typing_test_utils.rb:71 lib/window.rb:53
+msgid "5 minutes"
+msgstr "5 分钟"
+
+#: lib/typing_test_utils.rb:72 lib/window.rb:54
+msgid "10 minutes"
+msgstr "10 分钟"
+
+#: lib/window.rb:57
+msgid ""
+"The test has been cancelled due to an excessive amount of invalid "
+"keystrokes. This will not affect your typing statistics."
+msgstr "该测试已因过量的无效按键而取消。这不会影响您的打字统计。"
+
+#: lib/window.rb:180
+msgid "Restart"
+msgstr "重新开始"
+
+#: lib/window.rb:218
+msgid "_Edit Text"
+msgstr "编辑文本(_E)"
+
+#: lib/window.rb:234
+msgid "Main Menu"
+msgstr "主菜单"
+
+#: lib/window.rb:256
+msgid "Just Start Typing"
+msgstr "请直接开始打字"
+
+#. Translators: "Entry" here is the act of entering text
+#: lib/window.rb:263
+msgid "_Enable Entry"
+msgstr "启用输入(_E)"
+
+#: lib/window.rb:278
+msgid "Results"
+msgstr "结果"
+
+#: lib/window.rb:307
+msgid "Test Cancelled"
+msgstr "测试已取消"
+
+#: lib/window.rb:362
+msgid "_Continue"
+msgstr "继续(_C)"
+
+#~ msgid ""
+#~ "typing;trainer;touch typing;keyboard;speed;wpm;words per "
+#~ "minute;accuracy;test;"
+#~ msgstr ""
+#~ "typing;trainer;touch typing;keyboard;speed;wpm;words per "
+#~ "minute;accuracy;test;打字;训练;教练;触摸打字;键盘;速度;每分钟字数;测试;"
+
+#~ msgid ""
+#~ "There is no doubt that typing on a keyboard is an essential skill in the "
+#~ "digital age. Typing fast and accurately gives you more opportunities, "
+#~ "more time for what matters to you, and a sense of self-accomplishment."
+#~ msgstr ""
+#~ "毫无疑问在数字时代用键盘打字是一项必备技能。快速并正确地打字可以给你更多机"
+#~ "会，可以腾出更多时间让你做更重要的事情，且会有一种自我成就的感觉。"
+
+#~ msgid ""
+#~ "Keypunch lets you practice typing. Thanks to fast-paced sessions with "
+#~ "instant feedback afterwards and a plethora of available languages, you "
+#~ "might even have a little fun doing so. With determination, proper "
+#~ "technique and some time, you will observe a noticeable increase in both "
+#~ "the speed and the accuracy of which your thoughts and ideas are put into "
+#~ "words on the screen."
+#~ msgstr ""
+#~ "Keypunch 可让您练习打字。得益于具有即时反馈和大量可用语言的快节奏课程，您"
+#~ "甚至可能会享受到一些乐趣。拥有决心、合适的技巧和一些时间，在将您的想法和点"
+#~ "子变成屏幕上的文字时您将同时在打字速度和精准度上观察到明显的进步。"
+
+#~ msgid ""
+#~ "If you are already a racer at typing, Keypunch still has something for "
+#~ "you. Try practicing with numbers and punctuation, or choose your own text "
+#~ "to type out as fast as you can."
+#~ msgstr ""
+#~ "如果您已经是一名打字比赛运动员，Keypunch 仍可为您提供一些帮助。尝试练习带"
+#~ "有数字和标点符号的文本，或选择您自己的文本来让您达到更快的打字速度。"
+
+#~ msgid "Get ready to accelerate your typing!"
+#~ msgstr "准备好加速打字！"
+
+#~ msgid ""
+#~ "Keypunch is proudly part of GNOME Circle, an initiative that champions "
+#~ "the great software that is available for the GNOME platform. For more "
+#~ "information, visit the GNOME Circle website."
+#~ msgstr ""
+#~ "Keypunch 荣幸的成为 GNOME 生态圈一员，一项拥护适用于 GNOME 平台极佳软件的"
+#~ "倡议。要获取更多信息，请访问 GNOME 生态圈网站。"
+
+#~ msgid "In the middle of a session"
+#~ msgstr "课程中期"
+
+#~ msgid "Ready for typing"
+#~ msgstr "准备好打字"
+
+#~ msgid "Session results"
+#~ msgstr "课程结果"
+
+#~ msgid "Language selection"
+#~ msgstr "语言选择"
+
+#~ msgid "Custom text entry"
+#~ msgstr "自定义文本输入"
+
+#~ msgid "Window Width"
+#~ msgstr "窗口宽度"
+
+#~ msgid "Window Height"
+#~ msgstr "窗口高度"
+
+#~ msgid "Window Maximization"
+#~ msgstr "窗口最大化"
+
+#~ msgid "Session Type"
+#~ msgstr "课程类型"
+
+#~ msgid "Session Duration"
+#~ msgstr "课程时长"
+
+#~ msgid "The duration of time-based sessions"
+#~ msgstr "基于时间的课程时长"
+
+#~ msgid "The code of the language used for automatically generated text"
+#~ msgstr "用于自动生成文本的语言代码"
+
+#~ msgid "Recent Languages"
+#~ msgstr "最近使用的语言"
+
+#~ msgid ""
+#~ "Languages shown in the list of recent ones in the text language dialog"
+#~ msgstr "在文本语言对话框中显示在最近列表中的语言"
+
+#~ msgid "Text displayed when “Custom” is chosen from the session menu"
+#~ msgstr "在课程菜单中选择“自定义”时显示的文本"
+
+#~ msgid "Personal Best"
+#~ msgstr "个人最佳"
+
+#~ msgid ""
+#~ "The current highest amount of WPM received for each session type / "
+#~ "duration and language"
+#~ msgstr "每个课程类型/时长和语言的当前最高每分钟打字数量"
+
+#~ msgid "Search Results"
+#~ msgstr "搜索结果"
+
+#~ msgid "Text View"
+#~ msgstr "文本视图"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Text Language"
+#~ msgstr "文本语言"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Quit"
+#~ msgstr "退出"
+
+#~ msgid "Frustration Relief"
+#~ msgstr "缓解压力"
+
+#~ msgid "Frustration Detected"
+#~ msgstr "检测到压力过高"
+
+#~ msgid ""
+#~ "You learn faster in a calm state of mind. Consider taking a break. The "
+#~ "test has been cancelled, and will not affect your typing statistics."
+#~ msgstr ""
+#~ "您在思维冷静状态会学的更快。请考虑休息一下。该测试已取消，且不会影响您的打"
+#~ "字统计。"

@@ -4,6 +4,7 @@ require "gtk4"
 require "adwaita"
 
 require_relative "style"
+require_relative "translations"
 require_relative "typing_test_utils"
 
 # ResultsView shows the words-per-minute and accuracy of a finished test,
@@ -19,6 +20,8 @@ require_relative "typing_test_utils"
 # bindings do.
 #
 class ResultsView
+  include Translations::Helpers
+
   # The spacing of the test-info row in each orientation, upstream's
   # `transform_to` on the orientation binding.
   INFO_SPACING = { horizontal: 30, vertical: 18 }.freeze
@@ -108,8 +111,9 @@ class ResultsView
   def set_summary(summary)
     wpm_label.label = format("%<wpm>.0f", wpm: summary.wpm.floor)
 
-    # The percentage label format of the results page.
-    accuracy_label.label = "#{(summary.accuracy * 100).floor}%"
+    # Translators: The percentage label format of the results page. The `{}`
+    # block will be replaced with the percentage number, do not translate it!
+    accuracy_label.label = fmt(_("{}%"), (summary.accuracy * 100).floor)
 
     duration_label.label = self.class.human_readable_duration(summary.real_duration)
     test_type_label.label = self.class.test_type_string(summary.config)
@@ -119,9 +123,9 @@ class ResultsView
 
   def self.test_type_string(config)
     if config.finite?
-      "Custom"
+      _("Custom")
     else
-      config.difficulty
+      TypingTestUtils::GeneratedTestDifficulty.ui_string(config.difficulty)
     end
   end
 
@@ -131,19 +135,17 @@ class ResultsView
     seconds = total_seconds % 60
 
     if minutes.positive? && seconds.positive?
-      "#{minutes}m #{seconds}s"
+      # Translators: The `{}` blocks will be replaced with the number of
+      # minutes and seconds. Do not translate them!
+      fmt(_("{}m {}s"), minutes, seconds)
     elsif minutes.positive?
-      pluralized(minutes, "minute")
+      # Translators: The `{}` block will be replaced with the number of
+      # minutes. Do not translate it!
+      fmt(n_("{} minute", "{} minutes", minutes), minutes)
     else
-      pluralized(seconds, "second")
-    end
-  end
-
-  def self.pluralized(count, unit)
-    if count == 1
-      "#{count} #{unit}"
-    else
-      "#{count} #{unit}s"
+      # Translators: The `{}` block will be replaced with the number of
+      # seconds. Do not translate it!
+      fmt(n_("{} second", "{} seconds", seconds), seconds)
     end
   end
 
@@ -190,14 +192,14 @@ class ResultsView
   def personal_best
     @personal_best ||= Gtk::Image.new.tap do |image|
       image.icon_name = "arrow3-up-symbolic"
-      image.tooltip_text = "New Personal Best for Configuration"
+      image.tooltip_text = _("New Personal Best for Configuration")
       image.visible = false
       image.add_css_class("accent")
     end
   end
 
   def wpm_caption
-    @wpm_caption ||= Gtk::Label.new("Words per Minute").tap do |label|
+    @wpm_caption ||= Gtk::Label.new(_("Words per Minute")).tap do |label|
       label.add_css_class("dim-label")
     end
   end
@@ -217,7 +219,7 @@ class ResultsView
   end
 
   def accuracy_caption
-    @accuracy_caption ||= Gtk::Label.new("Accuracy").tap do |label|
+    @accuracy_caption ||= Gtk::Label.new(_("Accuracy")).tap do |label|
       label.add_css_class("dim-label")
     end
   end
@@ -232,7 +234,7 @@ class ResultsView
   def test_type_box
     @test_type_box ||= Gtk::Box.new(:horizontal, 6).tap do |box|
       box.halign = :center
-      box.tooltip_text = "Test Type"
+      box.tooltip_text = _("Test Type")
     end
   end
 
@@ -243,7 +245,7 @@ class ResultsView
   def duration_box
     @duration_box ||= Gtk::Box.new(:horizontal, 6).tap do |box|
       box.halign = :center
-      box.tooltip_text = "Test Duration"
+      box.tooltip_text = _("Test Duration")
     end
   end
 
@@ -254,7 +256,7 @@ class ResultsView
   def language_box
     @language_box ||= Gtk::Box.new(:horizontal, 6).tap do |box|
       box.halign = :center
-      box.tooltip_text = "Text Language"
+      box.tooltip_text = _("Text Language")
     end
   end
 

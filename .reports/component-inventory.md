@@ -14,8 +14,12 @@ and five non-widget support modules.
 lines), following the pilot shape in `gnome-contacts-rb`: one upstream source
 file (or `.rs` + `.blp` pair) per flat `lib/<thing>.rb`. The vendored data —
 `data/style.css`, `data/word_lists/` (46 files), `data/assets/multilingual.svg`
-and `data/icons/hicolor/` — is in place too. **The one component still absent is
-the translation layer: there is no `po/` and no `lib/translations.rb`.**
+and `data/icons/hicolor/` — is in place too. The translation layer landed with
+`po/` (37 locales, `LINGUAS`, `POTFILES.in`, a regenerated `keypunch.pot`) and
+`lib/translations.rb`; **62 of upstream's 87 messages are ported, and the 25
+that are not are the GSettings schema, desktop entry and metainfo files this
+port does not have, plus two accessibility labels the bindings cannot set.**
+`TRANSLATION_PARITY.md` is the per-message ledger.
 
 Dev-shell probe (`nix develop --command xvfb-run -a ruby`): GTK 4.22.4, and
 every Adwaita and Gtk class upstream uses is present in the bindings —
@@ -306,7 +310,7 @@ Nine rules defining `KpTextView` (+ `.unfocused`, `> textview`),
 | `src/text_utils.rs` | `lib/text_utils.rb` | grapheme validation, replacements, word/line offsets | **exists** (340 lines) |
 | `src/text_generation.rs` + `data/word_lists/*.txt` (46 files) | `lib/text_generation.rb` + vendored `data/word_lists/` | 43-language word lists, punctuation/capitalisation generator, 400-grapheme chunks | **exists** (508 lines; all 46 lists vendored) |
 | `src/discord_rpc.rs` | `lib/discord_rpc.rb` | Discord IPC rich presence (Ready / Typing / Results) | **exists** (220 lines) |
-| `po/` (37 locales, `LINGUAS`, `keypunch.pot`, `POTFILES.in`) | `po/` + `lib/translations.rb` | gettext catalogue | **missing — the only gap left** |
+| `po/` (37 locales, `LINGUAS`, `keypunch.pot`, `POTFILES.in`) | `po/` + `lib/translations.rb` | gettext catalogue | **exists** (37 locales carried over, 62 of 87 messages ported; `lib/translations.rb` is 590 lines) |
 
 GSettings keys: `window-width` (900), `window-height` (450),
 `window-maximized`, `session-type` enum (Simple/Advanced/Custom, default
@@ -346,9 +350,14 @@ so each blocker below carries how it was settled.
 7. **Discord rich presence has no Ruby equivalent in the lockfile.**
    **Settled:** `lib/discord_rpc.rb` speaks the IPC socket protocol directly;
    it degrades to a no-op when no Discord socket is present.
-8. **No gettext wiring — STILL OPEN.** 37 locales upstream. The fork has no
-   `po/` and no `lib/translations.rb`; user-visible strings are plain Ruby
-   literals. The special Unicode characters (`⁄`, `∶`) and the plural
-   duration forms in `lib/typing_test_utils.rb` and `lib/results_view.rb` are
-   the parts that need care when the catalogue is added. This is the one
-   remaining full-parity gap.
+8. **No gettext wiring.**
+   **Settled:** upstream's 37 `.po` files, `LINGUAS` and `POTFILES.in` (rewritten
+   to the Ruby paths) are in `po/`, and `lib/translations.rb` reads the current
+   locale's catalogue straight out of them — the app has no install step, so
+   there is no `$LOCALEDIR` of compiled `.mo` files to bind. It implements the
+   `Plural-Forms` engine and `msgctxt` lookups the `.po` files need, and the
+   special Unicode characters (`⁄`, `∶`) and the plural duration forms sit
+   inside their upstream msgids byte for byte. Still open: the GSettings
+   schema, desktop entry and metainfo files, which hold the 25 messages the
+   port does not emit, and GLib's own domain binding that would translate
+   them. See `TRANSLATION_PARITY.md`.

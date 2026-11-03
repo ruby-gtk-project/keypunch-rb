@@ -3,6 +3,8 @@
 require "fileutils"
 require "json"
 
+require_relative "translations"
+
 # Settings holds the same keys as upstream's
 # data/no.bragefuglseth.Keypunch.gschema.xml.in, with the same defaults and the
 # same semantics.
@@ -19,6 +21,8 @@ require "json"
 # a dropdown's `selected` index to an enum-valued key in both directions.
 #
 class Settings
+  include Translations::Helpers
+
   # Must match their corresponding schema enums
   SESSION_TYPE_VALUES = %w[Simple Advanced Custom].freeze
   SESSION_DURATION_VALUES = %w[Sec15 Sec30 Min1 Min5 Min10].freeze
@@ -35,15 +39,38 @@ class Settings
     "personal-best"    => [],
   }.freeze
 
+  # Two of those defaults are translatable in upstream's schema, so a locale
+  # starts on its own word list with a pangram of its own language rather than
+  # on English's. A gschema default is GVariant source text, which is why the
+  # quotation marks are part of the msgid; they come off the translation
+  # again. A locale whose code has no word list falls back to English in
+  # `TextGeneration::Language.from_code`, which is what the translator comment
+  # on the first of these promises.
+  #
+  # Translators: Insert the language code of your language here, for example "nb" for Norwegian Bokmaal. Do not remove the quotation marks. It's doesn't matter if there isn't a word list for the language in `data/word_lists` right now, the app will fall back to English in that case and start using the list if it becomes available in the future.
+  DEFAULT_TEXT_LANGUAGE = N_("\"en\"")
+
+  # Translators: This is the default text for custom typing sessions. Do not translate it literally, and do not remove the quotation marks. Replace it with an appropriate "sample sentence" from your language instead. The original text is an English pangram, so you can e.g. find a pangram in your language: https://clagnut.com/blog/2380
+  DEFAULT_CUSTOM_TEXT = N_("\"The quick brown fox jumps over the lazy dog.\"")
+
+  QUOTE = "\""
+
   def initialize(path: nil)
     @path = path || default_path
-    @values = DEFAULTS.merge(read)
+    @values = localized_defaults.merge(read)
     @listeners = {}
   end
 
   def location = @path
 
-  def [](key) = @values.fetch(key.to_s, DEFAULTS[key.to_s])
+  def [](key) = @values.fetch(key.to_s, localized_defaults[key.to_s])
+
+  def localized_defaults
+    @localized_defaults ||= DEFAULTS.merge(
+      "text-language" => unquote(_(DEFAULT_TEXT_LANGUAGE)),
+      "custom-text"   => unquote(_(DEFAULT_CUSTOM_TEXT)),
+    )
+  end
 
   def []=(key, value)
     @values[key.to_s] = value
@@ -109,6 +136,12 @@ class Settings
   end
 
   private
+
+    # A GVariant string literal, as a translated schema default arrives, down
+    # to the string it stands for.
+    def unquote(value)
+      value.delete_prefix(QUOTE).delete_suffix(QUOTE)
+    end
 
     def notify(key)
       @listeners.fetch(key, []).each(&:call)

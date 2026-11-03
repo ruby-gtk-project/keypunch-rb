@@ -2,6 +2,8 @@
 
 require "adwaita"
 
+require_relative "translations"
+
 # AboutDialog is the app's About window.
 #
 # Ported from `show_about_dialog` in upstream's src/widgets/window.rs. Upstream
@@ -13,14 +15,16 @@ require "adwaita"
 # data/no.bragefuglseth.Keypunch.metainfo.xml.in.in supplies are set directly
 # — the same name, summary, licence, developer and urls — and the credit,
 # acknowledgement, donate-link and other-app calls follow upstream exactly.
-# Upstream also sets the translator credits from its gettext catalogue; this
-# port carries no catalogue, so there are no translator names to list.
 #
 class AboutDialog < Adwaita::AboutDialog
-  APPLICATION_NAME = "Keypunch"
+  include Translations::Helpers
+
+  # Upstream reads this from the metainfo file, where it is translatable and a
+  # few locales do translate it, so it goes through the catalogue here too.
+  APPLICATION_NAME = N_("Keypunch")
   DEVELOPER_NAME = "Brage Fuglseth"
   COPYRIGHT = "© 2024–2026 Brage Fuglseth"
-  COMMENTS = "Practice your typing skills"
+  COMMENTS = N_("Practice your typing skills")
   RELEASE_NOTES_VERSION = "7.0"
 
   HOMEPAGE = "https://apps.gnome.org/Keypunch"
@@ -49,7 +53,12 @@ class AboutDialog < Adwaita::AboutDialog
 
   # Metainfo for the app Fretboard.
   # <https://github.com/bragefuglseth/fretboard>
-  OTHER_APP = ["no.bragefuglseth.Fretboard", "Fretboard", "Look up guitar chords"].freeze
+  OTHER_APP_ID = "no.bragefuglseth.Fretboard"
+  OTHER_APP_NAME = N_("Fretboard")
+  OTHER_APP_DESCRIPTION = N_("Look up guitar chords")
+
+  # Translators: Replace "translator-credits" with your names, one name per line
+  TRANSLATOR_CREDITS = N_("translator-credits")
 
   def initialize(application_id, version)
     super()
@@ -59,12 +68,12 @@ class AboutDialog < Adwaita::AboutDialog
 
   def build
     tap do |dialog|
-      dialog.application_name = APPLICATION_NAME
+      dialog.application_name = _(APPLICATION_NAME)
       dialog.application_icon = @application_id
       dialog.developer_name = DEVELOPER_NAME
       dialog.version = @version
       dialog.release_notes_version = RELEASE_NOTES_VERSION
-      dialog.comments = COMMENTS
+      dialog.comments = _(COMMENTS)
       dialog.license_type = Gtk::License::GPL_3_0
       dialog.copyright = COPYRIGHT
       dialog.website = HOMEPAGE
@@ -72,10 +81,36 @@ class AboutDialog < Adwaita::AboutDialog
       dialog.support_url = SUPPORT_URL
       dialog.developers = DEVELOPERS
 
-      dialog.add_link("Donate", DONATE_URL)
-      dialog.add_credit_section("Orthography by", ORTHOGRAPHY_CREDITS)
-      dialog.add_acknowledgement_section("Special thanks to", SPECIAL_THANKS)
-      dialog.add_other_app(*OTHER_APP)
+      dialog.add_link(_("Donate"), DONATE_URL)
+      dialog.add_credit_section(_("Orthography by"), ORTHOGRAPHY_CREDITS)
+      dialog.add_acknowledgement_section(_("Special thanks to"), SPECIAL_THANKS)
+      dialog.add_other_app(OTHER_APP_ID, _(OTHER_APP_NAME), _(OTHER_APP_DESCRIPTION))
+
+      translated_credits.then do |credits|
+        if credits
+          dialog.translator_credits = credits
+        end
+      end
     end
   end
+
+  private
+
+    # Upstream sets the credits from the catalogue unconditionally. gettext
+    # hands back the msgid when a locale has not translated it, and
+    # "translator-credits" is not a name to show anyone, so the credits are
+    # set only once a catalogue has filled them in — the same test every
+    # GNOME app makes of this message.
+    # Named around the property rather than after it: `translator_credits` is
+    # AdwAboutDialog's own reader, and a method of that name here would hide
+    # it.
+    def translated_credits
+      _(TRANSLATOR_CREDITS).then do |credits|
+        if credits == TRANSLATOR_CREDITS
+          nil
+        else
+          credits
+        end
+      end
+    end
 end

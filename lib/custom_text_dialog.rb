@@ -2,6 +2,8 @@
 
 require "adwaita"
 
+require_relative "translations"
+
 # CustomTextDialog is the editor for the text a "Custom" test runs over.
 #
 # A direct port of upstream's src/widgets/custom_text_dialog.blp and
@@ -15,6 +17,8 @@ require "adwaita"
 # cannot declare GObject signals.
 #
 class CustomTextDialog < Adwaita::Dialog
+  include Translations::Helpers
+
   CONTENT_WIDTH = 450
   CONTENT_HEIGHT = 500
 
@@ -28,7 +32,7 @@ class CustomTextDialog < Adwaita::Dialog
     @on_discard = on_discard
     @apply_changes = false
 
-    self.title = "Custom Text"
+    self.title = _("Custom Text")
     self.content_width = CONTENT_WIDTH
     self.content_height = CONTENT_HEIGHT
   end
@@ -109,7 +113,7 @@ class CustomTextDialog < Adwaita::Dialog
   end
 
   def title_label
-    @title_label ||= Gtk::Label.new("Custom Text").tap do |label|
+    @title_label ||= Gtk::Label.new(_("Custom Text")).tap do |label|
       label.margin_bottom = 24
       label.add_css_class("title-1")
     end
@@ -118,7 +122,7 @@ class CustomTextDialog < Adwaita::Dialog
   def overlay = @overlay ||= Gtk::Overlay.new
 
   def placeholder
-    @placeholder ||= Gtk::Label.new("Insert custom text…").tap do |label|
+    @placeholder ||= Gtk::Label.new(_("Insert custom text…")).tap do |label|
       label.valign = :start
       label.halign = :start
       label.margin_top = 12
@@ -147,7 +151,7 @@ class CustomTextDialog < Adwaita::Dialog
   end
 
   def save_button
-    @save_button ||= Gtk::Button.new(label: "_Save").tap do |button|
+    @save_button ||= Gtk::Button.new(label: _("_Save")).tap do |button|
       button.use_underline = true
       button.add_css_class("pill")
       button.add_css_class("suggested-action")

@@ -1,0 +1,430 @@
+# Hindi translation for keypunch.
+# Copyright (C) 2024 keypunch's COPYRIGHT HOLDER
+# This file is distributed under the same license as the keypunch package.
+# Scrambled777 <weblate.scrambled777@simplelogin.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: keypunch\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-03 00:11+0000\n"
+"PO-Revision-Date: 2024-07-17 10:56+0530\n"
+"Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
+"Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net>\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 46.1\n"
+
+#: lib/about_dialog.rb:24 lib/window.rb:119
+msgid "Keypunch"
+msgstr "कीपंच"
+
+#: lib/about_dialog.rb:27
+msgid "Practice your typing skills"
+msgstr "अपने टाइपिंग कौशल का अभ्यास करें"
+
+#: lib/about_dialog.rb:57
+msgid "Fretboard"
+msgstr ""
+
+#: lib/about_dialog.rb:58
+msgid "Look up guitar chords"
+msgstr ""
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: lib/about_dialog.rb:61
+msgid "translator-credits"
+msgstr "Scrambled777 <weblate.scrambled777@simplelogin.com>"
+
+#: lib/about_dialog.rb:84
+msgid "Donate"
+msgstr ""
+
+#: lib/about_dialog.rb:85
+msgid "Orthography by"
+msgstr "ऑर्थोग्राफी प्रदानकर्ता"
+
+#: lib/about_dialog.rb:86
+msgid "Special thanks to"
+msgstr "इनको विशेष धन्यवाद"
+
+#: lib/custom_text_dialog.rb:35 lib/custom_text_dialog.rb:116
+msgid "Custom Text"
+msgstr "तदनुकूल पाठ"
+
+#: lib/custom_text_dialog.rb:125
+msgid "Insert custom text…"
+msgstr "तदनुकूल पाठ सम्मिलित करें…"
+
+#: lib/custom_text_dialog.rb:154
+msgid "_Save"
+msgstr "सहेजें (_S)"
+
+#: lib/primary_menu.rb:19
+msgid "Text _Language"
+msgstr "पाठ भाषा (_L)"
+
+#: lib/primary_menu.rb:20
+msgid "_Keyboard Shortcuts"
+msgstr "कीबोर्ड शॉर्टकट (_K)"
+
+#: lib/primary_menu.rb:21
+msgid "_About Keypunch"
+msgstr "कीपंच का परिचय (_A)"
+
+#. Translators: The percentage label format of the results page. The `{}`
+#. block will be replaced with the percentage number, do not translate it!
+#: lib/results_view.rb:116
+msgid "{}%"
+msgstr "{}%"
+
+#: lib/results_view.rb:126 lib/window.rb:47
+msgid "Custom"
+msgstr "तदनुकूल"
+
+#. Translators: The `{}` blocks will be replaced with the number of
+#. minutes and seconds. Do not translate them!
+#: lib/results_view.rb:140
+msgid "{}m {}s"
+msgstr "{}m {}s"
+
+#. Translators: The `{}` block will be replaced with the number of
+#. minutes. Do not translate it!
+#: lib/results_view.rb:144
+msgid "{} minute"
+msgid_plural "{} minutes"
+msgstr[0] "{} मिनट"
+msgstr[1] "{} मिनट"
+
+#. Translators: The `{}` block will be replaced with the number of
+#. seconds. Do not translate it!
+#: lib/results_view.rb:148
+msgid "{} second"
+msgid_plural "{} seconds"
+msgstr[0] "{} सेकंड"
+msgstr[1] "{} सेकंड"
+
+#: lib/results_view.rb:195
+msgid "New Personal Best for Configuration"
+msgstr "विन्यास के लिए नया व्यक्तिगत सर्वश्रेष्ठ"
+
+#: lib/results_view.rb:202
+msgid "Words per Minute"
+msgstr "शब्द प्रति मिनट"
+
+#: lib/results_view.rb:222
+msgid "Accuracy"
+msgstr ""
+
+#: lib/results_view.rb:237 lib/window.rb:195
+#, fuzzy
+msgid "Test Type"
+msgstr "सत्र प्रकार"
+
+#: lib/results_view.rb:248 lib/window.rb:203
+#, fuzzy
+msgid "Test Duration"
+msgstr "सत्र अवधि"
+
+#: lib/results_view.rb:259 lib/text_language_dialog.rb:52
+#: lib/text_language_dialog.rb:102 lib/text_language_dialog.rb:137
+msgid "Text Language"
+msgstr "पाठ भाषा"
+
+#. Translators: Insert the language code of your language here, for example "nb" for Norwegian Bokmaal. Do not remove the quotation marks. It's doesn't matter if there isn't a word list for the language in `data/word_lists` right now, the app will fall back to English in that case and start using the list if it becomes available in the future.
+#: lib/settings.rb:51
+msgid "\"en\""
+msgstr "\"hi\""
+
+#. Translators: This is the default text for custom typing sessions. Do not translate it literally, and do not remove the quotation marks. Replace it with an appropriate "sample sentence" from your language instead. The original text is an English pangram, so you can e.g. find a pangram in your language: https://clagnut.com/blog/2380
+#: lib/settings.rb:54
+msgid "\"The quick brown fox jumps over the lazy dog.\""
+msgstr ""
+"\"ऋषियों को सताने वाले दुष्ट राक्षसों के राजा रावण का सर्वनाश करने वाले विष्णुवतार भगवान "
+"श्रीराम, अयोध्या के महाराज दशरथ के बड़े सपुत्र थे।\""
+
+#: lib/shortcuts_dialog.rb:33
+#, fuzzy
+msgctxt "shortcut dialog"
+msgid "General"
+msgstr "सामान्य"
+
+#: lib/shortcuts_dialog.rb:51
+#, fuzzy
+msgctxt "shortcut dialog"
+msgid "Open Menu"
+msgstr "मुख्य मेनू"
+
+#: lib/shortcuts_dialog.rb:52 lib/shortcuts_dialog.rb:56
+#, fuzzy
+msgctxt "shortcut dialog"
+msgid "Text Language"
+msgstr "पाठ भाषा"
+
+#: lib/shortcuts_dialog.rb:53
+#, fuzzy
+msgctxt "shortcut dialog"
+msgid "Cancel Test"
+msgstr "सत्र रद्द करें"
+
+#: lib/shortcuts_dialog.rb:54
+#, fuzzy
+msgctxt "shortcut dialog"
+msgid "Keyboard Shortcuts"
+msgstr "कीबोर्ड शॉर्टकट"
+
+#: lib/shortcuts_dialog.rb:55
+#, fuzzy
+msgctxt "shortcut dialog"
+msgid "Close Window"
+msgstr "विंडो बंद करें"
+
+#: lib/text_language_dialog.rb:39
+msgid ""
+"You can help add a new text language to Keypunch by submitting a language "
+"request on GitHub. A GitHub account and some language knowledge is required."
+msgstr ""
+"आप GitHub पर भाषा अनुरोध जमा करके कीपंच में एक नई पाठ भाषा जोड़ने में मदद कर सकते हैं। "
+"GitHub खाता और कुछ भाषा ज्ञान की आवश्यकता है।"
+
+#: lib/text_language_dialog.rb:114 lib/text_language_dialog.rb:234
+#: lib/text_language_dialog.rb:277
+msgid "Add Language"
+msgstr "भाषा जोड़ें"
+
+#: lib/text_language_dialog.rb:151
+msgid "Search languages…"
+msgstr "भाषाएं खोजें…"
+
+#. Translators: Recent languages in text languages list
+#: lib/text_language_dialog.rb:176
+msgid "Recent"
+msgstr "हालिया"
+
+#. Translators: Other languages in text languages list
+#: lib/text_language_dialog.rb:184
+msgid "Other"
+msgstr "अन्य"
+
+#: lib/text_language_dialog.rb:226
+msgid "No Matches"
+msgstr "कोई मेल नहीं"
+
+#: lib/text_language_dialog.rb:231
+msgid "Try a different search"
+msgstr "भिन्न खोज का प्रयास करें"
+
+#: lib/text_language_dialog.rb:307
+msgid "_Create Request"
+msgstr "अनुरोध बनाएं (_C)"
+
+#. Translators: This is shown as a warning by GNOME Shell before logging out
+#. or shutting off the system in the middle of a typing test
+#: lib/typing_test_session.rb:46
+msgid "Ongoing typing test"
+msgstr ""
+
+#. Translators: The format of the word counter. The `{}` blocks will be
+#. replaced with the number of the word being typed and the number of
+#. words in the text. Do not translate them. The `⁄` sign is a fraction
+#. slash, not the ASCII slash it resembles; if your language doesn't
+#. use something completely different, you should probably copy and
+#. paste it from the original string.
+#: lib/typing_test_session.rb:355
+msgid "{} ⁄ {}"
+msgstr "{} ⁄ {}"
+
+#: lib/typing_test_session.rb:407
+msgid "Changes discarded"
+msgstr "परिवर्तन खारिज कर दिए गए"
+
+#: lib/typing_test_session.rb:408
+msgid "Restore"
+msgstr "पुनर्स्थापित करें"
+
+#. Translators: The format of the timer. The first `{}` block will be
+#. replaced with the minutes passed, and the second one will be replaced
+#. with the seconds passed. Do not translate the `{}` blocks. Note that
+#. the `∶` sign is a special Unicode character; if your language doesn't
+#. use something completely different, you should probably copy and paste
+#. it from the original string.
+#: lib/typing_test_session.rb:462
+msgid "{}∶{}"
+msgstr "{}∶{}"
+
+#: lib/typing_test_utils.rb:31 lib/window.rb:47
+msgid "Simple"
+msgstr "सरल"
+
+#: lib/typing_test_utils.rb:32 lib/window.rb:47
+msgid "Advanced"
+msgstr "उन्नत"
+
+#: lib/typing_test_utils.rb:68 lib/window.rb:50
+msgid "15 seconds"
+msgstr "15 सेकेंड"
+
+#: lib/typing_test_utils.rb:69 lib/window.rb:51
+msgid "30 seconds"
+msgstr "30 सेकेंड"
+
+#: lib/typing_test_utils.rb:70 lib/window.rb:52
+msgid "1 minute"
+msgstr "1 मिनट"
+
+#: lib/typing_test_utils.rb:71 lib/window.rb:53
+msgid "5 minutes"
+msgstr "5 मिनट"
+
+#: lib/typing_test_utils.rb:72 lib/window.rb:54
+msgid "10 minutes"
+msgstr "10 मिनट"
+
+#: lib/window.rb:57
+msgid ""
+"The test has been cancelled due to an excessive amount of invalid "
+"keystrokes. This will not affect your typing statistics."
+msgstr ""
+
+#: lib/window.rb:180
+msgid "Restart"
+msgstr "पुनरारंभ"
+
+#: lib/window.rb:218
+msgid "_Edit Text"
+msgstr "पाठ संपादित करें (_E)"
+
+#: lib/window.rb:234
+msgid "Main Menu"
+msgstr "मुख्य मेनू"
+
+#: lib/window.rb:256
+msgid "Just Start Typing"
+msgstr "बस टाइप करना शुरू करें"
+
+#. Translators: "Entry" here is the act of entering text
+#: lib/window.rb:263
+#, fuzzy
+msgid "_Enable Entry"
+msgstr "प्रविष्टि सक्षम करें"
+
+#: lib/window.rb:278
+msgid "Results"
+msgstr "परिणाम"
+
+#: lib/window.rb:307
+msgid "Test Cancelled"
+msgstr ""
+
+#: lib/window.rb:362
+msgid "_Continue"
+msgstr "जारी रखें (_C)"
+
+#~ msgid ""
+#~ "typing;trainer;touch typing;keyboard;speed;wpm;words per "
+#~ "minute;accuracy;test;"
+#~ msgstr ""
+#~ "टाइपिंग;प्रशिक्षक;स्पर्श टाइपिंग;कीबोर्ड;गति;wpm;शब्द प्रति मिनट;सटीकता;परीक्षण;"
+
+#~ msgid ""
+#~ "There is no doubt that typing on a keyboard is an essential skill in the "
+#~ "digital age. Typing fast and accurately gives you more opportunities, "
+#~ "more time for what matters to you, and a sense of self-accomplishment."
+#~ msgstr ""
+#~ "इसमें कोई संदेह नहीं है कि डिजिटल युग में कीबोर्ड पर टाइप करना एक आवश्यक कौशल है। तेजी "
+#~ "से और सटीक टाइपिंग करने से आपको अधिक अवसर मिलते हैं, आपके लिए महत्वपूर्ण कामों के लिए "
+#~ "अधिक समय मिलता है और आत्म-उपलब्धि की भावना होती है।"
+
+#~ msgid ""
+#~ "Keypunch lets you practice typing. Thanks to fast-paced sessions with "
+#~ "instant feedback afterwards and a plethora of available languages, you "
+#~ "might even have a little fun doing so. With determination, proper "
+#~ "technique and some time, you will observe a noticeable increase in both "
+#~ "the speed and the accuracy of which your thoughts and ideas are put into "
+#~ "words on the screen."
+#~ msgstr ""
+#~ "कीपंच आपको टाइपिंग का अभ्यास करने देता है। इसके बाद तुरंत फीडबैक के साथ तेज़ गति वाले "
+#~ "सत्रों और उपलब्ध भाषाओं की अधिकता के कारण, आपको ऐसा करने में थोड़ा मज़ा भी आ सकता "
+#~ "है। दृढ़ संकल्प, उचित तकनीक और कुछ समय के साथ, आप स्क्रीन पर अपने विचारों और विचारों "
+#~ "को शब्दों में व्यक्त करने की गति और सटीकता दोनों में उल्लेखनीय वृद्धि देखेंगे।"
+
+#~ msgid ""
+#~ "If you are already a racer at typing, Keypunch still has something for "
+#~ "you. Try practicing with numbers and punctuation, or choose your own text "
+#~ "to type out as fast as you can."
+#~ msgstr ""
+#~ "अगर आप पहले से ही टाइपिंग में माहिर हैं, तो कीपंच में आपके लिए भी कुछ है। संख्याओं और "
+#~ "विराम चिह्नों के साथ अभ्यास करने की कोशिश करें, या जितनी जल्दी हो सके टाइप करने के "
+#~ "लिए अपना खुद का पाठ चुनें।"
+
+#~ msgid "Get ready to accelerate your typing!"
+#~ msgstr "अपनी टाइपिंग में तेजी लाने के लिए तैयार हो जाइए!"
+
+#~ msgid "In the middle of a session"
+#~ msgstr "सत्र के मध्य में"
+
+#~ msgid "Ready for typing"
+#~ msgstr "टाइप करने के लिए तैयार"
+
+#~ msgid "Session results"
+#~ msgstr "सत्र परिणाम"
+
+#~ msgid "Language selection"
+#~ msgstr "भाषा चयन"
+
+#~ msgid "Custom text entry"
+#~ msgstr "तदनुकूल पाठ प्रविष्टि"
+
+#~ msgid "Window Width"
+#~ msgstr "विंडो की चौड़ाई"
+
+#~ msgid "Window Height"
+#~ msgstr "विंडो की ऊंचाई"
+
+#~ msgid "Window Maximization"
+#~ msgstr "विंडो अधिकतमीकृत"
+
+#~ msgid "The duration of time-based sessions"
+#~ msgstr "समय-आधारित सत्रों की अवधि"
+
+#~ msgid "The code of the language used for automatically generated text"
+#~ msgstr "स्वचालित रूप से उत्पन्न पाठ के लिए प्रयुक्त भाषा का कोड"
+
+#~ msgid "Recent Languages"
+#~ msgstr "हालिया भाषाएं"
+
+#~ msgid ""
+#~ "Languages shown in the list of recent ones in the text language dialog"
+#~ msgstr "पाठ भाषा संवाद में हाल की भाषाओं की सूची में दिखाई गई भाषाएं"
+
+#~ msgid "Text displayed when “Custom” is chosen from the session menu"
+#~ msgstr "सत्र मेनू से “तदनुकूल” चुनने पर प्रदर्शित पाठ"
+
+#~ msgid "Personal Best"
+#~ msgstr "व्यक्तिगत सर्वश्रेष्ठ"
+
+#~ msgid ""
+#~ "The current highest amount of WPM received for each session type / "
+#~ "duration and language"
+#~ msgstr ""
+#~ "प्रत्येक सत्र प्रकार / अवधि और भाषा के लिए प्राप्त WPM की वर्तमान उच्चतम मात्रा"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Text Language"
+#~ msgstr "पाठ भाषा"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Quit"
+#~ msgstr "बंद करें"
+
+#~ msgid "Search Results"
+#~ msgstr "खोज परिणाम"
+
+#~ msgid "Text View"
+#~ msgstr "पाठ दृश्य"
+
+#~ msgid "Correctness"
+#~ msgstr "यथार्थता"

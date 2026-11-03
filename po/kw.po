@@ -1,0 +1,461 @@
+# Cornish translation for Keypunch.
+# Copyright (C) 2026 Keypunch's COPYRIGHT HOLDER
+# This file is distributed under the same license as the Keypunch package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Flynn Peck <cirilla@tuta.io>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Keypunch main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-03 00:11+0000\n"
+"PO-Revision-Date: 2026-02-03 17:29+0000\n"
+"Last-Translator: Flynn Peck <cirilla@tuta.io>\n"
+"Language-Team: kw\n"
+"Language: kw\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-DL-VCS-Web: https://github.com/bragefuglseth/Keypunch\n"
+"X-DL-Lang: kw\n"
+"X-DL-Module: Keypunch\n"
+"X-DL-Branch: main\n"
+"X-DL-Domain: po\n"
+"X-DL-State: Translating\n"
+"X-Generator: Gtranslator 49.0\n"
+
+#: lib/about_dialog.rb:24 lib/window.rb:119
+msgid "Keypunch"
+msgstr "Alhwedhen-Toller"
+
+#: lib/about_dialog.rb:27
+msgid "Practice your typing skills"
+msgstr "Omassaya dha sleyneth ow jynnskrifa"
+
+#: lib/about_dialog.rb:57
+msgid "Fretboard"
+msgstr "Fretbordh"
+
+#: lib/about_dialog.rb:58
+msgid "Look up guitar chords"
+msgstr "Hwilas kordys gitar"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: lib/about_dialog.rb:61
+msgid "translator-credits"
+msgstr "Flynn"
+
+#: lib/about_dialog.rb:84
+msgid "Donate"
+msgstr ""
+
+#: lib/about_dialog.rb:85
+msgid "Orthography by"
+msgstr "Lytherenieth gans"
+
+#: lib/about_dialog.rb:86
+msgid "Special thanks to"
+msgstr "Meur ras yn arbennik dhe"
+
+#: lib/custom_text_dialog.rb:35 lib/custom_text_dialog.rb:116
+msgid "Custom Text"
+msgstr "Tekst A-vusur"
+
+#: lib/custom_text_dialog.rb:125
+msgid "Insert custom text…"
+msgstr "Ynworra tekst a-vusur…"
+
+#: lib/custom_text_dialog.rb:154
+msgid "_Save"
+msgstr "_Sawya"
+
+#: lib/primary_menu.rb:19
+msgid "Text _Language"
+msgstr "_Yeth Tekst"
+
+#: lib/primary_menu.rb:20
+msgid "_Keyboard Shortcuts"
+msgstr "_Kesunyansow Bysowek"
+
+#: lib/primary_menu.rb:21
+msgid "_About Keypunch"
+msgstr "_A-dro Alhwedhen-Tollen"
+
+#. Translators: The percentage label format of the results page. The `{}`
+#. block will be replaced with the percentage number, do not translate it!
+#: lib/results_view.rb:116
+msgid "{}%"
+msgstr "{}%"
+
+#: lib/results_view.rb:126 lib/window.rb:47
+msgid "Custom"
+msgstr "A-vusur"
+
+#. Translators: The `{}` blocks will be replaced with the number of
+#. minutes and seconds. Do not translate them!
+#: lib/results_view.rb:140
+msgid "{}m {}s"
+msgstr "{}m {}e"
+
+#. Translators: The `{}` block will be replaced with the number of
+#. minutes. Do not translate it!
+#: lib/results_view.rb:144
+msgid "{} minute"
+msgid_plural "{} minutes"
+msgstr[0] "{} mynysen"
+msgstr[1] "{} mynysennow"
+
+#. Translators: The `{}` block will be replaced with the number of
+#. seconds. Do not translate it!
+#: lib/results_view.rb:148
+msgid "{} second"
+msgid_plural "{} seconds"
+msgstr[0] "{} eylen"
+msgstr[1] "{} eylennow"
+
+#: lib/results_view.rb:195
+msgid "New Personal Best for Configuration"
+msgstr "Gwella Personel Nowydh rag Selyans"
+
+#: lib/results_view.rb:202
+msgid "Words per Minute"
+msgstr "Geryow dre Mynysen"
+
+#: lib/results_view.rb:222
+msgid "Accuracy"
+msgstr "Kewerder"
+
+#: lib/results_view.rb:237 lib/window.rb:195
+msgid "Test Type"
+msgstr "Eghen Apposyans"
+
+#: lib/results_view.rb:248 lib/window.rb:203
+msgid "Test Duration"
+msgstr "Termyn Apposyans"
+
+#: lib/results_view.rb:259 lib/text_language_dialog.rb:52
+#: lib/text_language_dialog.rb:102 lib/text_language_dialog.rb:137
+msgid "Text Language"
+msgstr "Yeth Tekst"
+
+#. Translators: Insert the language code of your language here, for example "nb" for Norwegian Bokmaal. Do not remove the quotation marks. It's doesn't matter if there isn't a word list for the language in `data/word_lists` right now, the app will fall back to English in that case and start using the list if it becomes available in the future.
+#: lib/settings.rb:51
+msgid "\"en\""
+msgstr "\"kw\""
+
+#. Translators: This is the default text for custom typing sessions. Do not translate it literally, and do not remove the quotation marks. Replace it with an appropriate "sample sentence" from your language instead. The original text is an English pangram, so you can e.g. find a pangram in your language: https://clagnut.com/blog/2380
+#: lib/settings.rb:54
+msgid "\"The quick brown fox jumps over the lazy dog.\""
+msgstr "\"Gwari hweg yw gwari teg\""
+
+#: lib/shortcuts_dialog.rb:33
+#, fuzzy
+msgctxt "shortcut dialog"
+msgid "General"
+msgstr "Ollgemmyn"
+
+#: lib/shortcuts_dialog.rb:51
+#, fuzzy
+msgctxt "shortcut dialog"
+msgid "Open Menu"
+msgstr "Rol Chif"
+
+#: lib/shortcuts_dialog.rb:52 lib/shortcuts_dialog.rb:56
+#, fuzzy
+msgctxt "shortcut dialog"
+msgid "Text Language"
+msgstr "Yeth Tekst"
+
+#: lib/shortcuts_dialog.rb:53
+#, fuzzy
+msgctxt "shortcut dialog"
+msgid "Cancel Test"
+msgstr "Hedhi Esedhek"
+
+#: lib/shortcuts_dialog.rb:54
+#, fuzzy
+msgctxt "shortcut dialog"
+msgid "Keyboard Shortcuts"
+msgstr "Kesunyansow Bysowek"
+
+#: lib/shortcuts_dialog.rb:55
+#, fuzzy
+msgctxt "shortcut dialog"
+msgid "Close Window"
+msgstr "Degea Fenester"
+
+#: lib/text_language_dialog.rb:39
+msgid ""
+"You can help add a new text language to Keypunch by submitting a language "
+"request on GitHub. A GitHub account and some language knowledge is required."
+msgstr ""
+"Ty a yll gweres addya yeth tekst nowydh gans ow danvon unn govyn yeth war "
+"GitHub. Akont Github ha nebes aswonvos yeth a res."
+
+#: lib/text_language_dialog.rb:114 lib/text_language_dialog.rb:234
+#: lib/text_language_dialog.rb:277
+msgid "Add Language"
+msgstr "Addya Yeth"
+
+#: lib/text_language_dialog.rb:151
+msgid "Search languages…"
+msgstr "Hwilas yethow…"
+
+#. Translators: Recent languages in text languages list
+#: lib/text_language_dialog.rb:176
+msgid "Recent"
+msgstr "A-dhiwedhes"
+
+#. Translators: Other languages in text languages list
+#: lib/text_language_dialog.rb:184
+msgid "Other"
+msgstr "Aral"
+
+#: lib/text_language_dialog.rb:226
+msgid "No Matches"
+msgstr "Parow Vyth"
+
+#: lib/text_language_dialog.rb:231
+msgid "Try a different search"
+msgstr "Assaya hwithrans aral"
+
+#: lib/text_language_dialog.rb:307
+msgid "_Create Request"
+msgstr "_Gul Govyn"
+
+#. Translators: This is shown as a warning by GNOME Shell before logging out
+#. or shutting off the system in the middle of a typing test
+#: lib/typing_test_session.rb:46
+msgid "Ongoing typing test"
+msgstr "Apposyans ow jynnskrifa lemmyn"
+
+#. Translators: The format of the word counter. The `{}` blocks will be
+#. replaced with the number of the word being typed and the number of
+#. words in the text. Do not translate them. The `⁄` sign is a fraction
+#. slash, not the ASCII slash it resembles; if your language doesn't
+#. use something completely different, you should probably copy and
+#. paste it from the original string.
+#: lib/typing_test_session.rb:355
+msgid "{} ⁄ {}"
+msgstr ""
+
+#: lib/typing_test_session.rb:407
+msgid "Changes discarded"
+msgstr ""
+
+#: lib/typing_test_session.rb:408
+#, fuzzy
+msgid "Restore"
+msgstr "Dastalleth"
+
+#. Translators: The format of the timer. The first `{}` block will be
+#. replaced with the minutes passed, and the second one will be replaced
+#. with the seconds passed. Do not translate the `{}` blocks. Note that
+#. the `∶` sign is a special Unicode character; if your language doesn't
+#. use something completely different, you should probably copy and paste
+#. it from the original string.
+#: lib/typing_test_session.rb:462
+msgid "{}∶{}"
+msgstr "{}:{}"
+
+#: lib/typing_test_utils.rb:31 lib/window.rb:47
+msgid "Simple"
+msgstr "Sempel"
+
+#: lib/typing_test_utils.rb:32 lib/window.rb:47
+msgid "Advanced"
+msgstr "Avonsys"
+
+#: lib/typing_test_utils.rb:68 lib/window.rb:50
+msgid "15 seconds"
+msgstr "15 eylennow"
+
+#: lib/typing_test_utils.rb:69 lib/window.rb:51
+msgid "30 seconds"
+msgstr "30 eylennow"
+
+#: lib/typing_test_utils.rb:70 lib/window.rb:52
+msgid "1 minute"
+msgstr "1 mynysen"
+
+#: lib/typing_test_utils.rb:71 lib/window.rb:53
+msgid "5 minutes"
+msgstr "5 mynysennow"
+
+#: lib/typing_test_utils.rb:72 lib/window.rb:54
+msgid "10 minutes"
+msgstr "10 mynysennow"
+
+#: lib/window.rb:57
+msgid ""
+"The test has been cancelled due to an excessive amount of invalid "
+"keystrokes. This will not affect your typing statistics."
+msgstr ""
+
+#: lib/window.rb:180
+msgid "Restart"
+msgstr "Dastalleth"
+
+#: lib/window.rb:218
+msgid "_Edit Text"
+msgstr "_Golegi Tekst"
+
+#: lib/window.rb:234
+msgid "Main Menu"
+msgstr "Rol Chif"
+
+#: lib/window.rb:256
+msgid "Just Start Typing"
+msgstr "Dalleth Hepken Ow Jynnskrifa"
+
+#. Translators: "Entry" here is the act of entering text
+#: lib/window.rb:263
+msgid "_Enable Entry"
+msgstr "_Gallosegi Ynworrans"
+
+#: lib/window.rb:278
+msgid "Results"
+msgstr "Sewyansow"
+
+#: lib/window.rb:307
+msgid "Test Cancelled"
+msgstr ""
+
+#: lib/window.rb:362
+msgid "_Continue"
+msgstr "_Pesya"
+
+#~ msgid ""
+#~ "typing;trainer;touch typing;keyboard;speed;wpm;words per "
+#~ "minute;accuracy;test;"
+#~ msgstr ""
+#~ "jynnskrifa;dyskador;toch jynnskrifa;bysowek;tooth;wpm;geryow dre "
+#~ "mynysen;kewderder;apposyans;"
+
+#~ msgid ""
+#~ "There is no doubt that typing on a keyboard is an essential skill in the "
+#~ "digital age. Typing fast and accurately gives you more opportunities, "
+#~ "more time for what matters to you, and a sense of self-accomplishment."
+#~ msgstr ""
+#~ "Yma mar vyth, ow jynnskrifa war'n bysowek yw unn sleyneth a res y'n oos "
+#~ "besyel. Ow jynnskrifa snell hag yn kewar ri ty moy spassow, moy termyn "
+#~ "rag pyth a vern dhe ty, ha'n klewans a omhedhyans."
+
+#~ msgid ""
+#~ "Keypunch lets you practice typing. Thanks to fast-paced sessions with "
+#~ "instant feedback afterwards and a plethora of available languages, you "
+#~ "might even have a little fun doing so. With determination, proper "
+#~ "technique and some time, you will observe a noticeable increase in both "
+#~ "the speed and the accuracy of which your thoughts and ideas are put into "
+#~ "words on the screen."
+#~ msgstr ""
+#~ "Alhwedhen-Toller gasa ty omassaya ow jynnskrifa. Meur ras dhe esedhogow "
+#~ "snell gans dasliv desempis a-wosa ha meur a yethow kavadow, martesen ty a "
+#~ "wra omlowenhe dres yth. Gans mynnas krev, teknek fytti ha nebes termyn, "
+#~ "ty a wra avisya moy tooth ha kewerder rag settya dha tybyansow yn geryow "
+#~ "war'n skrin."
+
+#~ msgid ""
+#~ "If you are already a racer at typing, Keypunch still has something for "
+#~ "you. Try practicing with numbers and punctuation, or choose your own text "
+#~ "to type out as fast as you can."
+#~ msgstr ""
+#~ "Mar os jynnskrifer konnyk seulabrys, Alhwedhen-Toller kavos neppyth rag "
+#~ "ty hwath. Assaya owth omassaya gans niverow ha poyntyans, po dewis dha "
+#~ "tekst rag jynnskrifa es snell es ty a yll."
+
+#~ msgid "Get ready to accelerate your typing!"
+#~ msgstr "Ombareusi dhe uskishe dha ow jynnskrifa!"
+
+#~ msgid ""
+#~ "Keypunch is proudly part of GNOME Circle, an initiative that champions "
+#~ "the great software that is available for the GNOME platform. For more "
+#~ "information, visit the GNOME Circle website."
+#~ msgstr ""
+#~ "Alhwedhen-Toller yw darn a GNOME Kylgh yn stout, ragdres ow skoodhya an "
+#~ "medhelweyth bryntin kavadow rag an bynk GNOME. Rag moy kedhlow, omweles "
+#~ "an gwiasva GNOME Kylgh."
+
+#~ msgid "In the middle of a session"
+#~ msgstr "Yn-mysk a'n esedhek"
+
+#~ msgid "Ready for typing"
+#~ msgstr "Bysi rag ow jynnskrifa"
+
+#~ msgid "Session results"
+#~ msgstr "Sewyansow esedhek"
+
+#~ msgid "Language selection"
+#~ msgstr "Dewis yeth"
+
+#~ msgid "Custom text entry"
+#~ msgstr "Ynworrans tekst a-vusur"
+
+#~ msgid "Window Width"
+#~ msgstr "Lester Fenester"
+
+#~ msgid "Window Height"
+#~ msgstr "Ughelder Fenester"
+
+#~ msgid "Window Maximization"
+#~ msgstr "Kowlvoghheans Fenester"
+
+#~ msgid "Session Type"
+#~ msgstr "Eghen Esedhek"
+
+#~ msgid "Session Duration"
+#~ msgstr "Termyn Esedhek"
+
+#~ msgid "The duration of time-based sessions"
+#~ msgstr "An termyn a esedhogow termyn-selys"
+
+#~ msgid "The code of the language used for automatically generated text"
+#~ msgstr "An kod a'n yeth devnydhys rag tekst dinythys yn awtomatek"
+
+#~ msgid "Recent Languages"
+#~ msgstr "Yethow A-dhiwedhes"
+
+#~ msgid ""
+#~ "Languages shown in the list of recent ones in the text language dialog"
+#~ msgstr "Yethow diskwedhys y'n rol a-dhiwedhes y'n fenester yeth tekst"
+
+#~ msgid "Text displayed when “Custom” is chosen from the session menu"
+#~ msgstr "Tekst diskwedhys pan “A-vusur” yw dewisys dhyworth an rol esedhek"
+
+#~ msgid "Personal Best"
+#~ msgstr "Gwella Personel"
+
+#~ msgid ""
+#~ "The current highest amount of WPM received for each session type / "
+#~ "duration and language"
+#~ msgstr ""
+#~ "An myns ughella a-lemmyn a GDM kemerys rag pub eghen / termyn esedhek hag "
+#~ "yeth"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Text Language"
+#~ msgstr "Yeth Tekst"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Quit"
+#~ msgstr "Kwytya"
+
+#~ msgid "Search Results"
+#~ msgstr "Sewyansow Hwithrans"
+
+#~ msgid "Text View"
+#~ msgstr "Gwel Tekst"
+
+#~ msgid "Frustration Relief"
+#~ msgstr "Difresyans Sorr"
+
+#~ msgid "Frustration Detected"
+#~ msgstr "Sorr Helerghys"
+
+#~ msgid ""
+#~ "You learn faster in a calm state of mind. Consider taking a break. The "
+#~ "test has been cancelled, and will not affect your typing statistics."
+#~ msgstr ""
+#~ "Ty dyski uskissa y'n cher kosel. Prederi ow kemeres unn powes. An "
+#~ "apposyans re bos hedhys, ha ny wra menni dha statystygyon ow jynnskrifa."

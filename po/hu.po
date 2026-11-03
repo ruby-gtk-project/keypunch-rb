@@ -1,0 +1,465 @@
+# Hungarian translation for keypunch.
+# Copyright (C) 2025 Free Software Foundation, Inc.
+# This file is distributed under the same license as the keypunch package.
+#
+# Balázs Meskó <mesko.balazs at fsf dot hu>, 2025.
+# Balázs Úr <ur.balazs at fsf dot hu>, 2025.
+msgid ""
+msgstr ""
+"Project-Id-Version: keypunch\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-03 00:11+0000\n"
+"PO-Revision-Date: 2025-09-01 16:28+0200\n"
+"Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
+"Language-Team: Hungarian <openscope at fsf dot hu>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 24.12.3\n"
+
+#: lib/about_dialog.rb:24 lib/window.rb:119
+msgid "Keypunch"
+msgstr "Billentyűző"
+
+#: lib/about_dialog.rb:27
+msgid "Practice your typing skills"
+msgstr "Gyakorolja gépelési készségét"
+
+#: lib/about_dialog.rb:57
+msgid "Fretboard"
+msgstr "Fretboard"
+
+#: lib/about_dialog.rb:58
+msgid "Look up guitar chords"
+msgstr "Gitárakkordok keresése"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: lib/about_dialog.rb:61
+msgid "translator-credits"
+msgstr ""
+"Meskó Balázs <mesko.balazs at fsf dot hu>, 2025.\n"
+"Uhrinyi Dániel <12256895+danieluhrinyi@users.noreply.github.com>\n"
+"Úr Balázs <ur.balazs at fsf dot hu>, 2025."
+
+#: lib/about_dialog.rb:84
+msgid "Donate"
+msgstr ""
+
+#: lib/about_dialog.rb:85
+msgid "Orthography by"
+msgstr "Helyesírás"
+
+#: lib/about_dialog.rb:86
+msgid "Special thanks to"
+msgstr "Külön köszönet"
+
+#: lib/custom_text_dialog.rb:35 lib/custom_text_dialog.rb:116
+msgid "Custom Text"
+msgstr "Egyéni szöveg"
+
+#: lib/custom_text_dialog.rb:125
+msgid "Insert custom text…"
+msgstr "Egyéni szöveg beillesztése…"
+
+#: lib/custom_text_dialog.rb:154
+msgid "_Save"
+msgstr "_Mentés"
+
+#: lib/primary_menu.rb:19
+msgid "Text _Language"
+msgstr "Szöveg _nyelve"
+
+#: lib/primary_menu.rb:20
+msgid "_Keyboard Shortcuts"
+msgstr "_Gyorsbillentyűk"
+
+#: lib/primary_menu.rb:21
+msgid "_About Keypunch"
+msgstr "A Billentyűző _névjegye"
+
+#. Translators: The percentage label format of the results page. The `{}`
+#. block will be replaced with the percentage number, do not translate it!
+#: lib/results_view.rb:116
+msgid "{}%"
+msgstr "{}%"
+
+#: lib/results_view.rb:126 lib/window.rb:47
+msgid "Custom"
+msgstr "Egyéni"
+
+#. Translators: The `{}` blocks will be replaced with the number of
+#. minutes and seconds. Do not translate them!
+#: lib/results_view.rb:140
+msgid "{}m {}s"
+msgstr "{} p {} mp"
+
+#. Translators: The `{}` block will be replaced with the number of
+#. minutes. Do not translate it!
+#: lib/results_view.rb:144
+msgid "{} minute"
+msgid_plural "{} minutes"
+msgstr[0] "{} perc"
+msgstr[1] "{} perc"
+
+#. Translators: The `{}` block will be replaced with the number of
+#. seconds. Do not translate it!
+#: lib/results_view.rb:148
+msgid "{} second"
+msgid_plural "{} seconds"
+msgstr[0] "{} másodperc"
+msgstr[1] "{} másodperc"
+
+#: lib/results_view.rb:195
+msgid "New Personal Best for Configuration"
+msgstr "Új személyes rekord a beállításhoz"
+
+#: lib/results_view.rb:202
+msgid "Words per Minute"
+msgstr "Szavak percenként"
+
+#: lib/results_view.rb:222
+msgid "Accuracy"
+msgstr "Pontosság"
+
+#: lib/results_view.rb:237 lib/window.rb:195
+msgid "Test Type"
+msgstr "Teszt típusa"
+
+#: lib/results_view.rb:248 lib/window.rb:203
+msgid "Test Duration"
+msgstr "Teszt időtartama"
+
+#: lib/results_view.rb:259 lib/text_language_dialog.rb:52
+#: lib/text_language_dialog.rb:102 lib/text_language_dialog.rb:137
+msgid "Text Language"
+msgstr "Szöveg nyelve"
+
+#. Translators: Insert the language code of your language here, for example "nb" for Norwegian Bokmaal. Do not remove the quotation marks. It's doesn't matter if there isn't a word list for the language in `data/word_lists` right now, the app will fall back to English in that case and start using the list if it becomes available in the future.
+#: lib/settings.rb:51
+msgid "\"en\""
+msgstr "\"hu\""
+
+#. Translators: This is the default text for custom typing sessions. Do not translate it literally, and do not remove the quotation marks. Replace it with an appropriate "sample sentence" from your language instead. The original text is an English pangram, so you can e.g. find a pangram in your language: https://clagnut.com/blog/2380
+#: lib/settings.rb:54
+msgid "\"The quick brown fox jumps over the lazy dog.\""
+msgstr ""
+"\"Jó foxim és don Quijote húszwattos lámpánál ülve egy pár bűvös cipőt "
+"készít.\""
+
+#: lib/shortcuts_dialog.rb:33
+#, fuzzy
+msgctxt "shortcut dialog"
+msgid "General"
+msgstr "Általános"
+
+#: lib/shortcuts_dialog.rb:51
+#, fuzzy
+msgctxt "shortcut dialog"
+msgid "Open Menu"
+msgstr "Főmenü"
+
+#: lib/shortcuts_dialog.rb:52 lib/shortcuts_dialog.rb:56
+#, fuzzy
+msgctxt "shortcut dialog"
+msgid "Text Language"
+msgstr "Szöveg nyelve"
+
+#: lib/shortcuts_dialog.rb:53
+#, fuzzy
+msgctxt "shortcut dialog"
+msgid "Cancel Test"
+msgstr "Munkamenet megszakítása"
+
+#: lib/shortcuts_dialog.rb:54
+#, fuzzy
+msgctxt "shortcut dialog"
+msgid "Keyboard Shortcuts"
+msgstr "Gyorsbillentyűk"
+
+#: lib/shortcuts_dialog.rb:55
+#, fuzzy
+msgctxt "shortcut dialog"
+msgid "Close Window"
+msgstr "Ablak bezárása"
+
+#: lib/text_language_dialog.rb:39
+msgid ""
+"You can help add a new text language to Keypunch by submitting a language "
+"request on GitHub. A GitHub account and some language knowledge is required."
+msgstr ""
+"Segíthet új szövegnyelv hozzáadásában a Billentyűzőhöz, ha nyelvkérést küld "
+"be a GitHub-on. Ehhez GitHub-fiók és némi nyelvtudás szükséges."
+
+#: lib/text_language_dialog.rb:114 lib/text_language_dialog.rb:234
+#: lib/text_language_dialog.rb:277
+msgid "Add Language"
+msgstr "Nyelv hozzáadása"
+
+#: lib/text_language_dialog.rb:151
+msgid "Search languages…"
+msgstr "Nyelvek keresése…"
+
+#. Translators: Recent languages in text languages list
+#: lib/text_language_dialog.rb:176
+msgid "Recent"
+msgstr "Legutóbbi"
+
+#. Translators: Other languages in text languages list
+#: lib/text_language_dialog.rb:184
+msgid "Other"
+msgstr "Egyéb"
+
+#: lib/text_language_dialog.rb:226
+msgid "No Matches"
+msgstr "Nincs találat"
+
+#: lib/text_language_dialog.rb:231
+msgid "Try a different search"
+msgstr "Próbáljon másik keresést"
+
+#: lib/text_language_dialog.rb:307
+msgid "_Create Request"
+msgstr "_Kérés létrehozása"
+
+#. Translators: This is shown as a warning by GNOME Shell before logging out
+#. or shutting off the system in the middle of a typing test
+#: lib/typing_test_session.rb:46
+msgid "Ongoing typing test"
+msgstr "Futó gépelési teszt"
+
+#. Translators: The format of the word counter. The `{}` blocks will be
+#. replaced with the number of the word being typed and the number of
+#. words in the text. Do not translate them. The `⁄` sign is a fraction
+#. slash, not the ASCII slash it resembles; if your language doesn't
+#. use something completely different, you should probably copy and
+#. paste it from the original string.
+#: lib/typing_test_session.rb:355
+msgid "{} ⁄ {}"
+msgstr "{} ⁄ {}"
+
+#: lib/typing_test_session.rb:407
+msgid "Changes discarded"
+msgstr "Változtatások elvetve"
+
+#: lib/typing_test_session.rb:408
+msgid "Restore"
+msgstr "Helyreállítás"
+
+#. Translators: The format of the timer. The first `{}` block will be
+#. replaced with the minutes passed, and the second one will be replaced
+#. with the seconds passed. Do not translate the `{}` blocks. Note that
+#. the `∶` sign is a special Unicode character; if your language doesn't
+#. use something completely different, you should probably copy and paste
+#. it from the original string.
+#: lib/typing_test_session.rb:462
+msgid "{}∶{}"
+msgstr "{}∶{}"
+
+#: lib/typing_test_utils.rb:31 lib/window.rb:47
+msgid "Simple"
+msgstr "Egyszerű"
+
+#: lib/typing_test_utils.rb:32 lib/window.rb:47
+msgid "Advanced"
+msgstr "Haladó"
+
+#: lib/typing_test_utils.rb:68 lib/window.rb:50
+msgid "15 seconds"
+msgstr "15 másodperc"
+
+#: lib/typing_test_utils.rb:69 lib/window.rb:51
+msgid "30 seconds"
+msgstr "30 másodperc"
+
+#: lib/typing_test_utils.rb:70 lib/window.rb:52
+msgid "1 minute"
+msgstr "1 perc"
+
+#: lib/typing_test_utils.rb:71 lib/window.rb:53
+msgid "5 minutes"
+msgstr "5 perc"
+
+#: lib/typing_test_utils.rb:72 lib/window.rb:54
+msgid "10 minutes"
+msgstr "10 perc"
+
+#: lib/window.rb:57
+msgid ""
+"The test has been cancelled due to an excessive amount of invalid "
+"keystrokes. This will not affect your typing statistics."
+msgstr ""
+
+#: lib/window.rb:180
+msgid "Restart"
+msgstr "Újraindítás"
+
+#: lib/window.rb:218
+msgid "_Edit Text"
+msgstr "_Szöveg szerkesztése"
+
+#: lib/window.rb:234
+msgid "Main Menu"
+msgstr "Főmenü"
+
+#: lib/window.rb:256
+msgid "Just Start Typing"
+msgstr "Csak kezdjen gépelni"
+
+#. Translators: "Entry" here is the act of entering text
+#: lib/window.rb:263
+msgid "_Enable Entry"
+msgstr "_Bevitel engedélyezése"
+
+#: lib/window.rb:278
+msgid "Results"
+msgstr "Eredmények"
+
+#: lib/window.rb:307
+msgid "Test Cancelled"
+msgstr ""
+
+#: lib/window.rb:362
+msgid "_Continue"
+msgstr "_Folytatás"
+
+#~ msgid ""
+#~ "typing;trainer;touch typing;keyboard;speed;wpm;words per "
+#~ "minute;accuracy;test;"
+#~ msgstr ""
+#~ "gépelés;edző;tréner;érintős gépelés;billentyűzet;sebesség;wpm;szavak "
+#~ "percenként;pontosság;teszt;"
+
+#~ msgid ""
+#~ "There is no doubt that typing on a keyboard is an essential skill in the "
+#~ "digital age. Typing fast and accurately gives you more opportunities, "
+#~ "more time for what matters to you, and a sense of self-accomplishment."
+#~ msgstr ""
+#~ "Kétségtelen, hogy a billentyűzeten való gépelés elengedhetetlen készség a "
+#~ "digitális korban. A gyors és pontos gépelés több lehetőséget, több időt "
+#~ "biztosít az Ön számára fontos dolgokra, és önbizalmat ad."
+
+#~ msgid ""
+#~ "Keypunch lets you practice typing. Thanks to fast-paced sessions with "
+#~ "instant feedback afterwards and a plethora of available languages, you "
+#~ "might even have a little fun doing so. With determination, proper "
+#~ "technique and some time, you will observe a noticeable increase in both "
+#~ "the speed and the accuracy of which your thoughts and ideas are put into "
+#~ "words on the screen."
+#~ msgstr ""
+#~ "A Billentyűző segítségével gyakorolhatja a gépelést. A gyors tempójú "
+#~ "munkameneteknek, az azonnali visszajelzéseknek és a rengeteg elérhető "
+#~ "nyelvnek köszönhetően még élvezni is fogja a gyakorlást. Elszántsággal, "
+#~ "megfelelő technikával és egy kis idővel észrevehető javulást fog "
+#~ "tapasztalni mind a sebesség, mind a pontosság terén, amellyel gondolatai "
+#~ "és ötletei szavakká válnak a képernyőn."
+
+#~ msgid ""
+#~ "If you are already a racer at typing, Keypunch still has something for "
+#~ "you. Try practicing with numbers and punctuation, or choose your own text "
+#~ "to type out as fast as you can."
+#~ msgstr ""
+#~ "Ha Ön már gyors gépelő, a Billentyűző akkor is tartogat Önnek valamit. "
+#~ "Próbálja ki a számokkal és írásjelekkel való gyakorlást, vagy válasszon "
+#~ "saját szöveget, és gépelje le azt a lehető leggyorsabban."
+
+#~ msgid "Get ready to accelerate your typing!"
+#~ msgstr "Készüljön fel a gépelése gyorsítására!"
+
+#~ msgid ""
+#~ "Keypunch is proudly part of GNOME Circle, an initiative that champions "
+#~ "the great software that is available for the GNOME platform. For more "
+#~ "information, visit the GNOME Circle website."
+#~ msgstr ""
+#~ "A Billentyűző a GNOME Kör büszke tagja, egy kezdeményezésé, amely a GNOME "
+#~ "platformon elérhető nagyszerű szoftvereket támogatja. További "
+#~ "információkért keresse fel a GNOME Kör webhelyét."
+
+#~ msgid "In the middle of a session"
+#~ msgstr "Munkamenet közepén"
+
+#~ msgid "Ready for typing"
+#~ msgstr "Készen áll a gépelésre"
+
+#~ msgid "Session results"
+#~ msgstr "Munkamenet eredményei"
+
+#~ msgid "Language selection"
+#~ msgstr "Nyelvválasztás"
+
+#~ msgid "Custom text entry"
+#~ msgstr "Egyéni szöveg megadása"
+
+#~ msgid "Window Width"
+#~ msgstr "Ablak szélessége"
+
+#~ msgid "Window Height"
+#~ msgstr "Ablak magassága"
+
+#~ msgid "Window Maximization"
+#~ msgstr "Ablak maximalizálása"
+
+#~ msgid "Session Type"
+#~ msgstr "Munkamenet típusa"
+
+#~ msgid "Session Duration"
+#~ msgstr "Munkamenet időtartama"
+
+#~ msgid "The duration of time-based sessions"
+#~ msgstr "Időalapú munkamenetek időtartama"
+
+#~ msgid "The code of the language used for automatically generated text"
+#~ msgstr "Az automatikusan előállított szöveg nyelvi kódja"
+
+#~ msgid "Recent Languages"
+#~ msgstr "Legutóbbi nyelvek"
+
+#~ msgid ""
+#~ "Languages shown in the list of recent ones in the text language dialog"
+#~ msgstr ""
+#~ "A legutóbbi nyelvek listájában látható nyelvek a szöveg nyelvének "
+#~ "párbeszédablakában"
+
+#~ msgid "Text displayed when “Custom” is chosen from the session menu"
+#~ msgstr ""
+#~ "Megjelenített szöveg az „Egyéni” kiválasztása esetén a munkamenet "
+#~ "menüjében"
+
+#~ msgid "Personal Best"
+#~ msgstr "Személyes rekord"
+
+#~ msgid ""
+#~ "The current highest amount of WPM received for each session type / "
+#~ "duration and language"
+#~ msgstr ""
+#~ "Az egyes munkamenettípusokhoz, időtartamokhoz és nyelvekhez tartozó "
+#~ "jelenlegi legmagasabb WPM (szavak percenként) érték"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Text Language"
+#~ msgstr "Szöveg nyelve"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Quit"
+#~ msgstr "Kilépés"
+
+#~ msgid "Search Results"
+#~ msgstr "Keresési eredmények"
+
+#~ msgid "Text View"
+#~ msgstr "Szövegnézet"
+
+#~ msgid "Frustration Relief"
+#~ msgstr "Frusztráció enyhítése"
+
+#~ msgid "Frustration Detected"
+#~ msgstr "Frusztráció észlelve"
+
+#~ msgid ""
+#~ "You learn faster in a calm state of mind. Consider taking a break. The "
+#~ "test has been cancelled, and will not affect your typing statistics."
+#~ msgstr ""
+#~ "Nyugodt állapotban gyorsabban tanulhat. Fontolja meg, hogy szünetet "
+#~ "tartson. A teszt meg lett szakítva, és nem lesz hatással a gépelési "
+#~ "statisztikáira."

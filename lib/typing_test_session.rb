@@ -7,6 +7,7 @@ require_relative "settings"
 require_relative "text_generation"
 require_relative "text_language_dialog"
 require_relative "text_utils"
+require_relative "translations"
 require_relative "typing_test_utils"
 
 # TypingTestSession is the lifecycle of a typing test: getting ready, starting
@@ -20,6 +21,7 @@ require_relative "typing_test_utils"
 # `typed_text_changed` as callbacks and they are the same two entry points.
 #
 module TypingTestSession
+  include Translations::Helpers
   include TypingTestUtils
 
   # The lower this is, the more sensitive Keypunch is to "frustration" (random
@@ -39,15 +41,9 @@ module TypingTestSession
   # The accuracy a test has to beat before its speed counts as a personal best.
   PERSONAL_BEST_MIN_ACCURACY = 0.9
 
-  # The format of the word counter and the timer. Both separators are special
-  # Unicode characters — a fraction slash and a ratio sign — not the ASCII
-  # slash and colon they resemble.
-  WORD_COUNT_SEPARATOR = "\u2044"
-  TIMER_SEPARATOR = "\u2236"
-
   # Translators: This is shown as a warning by GNOME Shell before logging out
   # or shutting off the system in the middle of a typing test
-  INHIBIT_REASON = "Ongoing typing test"
+  INHIBIT_REASON = N_("Ongoing typing test")
 
   def setup_test_config
     settings.bind_dropdown_selected(test_type_dropdown, "session-type", Settings::SESSION_TYPE_VALUES)
@@ -147,7 +143,7 @@ module TypingTestSession
 
     discord_rpc.set_activity(config, PresenceState::TYPING)
 
-    inhibitor.inhibit(INHIBIT_REASON)
+    inhibitor.inhibit(_(INHIBIT_REASON))
   end
 
   def finish
@@ -349,7 +345,14 @@ module TypingTestSession
     def update_word_counter(view, config)
       if config.finite?
         current, total = view.progress
-        status_label.label = "#{current} #{WORD_COUNT_SEPARATOR} #{total}"
+
+        # Translators: The format of the word counter. The `{}` blocks will be
+        # replaced with the number of the word being typed and the number of
+        # words in the text. Do not translate them. The `⁄` sign is a fraction
+        # slash, not the ASCII slash it resembles; if your language doesn't
+        # use something completely different, you should probably copy and
+        # paste it from the original string.
+        status_label.label = fmt(_("{} ⁄ {}"), current, total)
       end
     end
 
@@ -401,8 +404,8 @@ module TypingTestSession
     end
 
     def show_discard_toast(discarded)
-      Adwaita::Toast.new("Changes discarded").tap do |toast|
-        toast.button_label = "Restore"
+      Adwaita::Toast.new(_("Changes discarded")).tap do |toast|
+        toast.button_label = _("Restore")
         toast.signal_connect("button-clicked") { show_custom_text_dialog(discarded) }
 
         toast_overlay.add_toast(toast)
@@ -441,12 +444,22 @@ module TypingTestSession
 
       if seconds >= 60 && rest < 10
         # add trailing zero for second values below 10
-        "#{minutes}#{TIMER_SEPARATOR}0#{rest}"
+        fmt(timer_format, minutes, "0#{rest}")
       elsif seconds >= 60
-        "#{minutes}#{TIMER_SEPARATOR}#{rest}"
+        fmt(timer_format, minutes, rest)
       else
         seconds.to_s
       end
+    end
+
+    def timer_format
+      # Translators: The format of the timer. The first `{}` block will be
+      # replaced with the minutes passed, and the second one will be replaced
+      # with the seconds passed. Do not translate the `{}` blocks. Note that
+      # the `∶` sign is a special Unicode character; if your language doesn't
+      # use something completely different, you should probably copy and paste
+      # it from the original string.
+      _("{}∶{}")
     end
 
     def summary_for(test, finish_instant)

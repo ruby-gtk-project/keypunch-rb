@@ -1,0 +1,1123 @@
+---
+version: 1
+upstream:
+  role: upstream
+  path: "/tmp/claude-1001/-home-nathan-src-github-ruby-gtk-project/9e6adaef-98a4-4c7a-bedc-91433423f878/scratchpad/up"
+  scanned: '2026-11-03'
+  domain: keypunch
+  messages: 79
+  occurrences: 103
+  reused: 18
+  plural: 0
+  with_context: 6
+  unresolved: 0
+port:
+  role: port
+  path: "."
+  ref: ruby
+  sha: 41f3144
+  scanned: '2026-11-03'
+  domain: keypunch
+  messages: 62
+  occurrences: 80
+  reused: 15
+  plural: 2
+  with_context: 6
+  unresolved: 21
+summary:
+  ported: 54
+  gaps: 25
+  extra: 8
+  kind_mismatch: 0
+  uses_mismatch: 6
+  occurrences:
+    upstream: 103
+    port: 80
+  languages:
+    upstream: 37
+    port: 37
+  languages_missing: []
+  domain_matches: true
+  parity: false
+messages:
+- id: '"The quick brown fox jumps over the lazy dog."'
+  state: extra
+  kind:
+    upstream:
+    port: single
+  uses:
+    upstream: 0
+    port: 1
+  port_sites:
+  - lib/settings.rb:54
+- id: '"en"'
+  state: extra
+  kind:
+    upstream:
+    port: single
+  uses:
+    upstream: 0
+    port: 1
+  port_sites:
+  - lib/settings.rb:51
+- id: 1 minute
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 2
+    port: 2
+  upstream_sites:
+  - src/typing_test_utils.rs:85
+  - src/widgets/window.blp:180
+  port_sites:
+  - lib/typing_test_utils.rb:70
+  - lib/window.rb:52
+- id: 10 minutes
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 2
+    port: 2
+  upstream_sites:
+  - src/typing_test_utils.rs:87
+  - src/widgets/window.blp:182
+  port_sites:
+  - lib/typing_test_utils.rb:72
+  - lib/window.rb:54
+- id: 15 seconds
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 2
+    port: 2
+  upstream_sites:
+  - src/typing_test_utils.rs:83
+  - src/widgets/window.blp:178
+  port_sites:
+  - lib/typing_test_utils.rb:68
+  - lib/window.rb:50
+- id: 30 seconds
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 2
+    port: 2
+  upstream_sites:
+  - src/typing_test_utils.rs:84
+  - src/widgets/window.blp:179
+  port_sites:
+  - lib/typing_test_utils.rb:69
+  - lib/window.rb:51
+- id: 5 minutes
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 2
+    port: 2
+  upstream_sites:
+  - src/typing_test_utils.rs:86
+  - src/widgets/window.blp:181
+  port_sites:
+  - lib/typing_test_utils.rb:71
+  - lib/window.rb:53
+- id: Accuracy
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/results_view.blp:85
+  port_sites:
+  - lib/results_view.rb:222
+- id: Add Language
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 3
+    port: 3
+  upstream_sites:
+  - src/widgets/text_language_dialog.blp:180
+  - src/widgets/text_language_dialog.blp:209
+  - src/widgets/text_language_dialog.blp:40
+  port_sites:
+  - lib/text_language_dialog.rb:114
+  - lib/text_language_dialog.rb:234
+  - lib/text_language_dialog.rb:277
+- id: Advanced
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 2
+    port: 2
+  upstream_sites:
+  - src/widgets/results_view.rs:174
+  - src/widgets/window.blp:169
+  port_sites:
+  - lib/typing_test_utils.rb:32
+  - lib/window.rb:47
+- id: Changes discarded
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/window/typing_test.rs:508
+  port_sites:
+  - lib/typing_test_session.rb:407
+- id: Custom
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 2
+    port: 2
+  upstream_sites:
+  - src/widgets/results_view.rs:171
+  - src/widgets/window.blp:169
+  port_sites:
+  - lib/results_view.rb:126
+  - lib/window.rb:47
+- id: Custom Text
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 3
+    port: 2
+  uses_mismatch: true
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.gschema.xml.in
+  - src/widgets/custom_text_dialog.blp:24
+  - src/widgets/custom_text_dialog.blp:45
+  port_sites:
+  - lib/custom_text_dialog.rb:116
+  - lib/custom_text_dialog.rb:35
+- id: Custom text entry
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.metainfo.xml.in.in
+  text_owed: Custom text entry
+- id: Donate
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/window.rs:195
+  port_sites:
+  - lib/about_dialog.rb:84
+- id: Fretboard
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/window.rs:228
+  port_sites:
+  - lib/about_dialog.rb:57
+- id: Get ready to accelerate your typing!
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.metainfo.xml.in.in
+  text_owed: Get ready to accelerate your typing!
+- id: If you are already a racer at typing, Keypunch still has something for you.
+    Try practicing with numbers and punctuation, or choose your own text to type out
+    as fast as you can.
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.metainfo.xml.in.in
+  text_owed: If you are already a racer at typing, Keypunch still has something for
+    you. Try practicing with numbers and punctuation, or choose your own text to type
+    out as fast as you can.
+- id: In the middle of a session
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.metainfo.xml.in.in
+  text_owed: In the middle of a session
+- id: Insert custom text…
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/custom_text_dialog.blp:56
+  port_sites:
+  - lib/custom_text_dialog.rb:125
+- id: Just Start Typing
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/window.blp:238
+  port_sites:
+  - lib/window.rb:256
+- id: Keypunch
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 3
+    port: 2
+  uses_mismatch: true
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.desktop.in.in:2
+  - data/no.bragefuglseth.Keypunch.metainfo.xml.in.in
+  - src/widgets/window.blp:24
+  port_sites:
+  - lib/about_dialog.rb:24
+  - lib/window.rb:119
+- id: Keypunch is proudly part of GNOME Circle, an initiative that champions the great
+    software that is available for the GNOME platform. For more information, visit
+    the GNOME Circle website.
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.metainfo.xml.in.in
+  text_owed: Keypunch is proudly part of GNOME Circle, an initiative that champions
+    the great software that is available for the GNOME platform. For more information,
+    visit the GNOME Circle website.
+- id: Keypunch lets you practice typing. Thanks to fast-paced sessions with instant
+    feedback afterwards and a plethora of available languages, you might even have
+    a little fun doing so. With determination, proper technique and some time, you
+    will observe a noticeable increase in both the speed and the accuracy of which
+    your thoughts and ideas are put into words on the screen.
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.metainfo.xml.in.in
+  text_owed: Keypunch lets you practice typing. Thanks to fast-paced sessions with
+    instant feedback afterwards and a plethora of available languages, you might even
+    have a little fun doing so. With determination, proper technique and some time,
+    you will observe a noticeable increase in both the speed and the accuracy of which
+    your thoughts and ideas are put into words on the screen.
+- id: Language selection
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.metainfo.xml.in.in
+  text_owed: Language selection
+- id: Languages shown in the list of recent ones in the text language dialog
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.gschema.xml.in
+  text_owed: Languages shown in the list of recent ones in the text language dialog
+- id: Look up guitar chords
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/window.rs:230
+  port_sites:
+  - lib/about_dialog.rb:58
+- id: Main Menu
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/window.blp:220
+  port_sites:
+  - lib/window.rb:234
+- id: New Personal Best for Configuration
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/results_view.blp:53
+  port_sites:
+  - lib/results_view.rb:195
+- id: No Matches
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/text_language_dialog.blp:159
+  port_sites:
+  - lib/text_language_dialog.rb:226
+- id: Ongoing typing test
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/window/typing_test.rs:336
+  port_sites:
+  - lib/typing_test_session.rb:46
+- id: Orthography by
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/window.rs:198
+  port_sites:
+  - lib/about_dialog.rb:85
+- id: Other
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/text_language_dialog.blp:103
+  port_sites:
+  - lib/text_language_dialog.rb:184
+- id: Personal Best
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.gschema.xml.in
+  text_owed: Personal Best
+- id: Practice your typing skills
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 2
+    port: 1
+  uses_mismatch: true
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.desktop.in.in:3
+  - data/no.bragefuglseth.Keypunch.metainfo.xml.in.in
+  port_sites:
+  - lib/about_dialog.rb:27
+- id: Ready for typing
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.metainfo.xml.in.in
+  text_owed: Ready for typing
+- id: Recent
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/text_language_dialog.blp:98
+  port_sites:
+  - lib/text_language_dialog.rb:176
+- id: Recent Languages
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.gschema.xml.in
+  text_owed: Recent Languages
+- id: Restart
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/window.blp:150
+  port_sites:
+  - lib/window.rb:180
+- id: Restore
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/window/typing_test.rs:509
+  port_sites:
+  - lib/typing_test_session.rb:408
+- id: Results
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/window.blp:273
+  port_sites:
+  - lib/window.rb:278
+- id: Search Results
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - src/widgets/text_language_dialog.blp:123
+  text_owed: Search Results
+- id: Search languages…
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 2
+    port: 1
+  uses_mismatch: true
+  upstream_sites:
+  - src/widgets/text_language_dialog.blp:70
+  - src/widgets/text_language_dialog.blp:74
+  port_sites:
+  - lib/text_language_dialog.rb:151
+- id: Session Duration
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.gschema.xml.in
+  text_owed: Session Duration
+- id: Session Type
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.gschema.xml.in
+  text_owed: Session Type
+- id: Session results
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.metainfo.xml.in.in
+  text_owed: Session results
+- id: Simple
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 2
+    port: 2
+  upstream_sites:
+  - src/widgets/results_view.rs:173
+  - src/widgets/window.blp:169
+  port_sites:
+  - lib/typing_test_utils.rb:31
+  - lib/window.rb:47
+- id: Special thanks to
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/window.rs:221
+  port_sites:
+  - lib/about_dialog.rb:86
+- id: Test Cancelled
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/window.blp:325
+  port_sites:
+  - lib/window.rb:307
+- id: Test Duration
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 2
+    port: 2
+  upstream_sites:
+  - src/widgets/results_view.blp:114
+  - src/widgets/window.blp:175
+  port_sites:
+  - lib/results_view.rb:248
+  - lib/window.rb:203
+- id: Test Type
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 2
+    port: 2
+  upstream_sites:
+  - src/widgets/results_view.blp:101
+  - src/widgets/window.blp:167
+  port_sites:
+  - lib/results_view.rb:237
+  - lib/window.rb:195
+- id: Text Language
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 5
+    port: 4
+  uses_mismatch: true
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.gschema.xml.in
+  - src/widgets/results_view.blp:127
+  - src/widgets/text_language_dialog.blp:24
+  - src/widgets/text_language_dialog.blp:32
+  - src/widgets/text_language_dialog.blp:58
+  port_sites:
+  - lib/results_view.rb:259
+  - lib/text_language_dialog.rb:102
+  - lib/text_language_dialog.rb:137
+  - lib/text_language_dialog.rb:52
+- id: Text View
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - src/widgets/text_view.blp:28
+  text_owed: Text View
+- id: Text _Language
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/window.blp:368
+  port_sites:
+  - lib/primary_menu.rb:19
+- id: Text displayed when “Custom” is chosen from the session menu
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.gschema.xml.in
+  text_owed: Text displayed when “Custom” is chosen from the session menu
+- id: The code of the language used for automatically generated text
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.gschema.xml.in
+  text_owed: The code of the language used for automatically generated text
+- id: The current highest amount of WPM received for each session type / duration
+    and language
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.gschema.xml.in
+  text_owed: The current highest amount of WPM received for each session type / duration
+    and language
+- id: The duration of time-based sessions
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.gschema.xml.in
+  text_owed: The duration of time-based sessions
+- id: The test has been cancelled due to an excessive amount of invalid keystrokes.
+    This will not affect your typing statistics.
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/window.blp:326
+  port_sites:
+  - lib/window.rb:57
+- id: There is no doubt that typing on a keyboard is an essential skill in the digital
+    age. Typing fast and accurately gives you more opportunities, more time for what
+    matters to you, and a sense of self-accomplishment.
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.metainfo.xml.in.in
+  text_owed: There is no doubt that typing on a keyboard is an essential skill in
+    the digital age. Typing fast and accurately gives you more opportunities, more
+    time for what matters to you, and a sense of self-accomplishment.
+- id: Try a different search
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/text_language_dialog.blp:167
+  port_sites:
+  - lib/text_language_dialog.rb:231
+- id: Window Height
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.gschema.xml.in
+  text_owed: Window Height
+- id: Window Maximization
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.gschema.xml.in
+  text_owed: Window Maximization
+- id: Window Width
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.gschema.xml.in
+  text_owed: Window Width
+- id: Words per Minute
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/results_view.blp:64
+  port_sites:
+  - lib/results_view.rb:202
+- id: You can help add a new text language to Keypunch by submitting a language request
+    on GitHub. A GitHub account and some language knowledge is required.
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/text_language_dialog.blp:218
+  port_sites:
+  - lib/text_language_dialog.rb:39
+- id: _About Keypunch
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/window.blp:378
+  port_sites:
+  - lib/primary_menu.rb:21
+- id: _Continue
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 2
+    port: 1
+  uses_mismatch: true
+  upstream_sites:
+  - src/widgets/window.blp:298
+  - src/widgets/window.blp:334
+  port_sites:
+  - lib/window.rb:362
+- id: _Create Request
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/text_language_dialog.blp:233
+  port_sites:
+  - lib/text_language_dialog.rb:307
+- id: _Edit Text
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/window.blp:191
+  port_sites:
+  - lib/window.rb:218
+- id: _Enable Entry
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/window.blp:247
+  port_sites:
+  - lib/window.rb:263
+- id: _Keyboard Shortcuts
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/window.blp:373
+  port_sites:
+  - lib/primary_menu.rb:20
+- id: _Save
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/custom_text_dialog.blp:92
+  port_sites:
+  - lib/custom_text_dialog.rb:154
+- id: translator-credits
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - src/widgets/window.rs:216
+  port_sites:
+  - lib/about_dialog.rb:61
+- id: typing;trainer;touch typing;keyboard;speed;wpm;words per minute;accuracy;test;
+  state: gap
+  kind:
+    upstream: single
+    port:
+  uses:
+    upstream: 1
+    port: 0
+  upstream_sites:
+  - data/no.bragefuglseth.Keypunch.desktop.in.in:9
+  text_owed: typing;trainer;touch typing;keyboard;speed;wpm;words per minute;accuracy;test;
+- id: "{} minute"
+  state: extra
+  kind:
+    upstream:
+    port: plural
+  uses:
+    upstream: 0
+    port: 1
+  port_sites:
+  - lib/results_view.rb:144
+- id: "{} second"
+  state: extra
+  kind:
+    upstream:
+    port: plural
+  uses:
+    upstream: 0
+    port: 1
+  port_sites:
+  - lib/results_view.rb:148
+- id: "{} ⁄ {}"
+  state: extra
+  kind:
+    upstream:
+    port: single
+  uses:
+    upstream: 0
+    port: 1
+  port_sites:
+  - lib/typing_test_session.rb:355
+- id: "{}%"
+  state: extra
+  kind:
+    upstream:
+    port: single
+  uses:
+    upstream: 0
+    port: 1
+  port_sites:
+  - lib/results_view.rb:116
+- id: "{}m {}s"
+  state: extra
+  kind:
+    upstream:
+    port: single
+  uses:
+    upstream: 0
+    port: 1
+  port_sites:
+  - lib/results_view.rb:140
+- id: "{}∶{}"
+  state: extra
+  kind:
+    upstream:
+    port: single
+  uses:
+    upstream: 0
+    port: 1
+  port_sites:
+  - lib/typing_test_session.rb:462
+- ctxt: shortcut dialog
+  id: Cancel Test
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - data/resources/shortcuts-dialog.ui:21
+  port_sites:
+  - lib/shortcuts_dialog.rb:53
+- ctxt: shortcut dialog
+  id: Close Window
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - data/resources/shortcuts-dialog.ui:33
+  port_sites:
+  - lib/shortcuts_dialog.rb:55
+- ctxt: shortcut dialog
+  id: General
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - data/resources/shortcuts-dialog.ui:6
+  port_sites:
+  - lib/shortcuts_dialog.rb:33
+- ctxt: shortcut dialog
+  id: Keyboard Shortcuts
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - data/resources/shortcuts-dialog.ui:27
+  port_sites:
+  - lib/shortcuts_dialog.rb:54
+- ctxt: shortcut dialog
+  id: Open Menu
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 1
+    port: 1
+  upstream_sites:
+  - data/resources/shortcuts-dialog.ui:9
+  port_sites:
+  - lib/shortcuts_dialog.rb:51
+- ctxt: shortcut dialog
+  id: Text Language
+  state: ported
+  kind:
+    upstream: single
+    port: single
+  uses:
+    upstream: 2
+    port: 2
+  upstream_sites:
+  - data/resources/shortcuts-dialog.ui:15
+  - data/resources/shortcuts-dialog.ui:39
+  port_sites:
+  - lib/shortcuts_dialog.rb:52
+  - lib/shortcuts_dialog.rb:56

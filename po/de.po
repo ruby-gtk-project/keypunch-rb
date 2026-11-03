@@ -1,0 +1,477 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the keypunch package.
+# alp10711 <93343276+alp10711@users.noreply.github.com>, 2024.
+# Philipp Kiemle <l10n@prly.mozmail.com>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: keypunch\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-03 00:11+0000\n"
+"PO-Revision-Date: 2026-07-02 21:23+0200\n"
+"Last-Translator: Gabriel Brand <gabr.brand@gmail.com>\n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.9\n"
+
+#: lib/about_dialog.rb:24 lib/window.rb:119
+msgid "Keypunch"
+msgstr "Keypunch"
+
+#: lib/about_dialog.rb:27
+msgid "Practice your typing skills"
+msgstr "Üben Sie Ihre Tippfähigkeiten"
+
+#: lib/about_dialog.rb:57
+msgid "Fretboard"
+msgstr "Griffbrett"
+
+#: lib/about_dialog.rb:58
+msgid "Look up guitar chords"
+msgstr "Gitarrenakkorde nachschlagen"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: lib/about_dialog.rb:61
+msgid "translator-credits"
+msgstr ""
+"alp10711 <93343276+alp10711@users.noreply.github.com>\n"
+"Philipp Kiemle <l10n@prly.mozmail.com>\n"
+"Gabriel Brand <gabr.brand@gmail.com>"
+
+#: lib/about_dialog.rb:84
+msgid "Donate"
+msgstr "Spenden"
+
+#: lib/about_dialog.rb:85
+msgid "Orthography by"
+msgstr "Rechtschreibung von"
+
+#: lib/about_dialog.rb:86
+msgid "Special thanks to"
+msgstr "Besonderer Dank geht an"
+
+#: lib/custom_text_dialog.rb:35 lib/custom_text_dialog.rb:116
+msgid "Custom Text"
+msgstr "Benutzerdefinierter Text"
+
+#: lib/custom_text_dialog.rb:125
+msgid "Insert custom text…"
+msgstr "Benutzerdefinierten Text einfügen …"
+
+#: lib/custom_text_dialog.rb:154
+msgid "_Save"
+msgstr "_Speichern"
+
+#: lib/primary_menu.rb:19
+msgid "Text _Language"
+msgstr "Text_sprache"
+
+#: lib/primary_menu.rb:20
+msgid "_Keyboard Shortcuts"
+msgstr "_Tastenkürzel"
+
+#: lib/primary_menu.rb:21
+msgid "_About Keypunch"
+msgstr "_Info zu Keypunch"
+
+#. Translators: The percentage label format of the results page. The `{}`
+#. block will be replaced with the percentage number, do not translate it!
+#: lib/results_view.rb:116
+msgid "{}%"
+msgstr "{}%"
+
+#: lib/results_view.rb:126 lib/window.rb:47
+msgid "Custom"
+msgstr "Benutzerdefiniert"
+
+#. Translators: The `{}` blocks will be replaced with the number of
+#. minutes and seconds. Do not translate them!
+#: lib/results_view.rb:140
+msgid "{}m {}s"
+msgstr "{}m {}s"
+
+#. Translators: The `{}` block will be replaced with the number of
+#. minutes. Do not translate it!
+#: lib/results_view.rb:144
+msgid "{} minute"
+msgid_plural "{} minutes"
+msgstr[0] "{} Minute"
+msgstr[1] "{} Minuten"
+
+#. Translators: The `{}` block will be replaced with the number of
+#. seconds. Do not translate it!
+#: lib/results_view.rb:148
+msgid "{} second"
+msgid_plural "{} seconds"
+msgstr[0] "{} Sekunde"
+msgstr[1] "{} Sekunden"
+
+#: lib/results_view.rb:195
+msgid "New Personal Best for Configuration"
+msgstr "Neue persönliche Bestleistung für Konfiguration"
+
+#: lib/results_view.rb:202
+msgid "Words per Minute"
+msgstr "Wörter pro Minute"
+
+#: lib/results_view.rb:222
+msgid "Accuracy"
+msgstr "Genauigkeit"
+
+#: lib/results_view.rb:237 lib/window.rb:195
+msgid "Test Type"
+msgstr "Testtyp"
+
+#: lib/results_view.rb:248 lib/window.rb:203
+msgid "Test Duration"
+msgstr "Testdauer"
+
+#: lib/results_view.rb:259 lib/text_language_dialog.rb:52
+#: lib/text_language_dialog.rb:102 lib/text_language_dialog.rb:137
+msgid "Text Language"
+msgstr "Textsprache"
+
+#. Translators: Insert the language code of your language here, for example "nb" for Norwegian Bokmaal. Do not remove the quotation marks. It's doesn't matter if there isn't a word list for the language in `data/word_lists` right now, the app will fall back to English in that case and start using the list if it becomes available in the future.
+#: lib/settings.rb:51
+msgid "\"en\""
+msgstr "\"de\""
+
+#. Translators: This is the default text for custom typing sessions. Do not translate it literally, and do not remove the quotation marks. Replace it with an appropriate "sample sentence" from your language instead. The original text is an English pangram, so you can e.g. find a pangram in your language: https://clagnut.com/blog/2380
+#: lib/settings.rb:54
+msgid "\"The quick brown fox jumps over the lazy dog.\""
+msgstr "\"Falsches Üben von Xylophonmusik quält jeden größeren Zwerg\""
+
+#: lib/shortcuts_dialog.rb:33
+msgctxt "shortcut dialog"
+msgid "General"
+msgstr "Allgemein"
+
+#: lib/shortcuts_dialog.rb:51
+msgctxt "shortcut dialog"
+msgid "Open Menu"
+msgstr "Menü öffnen"
+
+#: lib/shortcuts_dialog.rb:52 lib/shortcuts_dialog.rb:56
+msgctxt "shortcut dialog"
+msgid "Text Language"
+msgstr "Textsprache"
+
+#: lib/shortcuts_dialog.rb:53
+msgctxt "shortcut dialog"
+msgid "Cancel Test"
+msgstr "Test abbrechen"
+
+#: lib/shortcuts_dialog.rb:54
+msgctxt "shortcut dialog"
+msgid "Keyboard Shortcuts"
+msgstr "Tastenkürzel"
+
+#: lib/shortcuts_dialog.rb:55
+msgctxt "shortcut dialog"
+msgid "Close Window"
+msgstr "Fenster schließen"
+
+#: lib/text_language_dialog.rb:39
+msgid ""
+"You can help add a new text language to Keypunch by submitting a language "
+"request on GitHub. A GitHub account and some language knowledge is required."
+msgstr ""
+"Sie können helfen, eine neue Textsprache zu Keypunch hinzuzufügen, indem Sie "
+"eine Sprachanfrage auf GitHub einreichen. Ein GitHub-Konto und einige "
+"Sprachkenntnisse sind erforderlich."
+
+#: lib/text_language_dialog.rb:114 lib/text_language_dialog.rb:234
+#: lib/text_language_dialog.rb:277
+msgid "Add Language"
+msgstr "Sprache hinzufügen"
+
+#: lib/text_language_dialog.rb:151
+msgid "Search languages…"
+msgstr "Sprachen suchen …"
+
+#. Translators: Recent languages in text languages list
+#: lib/text_language_dialog.rb:176
+msgid "Recent"
+msgstr "Zuletzt"
+
+#. Translators: Other languages in text languages list
+#: lib/text_language_dialog.rb:184
+msgid "Other"
+msgstr "Andere"
+
+#: lib/text_language_dialog.rb:226
+msgid "No Matches"
+msgstr "Keine Treffer"
+
+#: lib/text_language_dialog.rb:231
+msgid "Try a different search"
+msgstr "Versuchen Sie einen anderen Suchbegriff"
+
+#: lib/text_language_dialog.rb:307
+msgid "_Create Request"
+msgstr "_Anfrage erstellen"
+
+#. Translators: This is shown as a warning by GNOME Shell before logging out
+#. or shutting off the system in the middle of a typing test
+#: lib/typing_test_session.rb:46
+msgid "Ongoing typing test"
+msgstr "Laufender Tipptest"
+
+#. Translators: The format of the word counter. The `{}` blocks will be
+#. replaced with the number of the word being typed and the number of
+#. words in the text. Do not translate them. The `⁄` sign is a fraction
+#. slash, not the ASCII slash it resembles; if your language doesn't
+#. use something completely different, you should probably copy and
+#. paste it from the original string.
+#: lib/typing_test_session.rb:355
+msgid "{} ⁄ {}"
+msgstr "{} ⁄ {}"
+
+#: lib/typing_test_session.rb:407
+msgid "Changes discarded"
+msgstr "Änderungen verworfen"
+
+#: lib/typing_test_session.rb:408
+msgid "Restore"
+msgstr "Wiederherstellen"
+
+#. Translators: The format of the timer. The first `{}` block will be
+#. replaced with the minutes passed, and the second one will be replaced
+#. with the seconds passed. Do not translate the `{}` blocks. Note that
+#. the `∶` sign is a special Unicode character; if your language doesn't
+#. use something completely different, you should probably copy and paste
+#. it from the original string.
+#: lib/typing_test_session.rb:462
+msgid "{}∶{}"
+msgstr "{}∶{}"
+
+#: lib/typing_test_utils.rb:31 lib/window.rb:47
+msgid "Simple"
+msgstr "Einfach"
+
+#: lib/typing_test_utils.rb:32 lib/window.rb:47
+msgid "Advanced"
+msgstr "Fortgeschritten"
+
+#: lib/typing_test_utils.rb:68 lib/window.rb:50
+msgid "15 seconds"
+msgstr "15 Sekunden"
+
+#: lib/typing_test_utils.rb:69 lib/window.rb:51
+msgid "30 seconds"
+msgstr "30 Sekunden"
+
+#: lib/typing_test_utils.rb:70 lib/window.rb:52
+msgid "1 minute"
+msgstr "1 Minute"
+
+#: lib/typing_test_utils.rb:71 lib/window.rb:53
+msgid "5 minutes"
+msgstr "5 Minuten"
+
+#: lib/typing_test_utils.rb:72 lib/window.rb:54
+msgid "10 minutes"
+msgstr "10 Minuten"
+
+#: lib/window.rb:57
+msgid ""
+"The test has been cancelled due to an excessive amount of invalid "
+"keystrokes. This will not affect your typing statistics."
+msgstr ""
+"Der Test wurde aufgrund zu vieler ungültiger Tastenanschläge abgebrochen. "
+"Dies wird Ihre Tippstatistiken nicht beeinflussen."
+
+#: lib/window.rb:180
+msgid "Restart"
+msgstr "Neu starten"
+
+#: lib/window.rb:218
+msgid "_Edit Text"
+msgstr "Text _bearbeiten"
+
+#: lib/window.rb:234
+msgid "Main Menu"
+msgstr "Hauptmenü"
+
+#: lib/window.rb:256
+msgid "Just Start Typing"
+msgstr "Tippen Sie einfach los"
+
+#. Translators: "Entry" here is the act of entering text
+#: lib/window.rb:263
+msgid "_Enable Entry"
+msgstr "_Eingabe aktivieren"
+
+#: lib/window.rb:278
+msgid "Results"
+msgstr "Ergebnisse"
+
+#: lib/window.rb:307
+msgid "Test Cancelled"
+msgstr "Test abgebrochen"
+
+#: lib/window.rb:362
+msgid "_Continue"
+msgstr "_Fortsetzen"
+
+#~ msgid ""
+#~ "typing;trainer;touch typing;keyboard;speed;wpm;words per "
+#~ "minute;accuracy;test;"
+#~ msgstr ""
+#~ "typing;trainer;touch typing;keyboard;speed;wpm;words per "
+#~ "minute;accuracy;test;Tippen;Trainer;Tippen mit dem "
+#~ "Finger;Tastatur;Geschwindigkeit;wpm;Wörter pro Minute;Genauigkeit;Test;"
+
+#~ msgid ""
+#~ "There is no doubt that typing on a keyboard is an essential skill in the "
+#~ "digital age. Typing fast and accurately gives you more opportunities, "
+#~ "more time for what matters to you, and a sense of self-accomplishment."
+#~ msgstr ""
+#~ "Es besteht kein Zweifel, dass das Tippen auf einer Tastatur eine "
+#~ "wesentliche Fähigkeit im digitalen Zeitalter ist. Wer schnell und präzise "
+#~ "tippen kann, hat mehr Möglichkeiten, mehr Zeit für das, was ihm wichtig "
+#~ "ist, und ein Gefühl der Selbstverwirklichung."
+
+#~ msgid ""
+#~ "Keypunch lets you practice typing. Thanks to fast-paced sessions with "
+#~ "instant feedback afterwards and a plethora of available languages, you "
+#~ "might even have a little fun doing so. With determination, proper "
+#~ "technique and some time, you will observe a noticeable increase in both "
+#~ "the speed and the accuracy of which your thoughts and ideas are put into "
+#~ "words on the screen."
+#~ msgstr ""
+#~ "Mit Keypunch können Sie das Tippen üben. Dank schneller Übungen mit "
+#~ "sofortigem Feedback und einer Vielzahl verfügbarer Sprachen werden Sie "
+#~ "dabei vielleicht sogar ein wenig Spaß haben. Mit Entschlossenheit, der "
+#~ "richtigen Technik und etwas Zeit werden Sie eine spürbare Verbesserung "
+#~ "sowohl der Geschwindigkeit, als auch der Genauigkeit feststellen, mit der "
+#~ "Ihre Gedanken und Ideen auf dem Bildschirm in Worte gefasst werden."
+
+#~ msgid ""
+#~ "If you are already a racer at typing, Keypunch still has something for "
+#~ "you. Try practicing with numbers and punctuation, or choose your own text "
+#~ "to type out as fast as you can."
+#~ msgstr ""
+#~ "Wenn Sie bereits ein Profi im Tippen sind, hat Keypunch trotzdem etwas "
+#~ "für Sie. Versuchen Sie, mit Zahlen und Satzzeichen zu üben, oder wählen "
+#~ "Sie Ihren eigenen Text aus, den Sie so schnell wie möglich abtippen "
+#~ "möchten."
+
+#~ msgid "Get ready to accelerate your typing!"
+#~ msgstr "Bereiten Sie sich darauf vor, Ihr Tippen zu verbessern!"
+
+#~ msgid ""
+#~ "Keypunch is proudly part of GNOME Circle, an initiative that champions "
+#~ "the great software that is available for the GNOME platform. For more "
+#~ "information, visit the GNOME Circle website."
+#~ msgstr ""
+#~ "Keypunch ist stolzes Mitglied von GNOME Circle, einer Initiative, die "
+#~ "sich für hervorragende Software für die GNOME-Plattform einsetzt. Um mehr "
+#~ "zu erfahren, besuchen Sie die Webseite von GNOME Circle."
+
+#~ msgid "In the middle of a session"
+#~ msgstr "Mitten in einer Sitzung"
+
+#~ msgid "Ready for typing"
+#~ msgstr "Bereit zum Tippen"
+
+#~ msgid "Session results"
+#~ msgstr "Ergebnisse der Sitzung"
+
+#~ msgid "Language selection"
+#~ msgstr "Sprachauswahl"
+
+#~ msgid "Custom text entry"
+#~ msgstr "Benutzerdefinierter Texteintrag"
+
+#~ msgid "Window Width"
+#~ msgstr "Fensterbreite"
+
+#~ msgid "Window Height"
+#~ msgstr "Fensterhöhe"
+
+#~ msgid "Window Maximization"
+#~ msgstr "Fenstermaximierung"
+
+#~ msgid "Session Type"
+#~ msgstr "Sitzungstyp"
+
+#~ msgid "Session Duration"
+#~ msgstr "Sitzungsdauer"
+
+#~ msgid "The duration of time-based sessions"
+#~ msgstr "Die Dauer zeitbasierter Sitzungen"
+
+#~ msgid "The code of the language used for automatically generated text"
+#~ msgstr ""
+#~ "Der Code der Sprache, die für automatisch generierten Text verwendet wird"
+
+#~ msgid "Recent Languages"
+#~ msgstr "Zuletzt verwendete Sprachen"
+
+#~ msgid ""
+#~ "Languages shown in the list of recent ones in the text language dialog"
+#~ msgstr ""
+#~ "Sprachen, die in der Liste der zuletzt verwendeten Sprachen im Dialogfeld "
+#~ "der Textsprache angezeigt werden"
+
+#~ msgid "Text displayed when “Custom” is chosen from the session menu"
+#~ msgstr ""
+#~ "Der Text wird angezeigt, wenn „Benutzerdefiniert“ aus dem Sitzungsmenü "
+#~ "gewählt wird"
+
+#~ msgid "Personal Best"
+#~ msgstr "Persönliche Bestleistung"
+
+#~ msgid ""
+#~ "The current highest amount of WPM received for each session type / "
+#~ "duration and language"
+#~ msgstr ""
+#~ "Die aktuell höchste erhaltene WPM für jede Sitzungsart / Dauer und Sprache"
+
+#~ msgid "Search Results"
+#~ msgstr "Suchergebnisse"
+
+#~ msgid "Text View"
+#~ msgstr "Textansicht"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Text Language"
+#~ msgstr "Textsprache"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Quit"
+#~ msgstr "Beenden"
+
+#~ msgid "Frustration Relief"
+#~ msgstr "Frustrationsabbau"
+
+#~ msgid "Frustration Detected"
+#~ msgstr "Frustration erkannt"
+
+#~ msgid ""
+#~ "You learn faster in a calm state of mind. Consider taking a break. The "
+#~ "test has been cancelled, and will not affect your typing statistics."
+#~ msgstr ""
+#~ "Sie lernen schneller, wenn Sie entspannt sind. Denken Sie über eine Pause "
+#~ "nach. Der Test wurde abgebrochen und wird Ihre Tippstatistik nicht "
+#~ "beeinflussen."
+
+#~ msgid "Correctness"
+#~ msgstr "Korrektheit"
+
+#~ msgid "\"en_US\""
+#~ msgstr "\"de\""
+
+#~ msgid ""
+#~ "This is the initial release of Keypunch! Give it a spin and say what you "
+#~ "think."
+#~ msgstr ""
+#~ "Dies ist die Erstveröffentlichung von Keypunch! Probieren Sie es aus und "
+#~ "sagen Sie, was Sie davon halten."

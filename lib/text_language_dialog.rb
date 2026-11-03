@@ -4,6 +4,7 @@ require "adwaita"
 
 require_relative "language_row"
 require_relative "text_generation"
+require_relative "translations"
 
 # TextLanguageDialog lets the user pick the language generated text is drawn
 # from, and explains how to get a new one added.
@@ -22,6 +23,8 @@ require_relative "text_generation"
 # which have nothing to fold — alone.
 #
 class TextLanguageDialog < Adwaita::Dialog
+  include Translations::Helpers
+
   LANGUAGE_REQUEST_URL =
     "https://github.com/bragefuglseth/keypunch/issues/new?assignees=&labels=new+language&projects=&template=language_request.yaml&title=%5BLanguage+Request%5D%3A+"
 
@@ -33,9 +36,10 @@ class TextLanguageDialog < Adwaita::Dialog
   # How many languages the Recent group remembers, upstream's `.take(3)`.
   RECENT_LIMIT = 3
 
-  ADD_LANGUAGE_DESCRIPTION =
+  ADD_LANGUAGE_DESCRIPTION = N_(
     "You can help add a new text language to Keypunch by submitting a language request on GitHub. " \
-    "A GitHub account and some language knowledge is required."
+    "A GitHub account and some language knowledge is required.",
+  )
 
   def self.normalize(string)
     string.downcase.unicode_normalize(:nfd).gsub(/\p{Mn}/, "")
@@ -45,7 +49,7 @@ class TextLanguageDialog < Adwaita::Dialog
     super()
     @settings = settings
 
-    self.title = "Text Language"
+    self.title = _("Text Language")
     self.content_width = CONTENT_WIDTH
     self.content_height = CONTENT_HEIGHT
   end
@@ -95,7 +99,7 @@ class TextLanguageDialog < Adwaita::Dialog
   # Adwaita::NavigationPage takes its child and title positionally, so the
   # toolbar view has to exist first.
   def choose_language_page
-    @choose_language_page ||= Adwaita::NavigationPage.new(toolbar_view, "Text Language").tap do |page|
+    @choose_language_page ||= Adwaita::NavigationPage.new(toolbar_view, _("Text Language")).tap do |page|
       page.tag = "choose-language"
     end
   end
@@ -107,7 +111,7 @@ class TextLanguageDialog < Adwaita::Dialog
   def add_language_button
     @add_language_button ||= Gtk::Button.new.tap do |button|
       button.icon_name = "plus-large-symbolic"
-      button.tooltip_text = "Add Language"
+      button.tooltip_text = _("Add Language")
       button.action_name = "navigation.push"
       button.set_action_target_value(GLib::Variant.new("add-language"))
     end
@@ -130,7 +134,7 @@ class TextLanguageDialog < Adwaita::Dialog
   end
 
   def title_label
-    @title_label ||= Gtk::Label.new("Text Language").tap do |label|
+    @title_label ||= Gtk::Label.new(_("Text Language")).tap do |label|
       label.margin_bottom = 24
       label.add_css_class("title-1")
     end
@@ -144,7 +148,7 @@ class TextLanguageDialog < Adwaita::Dialog
 
   def search_entry
     @search_entry ||= Gtk::SearchEntry.new.tap do |entry|
-      entry.placeholder_text = "Search languages…"
+      entry.placeholder_text = _("Search languages…")
       entry.margin_bottom = 18
       entry.add_css_class("pill-entry")
     end
@@ -168,14 +172,16 @@ class TextLanguageDialog < Adwaita::Dialog
   def group_recent
     @group_recent ||= Adwaita::PreferencesGroup.new.tap do |group|
       # Recent languages in text languages list
-      group.title = "Recent"
+      # Translators: Recent languages in text languages list
+      group.title = _("Recent")
     end
   end
 
   def group_other
     @group_other ||= Adwaita::PreferencesGroup.new.tap do |group|
       # Other languages in text languages list
-      group.title = "Other"
+      # Translators: Other languages in text languages list
+      group.title = _("Other")
     end
   end
 
@@ -217,15 +223,15 @@ class TextLanguageDialog < Adwaita::Dialog
   end
 
   def no_results_title
-    @no_results_title ||= Gtk::Label.new("No Matches").tap do |label|
+    @no_results_title ||= Gtk::Label.new(_("No Matches")).tap do |label|
       label.add_css_class("title-2")
     end
   end
 
-  def no_results_description = @no_results_description ||= Gtk::Label.new("Try a different search")
+  def no_results_description = @no_results_description ||= Gtk::Label.new(_("Try a different search"))
 
   def add_language_page
-    @add_language_page ||= Adwaita::NavigationPage.new(add_language_toolbar_view, "Add Language").tap do |page|
+    @add_language_page ||= Adwaita::NavigationPage.new(add_language_toolbar_view, _("Add Language")).tap do |page|
       page.tag = "add-language"
     end
   end
@@ -268,14 +274,14 @@ class TextLanguageDialog < Adwaita::Dialog
   end
 
   def add_language_title
-    @add_language_title ||= Gtk::Label.new("Add Language").tap do |label|
+    @add_language_title ||= Gtk::Label.new(_("Add Language")).tap do |label|
       label.margin_top = 24
       label.add_css_class("title-1")
     end
   end
 
   def add_language_description
-    @add_language_description ||= Gtk::Label.new(ADD_LANGUAGE_DESCRIPTION).tap do |label|
+    @add_language_description ||= Gtk::Label.new(_(ADD_LANGUAGE_DESCRIPTION)).tap do |label|
       label.justify = :center
       label.wrap = true
       label.margin_top = 12
@@ -298,7 +304,7 @@ class TextLanguageDialog < Adwaita::Dialog
   end
 
   def language_request_label
-    @language_request_label ||= Gtk::Label.new("_Create Request").tap do |label|
+    @language_request_label ||= Gtk::Label.new(_("_Create Request")).tap do |label|
       label.use_underline = true
     end
   end

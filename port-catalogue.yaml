@@ -1,0 +1,441 @@
+---
+version: 1
+tree:
+  role: port
+  path: "."
+  ref: ruby
+  sha: 41f3144
+  scanned: '2026-11-03'
+domain: keypunch
+domain_source: po/*.pot
+totals:
+  messages: 62
+  occurrences: 80
+  reused: 15
+  plural: 2
+  with_context: 6
+  unresolved: 21
+languages:
+  count: 37
+  translated_strings: 2080
+  untranslated_strings: 91
+  fuzzy_strings: 123
+  list:
+  - ar
+  - bg
+  - ca
+  - cs
+  - de
+  - el
+  - en_GB
+  - eo
+  - es
+  - eu
+  - fa
+  - fi
+  - fr
+  - he
+  - hi
+  - hu
+  - id
+  - it
+  - ka
+  - kab
+  - kk
+  - kw
+  - nb
+  - nl
+  - oc
+  - pl
+  - pt_BR
+  - ro
+  - ru
+  - sk
+  - sl
+  - sr
+  - sv
+  - tr
+  - uk
+  - uz
+  - zh_CN
+  linguas_matches_files: true
+unresolved:
+- marker: _(TRANSLATOR_CREDITS).then do |credits|         if credits ==
+  site: lib/about_dialog.rb:108
+- marker: _(APPLICATION_NAME)       dialog.application_icon = @applicati
+  site: lib/about_dialog.rb:71
+- marker: _(COMMENTS)       dialog.license_type = Gtk::License::GPL_3_0
+  site: lib/about_dialog.rb:76
+- marker: _(OTHER_APP_DESCRIPTION))        translated_credits.then do |c
+  site: lib/about_dialog.rb:87
+- marker: _(OTHER_APP_NAME), _(OTHER_APP_DESCRIPTION))        translated
+  site: lib/about_dialog.rb:87
+- marker: _(label), action) }     end   end end
+  site: lib/primary_menu.rb:34
+- marker: _(DEFAULT_TEXT_LANGUAGE)),       "custom-text"   => unquote(_(
+  site: lib/settings.rb:70
+- marker: _(DEFAULT_CUSTOM_TEXT)),     )   end    def []=(key, value)
+  site: lib/settings.rb:71
+- marker: _(ADD_LANGUAGE_DESCRIPTION)).tap do |label|       label.justif
+  site: lib/text_language_dialog.rb:284
+- marker: pgettext(context, msgid) = catalogue.singular(context, msgid)
+  site: lib/translations.rb:105
+- marker: _(msgid) = Translations.gettext(msgid)
+  site: lib/translations.rb:66
+- marker: N_(msgid) = msgid
+  site: lib/translations.rb:72
+- marker: n_(singular, plural, count) = Translations.ngettext(singular, p
+  site: lib/translations.rb:75
+- marker: p_(context, msgid) = Translations.pgettext(context, msgid)
+  site: lib/translations.rb:78
+- marker: gettext(msgid) = catalogue.singular(nil, msgid)    def ngettext(sing
+  site: lib/translations.rb:96
+- marker: ngettext(singular, plural, count) = catalogue.plural(     nil,     si
+  site: lib/translations.rb:98
+- marker: _(INHIBIT_REASON))   end    def finish     @current_test.then
+  site: lib/typing_test_session.rb:146
+- marker: _(UI_STRINGS.fetch(difficulty, UI_STRINGS.fetch(SIMPLE)))   en
+  site: lib/typing_test_utils.rb:39
+- marker: _(english_string(duration))   end
+  site: lib/typing_test_utils.rb:84
+- marker: _(CANCELLED_DESCRIPTION)     end   end    def frustration_bott
+  site: lib/window.rb:308
+- marker: _(label) })     end      def edge_to_edge_toolbar_view       A
+  site: lib/window.rb:326
+messages:
+- id: '"The quick brown fox jumps over the lazy dog."'
+  kind: single
+  uses: 1
+  sites:
+  - lib/settings.rb:54
+- id: '"en"'
+  kind: single
+  uses: 1
+  sites:
+  - lib/settings.rb:51
+- id: 1 minute
+  kind: single
+  uses: 2
+  sites:
+  - lib/typing_test_utils.rb:70
+  - lib/window.rb:52
+- id: 10 minutes
+  kind: single
+  uses: 2
+  sites:
+  - lib/typing_test_utils.rb:72
+  - lib/window.rb:54
+- id: 15 seconds
+  kind: single
+  uses: 2
+  sites:
+  - lib/typing_test_utils.rb:68
+  - lib/window.rb:50
+- id: 30 seconds
+  kind: single
+  uses: 2
+  sites:
+  - lib/typing_test_utils.rb:69
+  - lib/window.rb:51
+- id: 5 minutes
+  kind: single
+  uses: 2
+  sites:
+  - lib/typing_test_utils.rb:71
+  - lib/window.rb:53
+- id: Accuracy
+  kind: single
+  uses: 1
+  sites:
+  - lib/results_view.rb:222
+- id: Add Language
+  kind: single
+  uses: 3
+  sites:
+  - lib/text_language_dialog.rb:114
+  - lib/text_language_dialog.rb:234
+  - lib/text_language_dialog.rb:277
+- id: Advanced
+  kind: single
+  uses: 2
+  sites:
+  - lib/typing_test_utils.rb:32
+  - lib/window.rb:47
+- id: Changes discarded
+  kind: single
+  uses: 1
+  sites:
+  - lib/typing_test_session.rb:407
+- id: Custom
+  kind: single
+  uses: 2
+  sites:
+  - lib/results_view.rb:126
+  - lib/window.rb:47
+- id: Custom Text
+  kind: single
+  uses: 2
+  sites:
+  - lib/custom_text_dialog.rb:116
+  - lib/custom_text_dialog.rb:35
+- id: Donate
+  kind: single
+  uses: 1
+  sites:
+  - lib/about_dialog.rb:84
+- id: Fretboard
+  kind: single
+  uses: 1
+  sites:
+  - lib/about_dialog.rb:57
+- id: Insert custom text…
+  kind: single
+  uses: 1
+  sites:
+  - lib/custom_text_dialog.rb:125
+- id: Just Start Typing
+  kind: single
+  uses: 1
+  sites:
+  - lib/window.rb:256
+- id: Keypunch
+  kind: single
+  uses: 2
+  sites:
+  - lib/about_dialog.rb:24
+  - lib/window.rb:119
+- id: Look up guitar chords
+  kind: single
+  uses: 1
+  sites:
+  - lib/about_dialog.rb:58
+- id: Main Menu
+  kind: single
+  uses: 1
+  sites:
+  - lib/window.rb:234
+- id: New Personal Best for Configuration
+  kind: single
+  uses: 1
+  sites:
+  - lib/results_view.rb:195
+- id: No Matches
+  kind: single
+  uses: 1
+  sites:
+  - lib/text_language_dialog.rb:226
+- id: Ongoing typing test
+  kind: single
+  uses: 1
+  sites:
+  - lib/typing_test_session.rb:46
+- id: Orthography by
+  kind: single
+  uses: 1
+  sites:
+  - lib/about_dialog.rb:85
+- id: Other
+  kind: single
+  uses: 1
+  sites:
+  - lib/text_language_dialog.rb:184
+- id: Practice your typing skills
+  kind: single
+  uses: 1
+  sites:
+  - lib/about_dialog.rb:27
+- id: Recent
+  kind: single
+  uses: 1
+  sites:
+  - lib/text_language_dialog.rb:176
+- id: Restart
+  kind: single
+  uses: 1
+  sites:
+  - lib/window.rb:180
+- id: Restore
+  kind: single
+  uses: 1
+  sites:
+  - lib/typing_test_session.rb:408
+- id: Results
+  kind: single
+  uses: 1
+  sites:
+  - lib/window.rb:278
+- id: Search languages…
+  kind: single
+  uses: 1
+  sites:
+  - lib/text_language_dialog.rb:151
+- id: Simple
+  kind: single
+  uses: 2
+  sites:
+  - lib/typing_test_utils.rb:31
+  - lib/window.rb:47
+- id: Special thanks to
+  kind: single
+  uses: 1
+  sites:
+  - lib/about_dialog.rb:86
+- id: Test Cancelled
+  kind: single
+  uses: 1
+  sites:
+  - lib/window.rb:307
+- id: Test Duration
+  kind: single
+  uses: 2
+  sites:
+  - lib/results_view.rb:248
+  - lib/window.rb:203
+- id: Test Type
+  kind: single
+  uses: 2
+  sites:
+  - lib/results_view.rb:237
+  - lib/window.rb:195
+- id: Text Language
+  kind: single
+  uses: 4
+  sites:
+  - lib/results_view.rb:259
+  - lib/text_language_dialog.rb:102
+  - lib/text_language_dialog.rb:137
+  - lib/text_language_dialog.rb:52
+- id: Text _Language
+  kind: single
+  uses: 1
+  sites:
+  - lib/primary_menu.rb:19
+- id: The test has been cancelled due to an excessive amount of invalid keystrokes.
+    This will not affect your typing statistics.
+  kind: single
+  uses: 1
+  sites:
+  - lib/window.rb:57
+- id: Try a different search
+  kind: single
+  uses: 1
+  sites:
+  - lib/text_language_dialog.rb:231
+- id: Words per Minute
+  kind: single
+  uses: 1
+  sites:
+  - lib/results_view.rb:202
+- id: You can help add a new text language to Keypunch by submitting a language request
+    on GitHub. A GitHub account and some language knowledge is required.
+  kind: single
+  uses: 1
+  sites:
+  - lib/text_language_dialog.rb:39
+- id: _About Keypunch
+  kind: single
+  uses: 1
+  sites:
+  - lib/primary_menu.rb:21
+- id: _Continue
+  kind: single
+  uses: 1
+  sites:
+  - lib/window.rb:362
+- id: _Create Request
+  kind: single
+  uses: 1
+  sites:
+  - lib/text_language_dialog.rb:307
+- id: _Edit Text
+  kind: single
+  uses: 1
+  sites:
+  - lib/window.rb:218
+- id: _Enable Entry
+  kind: single
+  uses: 1
+  sites:
+  - lib/window.rb:263
+- id: _Keyboard Shortcuts
+  kind: single
+  uses: 1
+  sites:
+  - lib/primary_menu.rb:20
+- id: _Save
+  kind: single
+  uses: 1
+  sites:
+  - lib/custom_text_dialog.rb:154
+- id: translator-credits
+  kind: single
+  uses: 1
+  sites:
+  - lib/about_dialog.rb:61
+- id: "{} minute"
+  kind: plural
+  uses: 1
+  sites:
+  - lib/results_view.rb:144
+- id: "{} second"
+  kind: plural
+  uses: 1
+  sites:
+  - lib/results_view.rb:148
+- id: "{} ⁄ {}"
+  kind: single
+  uses: 1
+  sites:
+  - lib/typing_test_session.rb:355
+- id: "{}%"
+  kind: single
+  uses: 1
+  sites:
+  - lib/results_view.rb:116
+- id: "{}m {}s"
+  kind: single
+  uses: 1
+  sites:
+  - lib/results_view.rb:140
+- id: "{}∶{}"
+  kind: single
+  uses: 1
+  sites:
+  - lib/typing_test_session.rb:462
+- ctxt: shortcut dialog
+  id: Cancel Test
+  kind: single
+  uses: 1
+  sites:
+  - lib/shortcuts_dialog.rb:53
+- ctxt: shortcut dialog
+  id: Close Window
+  kind: single
+  uses: 1
+  sites:
+  - lib/shortcuts_dialog.rb:55
+- ctxt: shortcut dialog
+  id: General
+  kind: single
+  uses: 1
+  sites:
+  - lib/shortcuts_dialog.rb:33
+- ctxt: shortcut dialog
+  id: Keyboard Shortcuts
+  kind: single
+  uses: 1
+  sites:
+  - lib/shortcuts_dialog.rb:54
+- ctxt: shortcut dialog
+  id: Open Menu
+  kind: single
+  uses: 1
+  sites:
+  - lib/shortcuts_dialog.rb:51
+- ctxt: shortcut dialog
+  id: Text Language
+  kind: single
+  uses: 2
+  sites:
+  - lib/shortcuts_dialog.rb:52
+  - lib/shortcuts_dialog.rb:56

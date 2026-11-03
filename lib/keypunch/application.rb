@@ -9,6 +9,7 @@ require_relative "../discord_rpc"
 require_relative "../settings"
 require_relative "../shortcuts_dialog"
 require_relative "../style"
+require_relative "../translations"
 require_relative "../window"
 
 module Keypunch
@@ -25,9 +26,11 @@ module Keypunch
   # from `gio::Settings::create_action`, which has no equivalent here because
   # the settings are not GSettings.
   #
-  # Upstream also registers a GResource bundle and binds its gettext domain in
-  # main.rs. This port has no resource bundle (the stylesheet, icons and
-  # illustration are read from data/) and no gettext catalogue.
+  # Upstream also registers a GResource bundle in main.rs; this port has none
+  # (the stylesheet, icons and illustration are read from data/). The gettext
+  # setup that follows it in main.rs is `Translations.bind` here, which reads
+  # the locale's catalogue straight out of po/ — see lib/translations.rb for
+  # why there is no compiled domain to bind instead.
   #
   # House style (see .claude/skills/ruby-gtk): every widget is a memoized
   # method, all configuration lives in its `tap`, assembly happens only in
@@ -45,6 +48,7 @@ module Keypunch
     def build
       app.tap do
         app.signal_connect("startup") do
+          Translations.bind
           Adwaita.init
           Style.load
 

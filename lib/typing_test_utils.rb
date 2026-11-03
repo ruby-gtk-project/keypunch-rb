@@ -2,6 +2,7 @@
 
 require_relative "text_generation"
 require_relative "text_utils"
+require_relative "translations"
 
 # TypingTestUtils holds the value objects a typing test is described and
 # summarised with.
@@ -16,19 +17,33 @@ module TypingTestUtils
   # Upstream's `GeneratedTestDifficulty`. The nicks match the SessionType enum
   # of the settings schema.
   module GeneratedTestDifficulty
+    include Translations::Helpers
+
     SIMPLE = "Simple"
     ADVANCED = "Advanced"
 
     ALL = [SIMPLE, ADVANCED].freeze
 
+    # The nicks read as English already, so they are their own msgids; these
+    # are the markers that put them in the catalogue. Upstream reaches the
+    # same two messages through `gettext` in src/widgets/results_view.rs.
+    UI_STRINGS = {
+      SIMPLE   => N_("Simple"),
+      ADVANCED => N_("Advanced"),
+    }.freeze
+
     module_function
 
     def from_settings_string(string) = ALL.find { |value| value == string }
+
+    def ui_string(difficulty) = _(UI_STRINGS.fetch(difficulty, UI_STRINGS.fetch(SIMPLE)))
   end
 
   # Upstream's `TestDuration`. The nicks match the SessionDuration enum of the
   # settings schema; the seconds are the ones the test timer counts down.
   module TestDuration
+    include Translations::Helpers
+
     SEC15 = "Sec15"
     SEC30 = "Sec30"
     MIN1 = "Min1"
@@ -46,12 +61,15 @@ module TypingTestUtils
       MIN10 => 10 * 60,
     }.freeze
 
+    # The English strings are the msgids too: the Discord presence wants them
+    # untranslated, the dropdown wants them translated, and both come from
+    # this one table.
     ENGLISH_STRINGS = {
-      SEC15 => "15 seconds",
-      SEC30 => "30 seconds",
-      MIN1  => "1 minute",
-      MIN5  => "5 minutes",
-      MIN10 => "10 minutes",
+      SEC15 => N_("15 seconds"),
+      SEC30 => N_("30 seconds"),
+      MIN1  => N_("1 minute"),
+      MIN5  => N_("5 minutes"),
+      MIN10 => N_("10 minutes"),
     }.freeze
 
     module_function
@@ -60,10 +78,10 @@ module TypingTestUtils
 
     def english_string(duration) = ENGLISH_STRINGS.fetch(duration, ENGLISH_STRINGS.fetch(DEFAULT))
 
-    # Upstream distinguishes `ui_string` (translated) from `english_string`
-    # (used for the Discord presence). This port carries no gettext catalogue,
-    # so the two are the same text.
-    def ui_string(duration) = english_string(duration)
+    # Upstream distinguishes `ui_string` (translated, for the dropdown) from
+    # `english_string` (what the Discord rich presence reports, which upstream
+    # keeps in English whatever the UI language is).
+    def ui_string(duration) = _(english_string(duration))
   end
 
   # Upstream's `PresenceState`, the three states the Discord rich presence

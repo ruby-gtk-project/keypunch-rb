@@ -1,0 +1,472 @@
+# Czech translation for Keypunch.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the keypunch package.
+# FIRST AUTHOR Amerey <info@amerey.eu>, 2024.
+# Seja Studio <seja.czstudio@gmail.com>, 2026.
+# Patrik Sivek <sivekpatrik@gmail.com>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: keypunch\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-03 00:11+0000\n"
+"PO-Revision-Date: 2026-07-04 21:18+0200\n"
+"Last-Translator: Patrik Sivek <sivekpatrik@gmail.com>\n"
+"Language-Team: Czech\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Gtranslator 50.0\n"
+
+#: lib/about_dialog.rb:24 lib/window.rb:119
+msgid "Keypunch"
+msgstr "Keypunch"
+
+#: lib/about_dialog.rb:27
+msgid "Practice your typing skills"
+msgstr "Procvičte si psaní na klávesnici"
+
+#: lib/about_dialog.rb:57
+msgid "Fretboard"
+msgstr "Fretboard"
+
+#: lib/about_dialog.rb:58
+msgid "Look up guitar chords"
+msgstr "Najděte kytarové akordy"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: lib/about_dialog.rb:61
+msgid "translator-credits"
+msgstr ""
+"Amerey <info@amerey.eu>\n"
+"Seja Studio <seja.czstudio@gmail.com>\n"
+"Patrik Sivek <sivekpatrik@gmail.com>"
+
+#: lib/about_dialog.rb:84
+msgid "Donate"
+msgstr "Přispět"
+
+#: lib/about_dialog.rb:85
+msgid "Orthography by"
+msgstr "Pravopis podle"
+
+#: lib/about_dialog.rb:86
+msgid "Special thanks to"
+msgstr "Zvláštní poděkování"
+
+#: lib/custom_text_dialog.rb:35 lib/custom_text_dialog.rb:116
+msgid "Custom Text"
+msgstr "Vlastní text"
+
+#: lib/custom_text_dialog.rb:125
+msgid "Insert custom text…"
+msgstr "vložit vlastní text…"
+
+#: lib/custom_text_dialog.rb:154
+msgid "_Save"
+msgstr "_Uložit"
+
+#: lib/primary_menu.rb:19
+msgid "Text _Language"
+msgstr "_Jazyk textu"
+
+#: lib/primary_menu.rb:20
+msgid "_Keyboard Shortcuts"
+msgstr "_Klávesové zkratky"
+
+#: lib/primary_menu.rb:21
+msgid "_About Keypunch"
+msgstr "_O aplikaci Keypunch"
+
+#. Translators: The percentage label format of the results page. The `{}`
+#. block will be replaced with the percentage number, do not translate it!
+#: lib/results_view.rb:116
+msgid "{}%"
+msgstr "{}%"
+
+#: lib/results_view.rb:126 lib/window.rb:47
+msgid "Custom"
+msgstr "Vlastní"
+
+#. Translators: The `{}` blocks will be replaced with the number of
+#. minutes and seconds. Do not translate them!
+#: lib/results_view.rb:140
+msgid "{}m {}s"
+msgstr "{} m {} s"
+
+#. Translators: The `{}` block will be replaced with the number of
+#. minutes. Do not translate it!
+#: lib/results_view.rb:144
+msgid "{} minute"
+msgid_plural "{} minutes"
+msgstr[0] "{} minuta"
+msgstr[1] "{} minuty"
+msgstr[2] "{} minut"
+
+#. Translators: The `{}` block will be replaced with the number of
+#. seconds. Do not translate it!
+#: lib/results_view.rb:148
+msgid "{} second"
+msgid_plural "{} seconds"
+msgstr[0] "{} sekunda"
+msgstr[1] "{} sekundy"
+msgstr[2] "{} sekund"
+
+#: lib/results_view.rb:195
+msgid "New Personal Best for Configuration"
+msgstr "Nové osobní maximum pro konfiguraci"
+
+#: lib/results_view.rb:202
+msgid "Words per Minute"
+msgstr "Slova za minutu"
+
+#: lib/results_view.rb:222
+msgid "Accuracy"
+msgstr "Přesnost"
+
+#: lib/results_view.rb:237 lib/window.rb:195
+msgid "Test Type"
+msgstr "Typ tréninku"
+
+#: lib/results_view.rb:248 lib/window.rb:203
+msgid "Test Duration"
+msgstr "Délka tréninku"
+
+#: lib/results_view.rb:259 lib/text_language_dialog.rb:52
+#: lib/text_language_dialog.rb:102 lib/text_language_dialog.rb:137
+msgid "Text Language"
+msgstr "Jazyk textu"
+
+#. Translators: Insert the language code of your language here, for example "nb" for Norwegian Bokmaal. Do not remove the quotation marks. It's doesn't matter if there isn't a word list for the language in `data/word_lists` right now, the app will fall back to English in that case and start using the list if it becomes available in the future.
+#: lib/settings.rb:51
+msgid "\"en\""
+msgstr "\"cs\""
+
+#. Translators: This is the default text for custom typing sessions. Do not translate it literally, and do not remove the quotation marks. Replace it with an appropriate "sample sentence" from your language instead. The original text is an English pangram, so you can e.g. find a pangram in your language: https://clagnut.com/blog/2380
+#: lib/settings.rb:54
+msgid "\"The quick brown fox jumps over the lazy dog.\""
+msgstr "\"Příliš žluťoučký kůň úpěl ďábelské ódy.\""
+
+#: lib/shortcuts_dialog.rb:33
+msgctxt "shortcut dialog"
+msgid "General"
+msgstr "Obecné"
+
+#: lib/shortcuts_dialog.rb:51
+msgctxt "shortcut dialog"
+msgid "Open Menu"
+msgstr "Otevřít nabídku"
+
+#: lib/shortcuts_dialog.rb:52 lib/shortcuts_dialog.rb:56
+msgctxt "shortcut dialog"
+msgid "Text Language"
+msgstr "Jazyk textu"
+
+#: lib/shortcuts_dialog.rb:53
+msgctxt "shortcut dialog"
+msgid "Cancel Test"
+msgstr "Přerušit trénink"
+
+#: lib/shortcuts_dialog.rb:54
+msgctxt "shortcut dialog"
+msgid "Keyboard Shortcuts"
+msgstr "Klávesové zkratky"
+
+#: lib/shortcuts_dialog.rb:55
+msgctxt "shortcut dialog"
+msgid "Close Window"
+msgstr "Zavřít okno"
+
+#: lib/text_language_dialog.rb:39
+msgid ""
+"You can help add a new text language to Keypunch by submitting a language "
+"request on GitHub. A GitHub account and some language knowledge is required."
+msgstr ""
+"Můžete pomoci přidat nový jazyk textu do Keypunch odesláním žádosti o jazyk "
+"na GitHubu. Je třeba mít účet GitHub a určité jazykové znalosti."
+
+#: lib/text_language_dialog.rb:114 lib/text_language_dialog.rb:234
+#: lib/text_language_dialog.rb:277
+msgid "Add Language"
+msgstr "Přidat jazyk"
+
+#: lib/text_language_dialog.rb:151
+msgid "Search languages…"
+msgstr "hledat jazyky…"
+
+#. Translators: Recent languages in text languages list
+#: lib/text_language_dialog.rb:176
+msgid "Recent"
+msgstr "Nedávné"
+
+#. Translators: Other languages in text languages list
+#: lib/text_language_dialog.rb:184
+msgid "Other"
+msgstr "Ostatní"
+
+#: lib/text_language_dialog.rb:226
+msgid "No Matches"
+msgstr "Žádné shody"
+
+#: lib/text_language_dialog.rb:231
+msgid "Try a different search"
+msgstr "Zkuste jiné vyhledávání"
+
+#: lib/text_language_dialog.rb:307
+msgid "_Create Request"
+msgstr "_Vytvořit požadavek"
+
+#. Translators: This is shown as a warning by GNOME Shell before logging out
+#. or shutting off the system in the middle of a typing test
+#: lib/typing_test_session.rb:46
+msgid "Ongoing typing test"
+msgstr "Probíhá trénink psaní"
+
+#. Translators: The format of the word counter. The `{}` blocks will be
+#. replaced with the number of the word being typed and the number of
+#. words in the text. Do not translate them. The `⁄` sign is a fraction
+#. slash, not the ASCII slash it resembles; if your language doesn't
+#. use something completely different, you should probably copy and
+#. paste it from the original string.
+#: lib/typing_test_session.rb:355
+msgid "{} ⁄ {}"
+msgstr "{} ⁄ {}"
+
+#: lib/typing_test_session.rb:407
+msgid "Changes discarded"
+msgstr "Změny nebyly uloženy"
+
+#: lib/typing_test_session.rb:408
+msgid "Restore"
+msgstr "Obnovit"
+
+#. Translators: The format of the timer. The first `{}` block will be
+#. replaced with the minutes passed, and the second one will be replaced
+#. with the seconds passed. Do not translate the `{}` blocks. Note that
+#. the `∶` sign is a special Unicode character; if your language doesn't
+#. use something completely different, you should probably copy and paste
+#. it from the original string.
+#: lib/typing_test_session.rb:462
+msgid "{}∶{}"
+msgstr "{}∶{}"
+
+#: lib/typing_test_utils.rb:31 lib/window.rb:47
+msgid "Simple"
+msgstr "Jednoduchý"
+
+#: lib/typing_test_utils.rb:32 lib/window.rb:47
+msgid "Advanced"
+msgstr "Pokročilý"
+
+#: lib/typing_test_utils.rb:68 lib/window.rb:50
+msgid "15 seconds"
+msgstr "15 sekund"
+
+#: lib/typing_test_utils.rb:69 lib/window.rb:51
+msgid "30 seconds"
+msgstr "30 sekund"
+
+#: lib/typing_test_utils.rb:70 lib/window.rb:52
+msgid "1 minute"
+msgstr "1 minuta"
+
+#: lib/typing_test_utils.rb:71 lib/window.rb:53
+msgid "5 minutes"
+msgstr "5 minut"
+
+#: lib/typing_test_utils.rb:72 lib/window.rb:54
+msgid "10 minutes"
+msgstr "10 minut"
+
+#: lib/window.rb:57
+msgid ""
+"The test has been cancelled due to an excessive amount of invalid "
+"keystrokes. This will not affect your typing statistics."
+msgstr ""
+"Trénink byl zrušen kvůli velkému počtu špatných znaků. Toto nijak neovlivní "
+"vaše statistiky."
+
+#: lib/window.rb:180
+msgid "Restart"
+msgstr "Restartovat"
+
+#: lib/window.rb:218
+msgid "_Edit Text"
+msgstr "_Upravit text"
+
+#: lib/window.rb:234
+msgid "Main Menu"
+msgstr "Hlavní nabídka"
+
+#: lib/window.rb:256
+msgid "Just Start Typing"
+msgstr "Začněte psát"
+
+#. Translators: "Entry" here is the act of entering text
+#: lib/window.rb:263
+msgid "_Enable Entry"
+msgstr "_Povolit zadávání"
+
+#: lib/window.rb:278
+msgid "Results"
+msgstr "Výsledky"
+
+#: lib/window.rb:307
+msgid "Test Cancelled"
+msgstr "Trénink byl zrušen"
+
+#: lib/window.rb:362
+msgid "_Continue"
+msgstr "_Pokračovat"
+
+#~ msgid ""
+#~ "typing;trainer;touch typing;keyboard;speed;wpm;words per "
+#~ "minute;accuracy;test;"
+#~ msgstr ""
+#~ "wpm;test;psaní;klávesnice;rychlost;přesnost;slova za minutu;psaní všemi "
+#~ "deseti;"
+
+#~ msgid ""
+#~ "There is no doubt that typing on a keyboard is an essential skill in the "
+#~ "digital age. Typing fast and accurately gives you more opportunities, "
+#~ "more time for what matters to you, and a sense of self-accomplishment."
+#~ msgstr ""
+#~ "Není pochyb o tom, že psaní na klávesnici je v digitálním věku nezbytnou "
+#~ "dovedností. Rychlé a přesné psaní vám dává více příležitostí, více času "
+#~ "na to, na čem vám záleží, a pocit sebeuspokojení."
+
+#~ msgid ""
+#~ "Keypunch lets you practice typing. Thanks to fast-paced sessions with "
+#~ "instant feedback afterwards and a plethora of available languages, you "
+#~ "might even have a little fun doing so. With determination, proper "
+#~ "technique and some time, you will observe a noticeable increase in both "
+#~ "the speed and the accuracy of which your thoughts and ideas are put into "
+#~ "words on the screen."
+#~ msgstr ""
+#~ "Keypunch vám umožní procvičit psaní. Díky rychlým relacím s následnou "
+#~ "okamžitou zpětnou vazbou a spoustě dostupných jazyků si při tom možná "
+#~ "užijete i trochu legrace. S odhodláním, správnou technikou a trochou času "
+#~ "zaznamenáte znatelný nárůst jak rychlosti, tak přesnosti, s jakou jsou "
+#~ "vaše myšlenky a nápady vkládány do slov na obrazovce."
+
+#~ msgid ""
+#~ "If you are already a racer at typing, Keypunch still has something for "
+#~ "you. Try practicing with numbers and punctuation, or choose your own text "
+#~ "to type out as fast as you can."
+#~ msgstr ""
+#~ "Pokud jste již zběhlí v psaní, Keypunch vám má stále co nabídnout. Zkuste "
+#~ "si procvičit čísla a interpunkci nebo si vyberte svůj vlastní text, který "
+#~ "budete psát co nejrychleji."
+
+#~ msgid "Get ready to accelerate your typing!"
+#~ msgstr "Připravte se zrychlit své psaní!"
+
+#~ msgid ""
+#~ "Keypunch is proudly part of GNOME Circle, an initiative that champions "
+#~ "the great software that is available for the GNOME platform. For more "
+#~ "information, visit the GNOME Circle website."
+#~ msgstr ""
+#~ "Keypunch je hrdou součástí iniciativy GNOME Circle, která prosazuje "
+#~ "skvělý software dostupný pro platformu GNOME. Více informací lze nalézt "
+#~ "na stránkách GNOME Circle. "
+
+#~ msgid "In the middle of a session"
+#~ msgstr "Uprostřed sezení"
+
+#~ msgid "Ready for typing"
+#~ msgstr "Připraveno pro psaní"
+
+#~ msgid "Session results"
+#~ msgstr "Výsledky sezení"
+
+#~ msgid "Language selection"
+#~ msgstr "Výběr jazyka"
+
+#~ msgid "Custom text entry"
+#~ msgstr "Vlastní zadávání textu"
+
+#~ msgid "Window Width"
+#~ msgstr "Šířka okna"
+
+#~ msgid "Window Height"
+#~ msgstr "Výška okna"
+
+#~ msgid "Window Maximization"
+#~ msgstr "Maximalizace okna"
+
+#~ msgid "Session Type"
+#~ msgstr "Typ sezení"
+
+#~ msgid "Session Duration"
+#~ msgstr "Délka sezení"
+
+#~ msgid "The duration of time-based sessions"
+#~ msgstr "Doba trvání relací založených na čase"
+
+#~ msgid "The code of the language used for automatically generated text"
+#~ msgstr "Kód jazyka použitého pro automaticky generovaný text"
+
+#~ msgid "Recent Languages"
+#~ msgstr "Naposledy použité jazyky"
+
+#~ msgid ""
+#~ "Languages shown in the list of recent ones in the text language dialog"
+#~ msgstr ""
+#~ "Jazyky zobrazené v seznamu posledních jazyků v dialogovém okně jazyka "
+#~ "textu"
+
+#~ msgid "Text displayed when “Custom” is chosen from the session menu"
+#~ msgstr ""
+#~ "Text se zobrazí, když je v nabídce sezení vybrána možnost „Vlastní“."
+
+#~ msgid "Personal Best"
+#~ msgstr "Osobní rekord"
+
+#~ msgid ""
+#~ "The current highest amount of WPM received for each session type / "
+#~ "duration and language"
+#~ msgstr ""
+#~ "Aktuální nejvyšší počet slov za minutu obdržený pro každý typ sezení / "
+#~ "trvání a jazyk"
+
+#~ msgid "Search Results"
+#~ msgstr "Výsledky vyhledávání"
+
+#~ msgid "Text View"
+#~ msgstr "Zobrazení textu"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Text Language"
+#~ msgstr "Jazyk textu"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Quit"
+#~ msgstr "Ukončit"
+
+#~ msgid "Frustration Relief"
+#~ msgstr "Úleva od frustrace"
+
+#~ msgid "Frustration Detected"
+#~ msgstr "Zaznamenána frustrace"
+
+#~ msgid ""
+#~ "You learn faster in a calm state of mind. Consider taking a break. The "
+#~ "test has been cancelled, and will not affect your typing statistics."
+#~ msgstr ""
+#~ "V klidném rozpoložení se budete učit rychleji. Zkuste si dát chvíli "
+#~ "pauzu. Sezení bylo přerušeno a její výsledky nebudou ovlivňovat vaší "
+#~ "statistiku psaní."
+
+#~ msgid "Correctness"
+#~ msgstr "Správnost"
+
+#~ msgid "\"en_US\""
+#~ msgstr "\"en_US\""
+
+#~ msgid ""
+#~ "This is the initial release of Keypunch! Give it a spin and say what you "
+#~ "think."
+#~ msgstr ""
+#~ "Toto je první vydání Keypunch! Vyzkoušejte ho a řekněte, co si myslíte."

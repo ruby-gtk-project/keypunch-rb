@@ -1,0 +1,434 @@
+# Turkish translation for dev.bragefuglseth.Keypunch.
+# Copyright (C) 2024 dev.bragefuglseth.Keypunch's copyright holder
+# This file is distributed under the same license as the dev.bragefuglseth.Keypunch package.
+#
+# Sabri Ünal <yakushabb@gmail.com>, 2024.
+# Muhammet Kara <muhammetk@gmail.com>, 2025.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dev.bragefuglseth.Keypunch\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-03 00:11+0000\n"
+"PO-Revision-Date: 2026-07-13 16:57+0300\n"
+"Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
+"Language-Team: Turkish <takim@gnome.org.tr>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
+
+#: lib/about_dialog.rb:24 lib/window.rb:119
+msgid "Keypunch"
+msgstr "Keypunch"
+
+#: lib/about_dialog.rb:27
+msgid "Practice your typing skills"
+msgstr "Yazma becerilerinizi geliştirin"
+
+#: lib/about_dialog.rb:57
+msgid "Fretboard"
+msgstr "Fretboard"
+
+#: lib/about_dialog.rb:58
+msgid "Look up guitar chords"
+msgstr "Gitar akorlarına bak"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: lib/about_dialog.rb:61
+msgid "translator-credits"
+msgstr ""
+"Sabri Ünal <yakushabb@gmail.com>\n"
+"Emin Tufan Çetin <etcetin@gmail.com>"
+
+#: lib/about_dialog.rb:84
+msgid "Donate"
+msgstr "Bağış Yap"
+
+#: lib/about_dialog.rb:85
+msgid "Orthography by"
+msgstr "Yazım tarafından"
+
+#: lib/about_dialog.rb:86
+msgid "Special thanks to"
+msgstr "Özel teşekkürler"
+
+#: lib/custom_text_dialog.rb:35 lib/custom_text_dialog.rb:116
+msgid "Custom Text"
+msgstr "Özel Metin"
+
+#: lib/custom_text_dialog.rb:125
+msgid "Insert custom text…"
+msgstr "Özel metin ekle…"
+
+#: lib/custom_text_dialog.rb:154
+msgid "_Save"
+msgstr "_Kaydet"
+
+#: lib/primary_menu.rb:19
+msgid "Text _Language"
+msgstr "Metin _Dilleri"
+
+#: lib/primary_menu.rb:20
+msgid "_Keyboard Shortcuts"
+msgstr "_Klavye Kısayolları"
+
+#: lib/primary_menu.rb:21
+msgid "_About Keypunch"
+msgstr "Keypunch _Hakkında"
+
+#. Translators: The percentage label format of the results page. The `{}`
+#. block will be replaced with the percentage number, do not translate it!
+#: lib/results_view.rb:116
+msgid "{}%"
+msgstr "%{}"
+
+#: lib/results_view.rb:126 lib/window.rb:47
+msgid "Custom"
+msgstr "Özel"
+
+#. Translators: The `{}` blocks will be replaced with the number of
+#. minutes and seconds. Do not translate them!
+#: lib/results_view.rb:140
+msgid "{}m {}s"
+msgstr "{}dk {}sn"
+
+#. Translators: The `{}` block will be replaced with the number of
+#. minutes. Do not translate it!
+#: lib/results_view.rb:144
+msgid "{} minute"
+msgid_plural "{} minutes"
+msgstr[0] "{} dakika"
+
+#. Translators: The `{}` block will be replaced with the number of
+#. seconds. Do not translate it!
+#: lib/results_view.rb:148
+msgid "{} second"
+msgid_plural "{} seconds"
+msgstr[0] "{} saniye"
+
+#: lib/results_view.rb:195
+msgid "New Personal Best for Configuration"
+msgstr "Yapılandırma için Yeni Kişisel En İyi"
+
+#: lib/results_view.rb:202
+msgid "Words per Minute"
+msgstr "Dakika Başına Kelime"
+
+#: lib/results_view.rb:222
+msgid "Accuracy"
+msgstr "Kesinlik"
+
+#: lib/results_view.rb:237 lib/window.rb:195
+msgid "Test Type"
+msgstr "Sınama Türü"
+
+#: lib/results_view.rb:248 lib/window.rb:203
+msgid "Test Duration"
+msgstr "Sınama Süresi"
+
+#: lib/results_view.rb:259 lib/text_language_dialog.rb:52
+#: lib/text_language_dialog.rb:102 lib/text_language_dialog.rb:137
+msgid "Text Language"
+msgstr "Metin Dili"
+
+# Türkçe örnek metinler oluşturulunca bu değerin tr olarak değiştirilmesi gerekiyor.
+#. Translators: Insert the language code of your language here, for example "nb" for Norwegian Bokmaal. Do not remove the quotation marks. It's doesn't matter if there isn't a word list for the language in `data/word_lists` right now, the app will fall back to English in that case and start using the list if it becomes available in the future.
+#: lib/settings.rb:51
+msgid "\"en\""
+msgstr "\"tr\""
+
+# Pangram: Çevirmeye çalışmayın.
+#. Translators: This is the default text for custom typing sessions. Do not translate it literally, and do not remove the quotation marks. Replace it with an appropriate "sample sentence" from your language instead. The original text is an English pangram, so you can e.g. find a pangram in your language: https://clagnut.com/blog/2380
+#: lib/settings.rb:54
+msgid "\"The quick brown fox jumps over the lazy dog.\""
+msgstr "\"Pijamalı hasta yağız şoföre çabucak güvendi.\""
+
+#: lib/shortcuts_dialog.rb:33
+msgctxt "shortcut dialog"
+msgid "General"
+msgstr "Genel"
+
+#: lib/shortcuts_dialog.rb:51
+msgctxt "shortcut dialog"
+msgid "Open Menu"
+msgstr "Menüyü Aç"
+
+#: lib/shortcuts_dialog.rb:52 lib/shortcuts_dialog.rb:56
+msgctxt "shortcut dialog"
+msgid "Text Language"
+msgstr "Metin Dili"
+
+#: lib/shortcuts_dialog.rb:53
+msgctxt "shortcut dialog"
+msgid "Cancel Test"
+msgstr "Sınamayı İptal Et"
+
+#: lib/shortcuts_dialog.rb:54
+msgctxt "shortcut dialog"
+msgid "Keyboard Shortcuts"
+msgstr "Klavye Kısayolları"
+
+#: lib/shortcuts_dialog.rb:55
+msgctxt "shortcut dialog"
+msgid "Close Window"
+msgstr "Pencereyi Kapat"
+
+#: lib/text_language_dialog.rb:39
+msgid ""
+"You can help add a new text language to Keypunch by submitting a language "
+"request on GitHub. A GitHub account and some language knowledge is required."
+msgstr ""
+"GitHub ile dil isteği göndererek Keypunchʼa yeni metin dili eklenmesine "
+"yardımcı olabilirsiniz. GitHub hesabı ve biraz dil bilgisi gereklidir."
+
+#: lib/text_language_dialog.rb:114 lib/text_language_dialog.rb:234
+#: lib/text_language_dialog.rb:277
+msgid "Add Language"
+msgstr "Dil Ekle"
+
+#: lib/text_language_dialog.rb:151
+msgid "Search languages…"
+msgstr "Dil ara…"
+
+#. Translators: Recent languages in text languages list
+#: lib/text_language_dialog.rb:176
+msgid "Recent"
+msgstr "Son Kullanılan"
+
+#. Translators: Other languages in text languages list
+#: lib/text_language_dialog.rb:184
+msgid "Other"
+msgstr "Diğer"
+
+#: lib/text_language_dialog.rb:226
+msgid "No Matches"
+msgstr "Eşleşme Yok"
+
+#: lib/text_language_dialog.rb:231
+msgid "Try a different search"
+msgstr "Başka arama dene"
+
+#: lib/text_language_dialog.rb:307
+msgid "_Create Request"
+msgstr "İstek _Oluştur"
+
+#. Translators: This is shown as a warning by GNOME Shell before logging out
+#. or shutting off the system in the middle of a typing test
+#: lib/typing_test_session.rb:46
+msgid "Ongoing typing test"
+msgstr "Süren yazım sınaması"
+
+#. Translators: The format of the word counter. The `{}` blocks will be
+#. replaced with the number of the word being typed and the number of
+#. words in the text. Do not translate them. The `⁄` sign is a fraction
+#. slash, not the ASCII slash it resembles; if your language doesn't
+#. use something completely different, you should probably copy and
+#. paste it from the original string.
+#: lib/typing_test_session.rb:355
+msgid "{} ⁄ {}"
+msgstr ""
+
+#: lib/typing_test_session.rb:407
+msgid "Changes discarded"
+msgstr ""
+
+#: lib/typing_test_session.rb:408
+#, fuzzy
+msgid "Restore"
+msgstr "Yeniden Başlat"
+
+#. Translators: The format of the timer. The first `{}` block will be
+#. replaced with the minutes passed, and the second one will be replaced
+#. with the seconds passed. Do not translate the `{}` blocks. Note that
+#. the `∶` sign is a special Unicode character; if your language doesn't
+#. use something completely different, you should probably copy and paste
+#. it from the original string.
+#: lib/typing_test_session.rb:462
+msgid "{}∶{}"
+msgstr "{}∶{}"
+
+#: lib/typing_test_utils.rb:31 lib/window.rb:47
+msgid "Simple"
+msgstr "Basit"
+
+#: lib/typing_test_utils.rb:32 lib/window.rb:47
+msgid "Advanced"
+msgstr "Gelişmiş"
+
+#: lib/typing_test_utils.rb:68 lib/window.rb:50
+msgid "15 seconds"
+msgstr "15 Saniye"
+
+#: lib/typing_test_utils.rb:69 lib/window.rb:51
+msgid "30 seconds"
+msgstr "30 saniye"
+
+#: lib/typing_test_utils.rb:70 lib/window.rb:52
+msgid "1 minute"
+msgstr "1 dakika"
+
+#: lib/typing_test_utils.rb:71 lib/window.rb:53
+msgid "5 minutes"
+msgstr "5 dakika"
+
+#: lib/typing_test_utils.rb:72 lib/window.rb:54
+msgid "10 minutes"
+msgstr "10 dakika"
+
+#: lib/window.rb:57
+msgid ""
+"The test has been cancelled due to an excessive amount of invalid "
+"keystrokes. This will not affect your typing statistics."
+msgstr ""
+"Sınarama, çok fazla geçersiz tuş vuruşu nedeniyle iptal edildi. Bu, yazma "
+"istatistiklerinizi etkilemeyecek."
+
+#: lib/window.rb:180
+msgid "Restart"
+msgstr "Yeniden Başlat"
+
+#: lib/window.rb:218
+msgid "_Edit Text"
+msgstr "Metni _Düzenle"
+
+#: lib/window.rb:234
+msgid "Main Menu"
+msgstr "Ana Menü"
+
+#: lib/window.rb:256
+msgid "Just Start Typing"
+msgstr "Yazmaya Başlayın"
+
+#. Translators: "Entry" here is the act of entering text
+#: lib/window.rb:263
+msgid "_Enable Entry"
+msgstr "Girdiyi _Etkinleştir"
+
+#: lib/window.rb:278
+msgid "Results"
+msgstr "Sonuçlar"
+
+#: lib/window.rb:307
+msgid "Test Cancelled"
+msgstr "Sınama İptal Edildi"
+
+#: lib/window.rb:362
+msgid "_Continue"
+msgstr "_Sürdür"
+
+#~ msgid ""
+#~ "typing;trainer;touch typing;keyboard;speed;wpm;words per "
+#~ "minute;accuracy;test;"
+#~ msgstr ""
+#~ "typing;trainer;touch typing;keyboard;speed;wpm;words per "
+#~ "minute;accuracy;test;yazma;eğitim;dokunmatik yazma;klavye;hız;dakika "
+#~ "başına kelime;dakika başına sözcük;doğruluk;"
+
+#~ msgid ""
+#~ "There is no doubt that typing on a keyboard is an essential skill in the "
+#~ "digital age. Typing fast and accurately gives you more opportunities, "
+#~ "more time for what matters to you, and a sense of self-accomplishment."
+#~ msgstr ""
+#~ "Klavye ile yazmak sayısal çağ için önemli bir beceri. Hızlı ve doğru "
+#~ "yazmak sizin için önemli olan şeylere daha fazla vakit ayırmanızı sağlar."
+
+#~ msgid ""
+#~ "Keypunch lets you practice typing. Thanks to fast-paced sessions with "
+#~ "instant feedback afterwards and a plethora of available languages, you "
+#~ "might even have a little fun doing so. With determination, proper "
+#~ "technique and some time, you will observe a noticeable increase in both "
+#~ "the speed and the accuracy of which your thoughts and ideas are put into "
+#~ "words on the screen."
+#~ msgstr ""
+#~ "Keypunch, yazım alıştırması yapmanızı sağlar. Ardına anlık geri bildirim "
+#~ "veren hızlı oturum ve var olan birçok dil seçeneği sayesinde biraz "
+#~ "eğlenmenizi bile sağlar. Adanmışlık, doğru teknik ve biraz zaman ile hem "
+#~ "düşüncelerinizi ve görüşlerinizi ekrana doğruca koyabilmenizi, hem de "
+#~ "hızınızı önemli biçimde yükseltmeyi sağladığını göreceksiniz."
+
+#~ msgid ""
+#~ "If you are already a racer at typing, Keypunch still has something for "
+#~ "you. Try practicing with numbers and punctuation, or choose your own text "
+#~ "to type out as fast as you can."
+#~ msgstr ""
+#~ "Eğer halihazırda yazım yarışçısıysanız, yine de Keypunch’ın size "
+#~ "sunacakları vardır. Sayı ve noktalamalarla alıştırma yapın ya da "
+#~ "olabildiğince hızlı yazabilmek için kendi metin türünüzü seçin."
+
+#~ msgid "Get ready to accelerate your typing!"
+#~ msgstr "Yazımınızı hızlandırmaya hazır olun!"
+
+#~ msgid ""
+#~ "Keypunch is proudly part of GNOME Circle, an initiative that champions "
+#~ "the great software that is available for the GNOME platform. For more "
+#~ "information, visit the GNOME Circle website."
+#~ msgstr ""
+#~ "Keypunch, GNOME platformu için harika yazılımları destekleyen GNOME "
+#~ "Çevre’nin parçasıdır. Daha çok bilgi için GNOME Çevre web sitesine göz "
+#~ "atın."
+
+#~ msgid "In the middle of a session"
+#~ msgstr "Oturumun ortasında"
+
+#~ msgid "Ready for typing"
+#~ msgstr "Yazmaya hazır"
+
+#~ msgid "Session results"
+#~ msgstr "Oturum sonuçları"
+
+#~ msgid "Language selection"
+#~ msgstr "Dil seçimi"
+
+#~ msgid "Custom text entry"
+#~ msgstr "Özel metin girdisi"
+
+#~ msgid "Window Width"
+#~ msgstr "Pencere Genişliği"
+
+#~ msgid "Window Height"
+#~ msgstr "Pencere Yüksekliği"
+
+#~ msgid "Window Maximization"
+#~ msgstr "Pencerenin Büyütülme Durumu"
+
+#~ msgid "Session Type"
+#~ msgstr "Oturum Türü"
+
+#~ msgid "Session Duration"
+#~ msgstr "Oturum Süresi"
+
+#~ msgid "The duration of time-based sessions"
+#~ msgstr "Zamana dayalı oturumların süresi"
+
+#~ msgid "The code of the language used for automatically generated text"
+#~ msgstr "Kendiliğinden oluşturulan metin için kullanılan dilin kodu"
+
+#~ msgid "Recent Languages"
+#~ msgstr "Son Diller"
+
+#~ msgid ""
+#~ "Languages shown in the list of recent ones in the text language dialog"
+#~ msgstr ""
+#~ "Metin dili iletişim kutusundaki son diller listesinde gösterilen diller"
+
+#~ msgid "Text displayed when “Custom” is chosen from the session menu"
+#~ msgstr "Oturum menüsünden “Özel” seçildiğinde görüntülenen metin"
+
+#~ msgid "Personal Best"
+#~ msgstr "Kişisel En İyi"
+
+#~ msgid ""
+#~ "The current highest amount of WPM received for each session type / "
+#~ "duration and language"
+#~ msgstr ""
+#~ "Her oturum türü / süresi ve dil için alınan geçerli en yüksek WPM miktarı"
+
+#~ msgid "Search Results"
+#~ msgstr "Arama Sonuçları"
+
+#~ msgid "Text View"
+#~ msgstr "Metin Görünümü"

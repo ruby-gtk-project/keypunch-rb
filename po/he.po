@@ -1,0 +1,459 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the keypunch package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Yosef Or Boczko <yoseforb@gmail.com>, 2024-2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: keypunch\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-03 00:11+0000\n"
+"PO-Revision-Date: 2026-08-23 09:24+0300\n"
+"Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
+"Language-Team: Hebrew\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3)\n"
+"X-Generator: Gtranslator 50.0\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: lib/about_dialog.rb:24 lib/window.rb:119
+msgid "Keypunch"
+msgstr "הקלדה עיוורת"
+
+#: lib/about_dialog.rb:27
+msgid "Practice your typing skills"
+msgstr "תרגול מיומנות ההקלדה שלך"
+
+#: lib/about_dialog.rb:57
+msgid "Fretboard"
+msgstr "Fretboard"
+
+#: lib/about_dialog.rb:58
+msgid "Look up guitar chords"
+msgstr "חיפוש אקורדים לגיטרה"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: lib/about_dialog.rb:61
+msgid "translator-credits"
+msgstr ""
+"יוסף אור בוצ׳קו <yoseforb@gmail.com>\n"
+"מיזם תרגום GNOME לעברית https://l10n.gnome.org/teams/he/"
+
+#: lib/about_dialog.rb:84
+msgid "Donate"
+msgstr "תרומה"
+
+#: lib/about_dialog.rb:85
+msgid "Orthography by"
+msgstr "אורתוגרפיה על ידי"
+
+#: lib/about_dialog.rb:86
+msgid "Special thanks to"
+msgstr "תודות מיוחדות ל"
+
+#: lib/custom_text_dialog.rb:35 lib/custom_text_dialog.rb:116
+msgid "Custom Text"
+msgstr "טקסט מותאם אישית"
+
+#: lib/custom_text_dialog.rb:125
+msgid "Insert custom text…"
+msgstr "הכנסת טקסט מותאם אישית…"
+
+#: lib/custom_text_dialog.rb:154
+msgid "_Save"
+msgstr "_שמירה"
+
+#: lib/primary_menu.rb:19
+msgid "Text _Language"
+msgstr "_שפת הטקסט"
+
+#: lib/primary_menu.rb:20
+msgid "_Keyboard Shortcuts"
+msgstr "_צירופי מקשים"
+
+#: lib/primary_menu.rb:21
+msgid "_About Keypunch"
+msgstr "_על הקלדה עיוורת"
+
+#. Translators: The percentage label format of the results page. The `{}`
+#. block will be replaced with the percentage number, do not translate it!
+#: lib/results_view.rb:116
+msgid "{}%"
+msgstr "{}%"
+
+#: lib/results_view.rb:126 lib/window.rb:47
+msgid "Custom"
+msgstr "מותאם אישית"
+
+#. Translators: The `{}` blocks will be replaced with the number of
+#. minutes and seconds. Do not translate them!
+#: lib/results_view.rb:140
+msgid "{}m {}s"
+msgstr "{} דקות ו־{} שניות"
+
+#. Translators: The `{}` block will be replaced with the number of
+#. minutes. Do not translate it!
+#: lib/results_view.rb:144
+msgid "{} minute"
+msgid_plural "{} minutes"
+msgstr[0] "דקה אחת"
+msgstr[1] "שתי דקות"
+msgstr[2] "{} דקות"
+msgstr[3] "{} דקות"
+
+#. Translators: The `{}` block will be replaced with the number of
+#. seconds. Do not translate it!
+#: lib/results_view.rb:148
+msgid "{} second"
+msgid_plural "{} seconds"
+msgstr[0] "שנייה"
+msgstr[1] "שתי שניות"
+msgstr[2] "{} שניות"
+msgstr[3] "{} שניות"
+
+#: lib/results_view.rb:195
+msgid "New Personal Best for Configuration"
+msgstr "שיא אישי חדש לקטגוריה"
+
+#: lib/results_view.rb:202
+msgid "Words per Minute"
+msgstr "מילים לדקה"
+
+#: lib/results_view.rb:222
+msgid "Accuracy"
+msgstr "דיוק"
+
+#: lib/results_view.rb:237 lib/window.rb:195
+msgid "Test Type"
+msgstr "בחינת הקלדה"
+
+#: lib/results_view.rb:248 lib/window.rb:203
+msgid "Test Duration"
+msgstr "משך בחינה"
+
+#: lib/results_view.rb:259 lib/text_language_dialog.rb:52
+#: lib/text_language_dialog.rb:102 lib/text_language_dialog.rb:137
+msgid "Text Language"
+msgstr "שפת הטקסט"
+
+#. Translators: Insert the language code of your language here, for example "nb" for Norwegian Bokmaal. Do not remove the quotation marks. It's doesn't matter if there isn't a word list for the language in `data/word_lists` right now, the app will fall back to English in that case and start using the list if it becomes available in the future.
+#: lib/settings.rb:51
+msgid "\"en\""
+msgstr "\"he\""
+
+#. Translators: This is the default text for custom typing sessions. Do not translate it literally, and do not remove the quotation marks. Replace it with an appropriate "sample sentence" from your language instead. The original text is an English pangram, so you can e.g. find a pangram in your language: https://clagnut.com/blog/2380
+#: lib/settings.rb:54
+msgid "\"The quick brown fox jumps over the lazy dog.\""
+msgstr ""
+"\"השועל הירוק הזוהר רוכב על דרקון סגול תוך כדי שהוא משחק שחמט עם סוס מעופף.\""
+
+#: lib/shortcuts_dialog.rb:33
+msgctxt "shortcut dialog"
+msgid "General"
+msgstr "כללי"
+
+#: lib/shortcuts_dialog.rb:51
+msgctxt "shortcut dialog"
+msgid "Open Menu"
+msgstr "תפריט ראשי"
+
+#: lib/shortcuts_dialog.rb:52 lib/shortcuts_dialog.rb:56
+msgctxt "shortcut dialog"
+msgid "Text Language"
+msgstr "שפת הטקסט"
+
+#: lib/shortcuts_dialog.rb:53
+msgctxt "shortcut dialog"
+msgid "Cancel Test"
+msgstr "ביטול הפעלה"
+
+#: lib/shortcuts_dialog.rb:54
+msgctxt "shortcut dialog"
+msgid "Keyboard Shortcuts"
+msgstr "צירופי מקשים"
+
+#: lib/shortcuts_dialog.rb:55
+msgctxt "shortcut dialog"
+msgid "Close Window"
+msgstr "סגירת חלון"
+
+#: lib/text_language_dialog.rb:39
+msgid ""
+"You can help add a new text language to Keypunch by submitting a language "
+"request on GitHub. A GitHub account and some language knowledge is required."
+msgstr ""
+"באפשרותך לעזור ולהוסיף שפה חדשה להקלדה עיוורת על ידי הגשת בקשה לשפה חדשה "
+"ב־GitHub. נדרש חשבון GitHub ומעט ידע בשפה."
+
+#: lib/text_language_dialog.rb:114 lib/text_language_dialog.rb:234
+#: lib/text_language_dialog.rb:277
+msgid "Add Language"
+msgstr "הוספת שפה"
+
+#: lib/text_language_dialog.rb:151
+msgid "Search languages…"
+msgstr "חיפוש שפות…"
+
+#. Translators: Recent languages in text languages list
+#: lib/text_language_dialog.rb:176
+msgid "Recent"
+msgstr "בשימוש לאחרונה"
+
+#. Translators: Other languages in text languages list
+#: lib/text_language_dialog.rb:184
+msgid "Other"
+msgstr "אחר"
+
+#: lib/text_language_dialog.rb:226
+msgid "No Matches"
+msgstr "אין התאמות"
+
+#: lib/text_language_dialog.rb:231
+msgid "Try a different search"
+msgstr "יש לנסות חיפוש שונה"
+
+#: lib/text_language_dialog.rb:307
+msgid "_Create Request"
+msgstr "_הגשת בקשה"
+
+#. Translators: This is shown as a warning by GNOME Shell before logging out
+#. or shutting off the system in the middle of a typing test
+#: lib/typing_test_session.rb:46
+msgid "Ongoing typing test"
+msgstr "מתקיימת כרגע בחינת הקלדה"
+
+#. Translators: The format of the word counter. The `{}` blocks will be
+#. replaced with the number of the word being typed and the number of
+#. words in the text. Do not translate them. The `⁄` sign is a fraction
+#. slash, not the ASCII slash it resembles; if your language doesn't
+#. use something completely different, you should probably copy and
+#. paste it from the original string.
+#: lib/typing_test_session.rb:355
+msgid "{} ⁄ {}"
+msgstr "‎{} ⁄ {}"
+
+#: lib/typing_test_session.rb:407
+msgid "Changes discarded"
+msgstr "שינויים בוטלו"
+
+#: lib/typing_test_session.rb:408
+msgid "Restore"
+msgstr "שחזור"
+
+#. Translators: The format of the timer. The first `{}` block will be
+#. replaced with the minutes passed, and the second one will be replaced
+#. with the seconds passed. Do not translate the `{}` blocks. Note that
+#. the `∶` sign is a special Unicode character; if your language doesn't
+#. use something completely different, you should probably copy and paste
+#. it from the original string.
+#: lib/typing_test_session.rb:462
+msgid "{}∶{}"
+msgstr "{}:{}"
+
+#: lib/typing_test_utils.rb:31 lib/window.rb:47
+msgid "Simple"
+msgstr "פשוט"
+
+#: lib/typing_test_utils.rb:32 lib/window.rb:47
+msgid "Advanced"
+msgstr "מתקדם"
+
+#: lib/typing_test_utils.rb:68 lib/window.rb:50
+msgid "15 seconds"
+msgstr "15 שניות"
+
+#: lib/typing_test_utils.rb:69 lib/window.rb:51
+msgid "30 seconds"
+msgstr "30 שניות"
+
+#: lib/typing_test_utils.rb:70 lib/window.rb:52
+msgid "1 minute"
+msgstr "דקה אחת"
+
+#: lib/typing_test_utils.rb:71 lib/window.rb:53
+msgid "5 minutes"
+msgstr "5 דקות"
+
+#: lib/typing_test_utils.rb:72 lib/window.rb:54
+msgid "10 minutes"
+msgstr "10 דקות"
+
+#: lib/window.rb:57
+msgid ""
+"The test has been cancelled due to an excessive amount of invalid "
+"keystrokes. This will not affect your typing statistics."
+msgstr ""
+"הבחינה בוטלה עקב מספר רב מדי של הקשות לא תקינות. הדבר לא ישפיע על נתוני "
+"ההקלדה שלך."
+
+#: lib/window.rb:180
+msgid "Restart"
+msgstr "הפעלה מחדש"
+
+#: lib/window.rb:218
+msgid "_Edit Text"
+msgstr "_עריכת טקסט"
+
+#: lib/window.rb:234
+msgid "Main Menu"
+msgstr "תפריט ראשי"
+
+#: lib/window.rb:256
+msgid "Just Start Typing"
+msgstr "אפשר להתחיל להקליד"
+
+#. Translators: "Entry" here is the act of entering text
+#: lib/window.rb:263
+msgid "_Enable Entry"
+msgstr "לאפשר ה_קלדה"
+
+#: lib/window.rb:278
+msgid "Results"
+msgstr "תוצאות"
+
+#: lib/window.rb:307
+msgid "Test Cancelled"
+msgstr "בחינה בוטלה"
+
+#: lib/window.rb:362
+msgid "_Continue"
+msgstr "לה_משיך"
+
+#~ msgid ""
+#~ "typing;trainer;touch typing;keyboard;speed;wpm;words per "
+#~ "minute;accuracy;test;"
+#~ msgstr ""
+#~ "הקלדה;אימון;מקלדת;הקלדה עיוורת;מקלדת פיזית;מהירות;מילים "
+#~ "לדקה;wpm;דיוק;מבחן;בדיקה;"
+
+#~ msgid ""
+#~ "There is no doubt that typing on a keyboard is an essential skill in the "
+#~ "digital age. Typing fast and accurately gives you more opportunities, "
+#~ "more time for what matters to you, and a sense of self-accomplishment."
+#~ msgstr ""
+#~ "אין ספק שהקלדה עיוורת היא מיומנות חיונית בעידן הדיגיטלי. הקלדה מהירה "
+#~ "ומדויקת מרחיבה את מנעד ההזדמנויות שלך, מפנה זמן רב יותר ומגבירה את תחושת "
+#~ "המסוגלות."
+
+#~ msgid ""
+#~ "Keypunch lets you practice typing. Thanks to fast-paced sessions with "
+#~ "instant feedback afterwards and a plethora of available languages, you "
+#~ "might even have a little fun doing so. With determination, proper "
+#~ "technique and some time, you will observe a noticeable increase in both "
+#~ "the speed and the accuracy of which your thoughts and ideas are put into "
+#~ "words on the screen."
+#~ msgstr ""
+#~ "היישום הקלדה עיוורת מאפשר לך לתרגל את ההקלדה שלך. תודות לתרגולים מהירים "
+#~ "ולמשוב מיידי ושפע של שפות זמינות, אפשר אפילו ליהנות מזה מעט. עם מספיק "
+#~ "נחישות, טכניקה נכונה וקצת זמן, אפשר לצפות לשיפור ניכר הן במהירות והן "
+#~ "בדיוק ההקלדה שלך."
+
+#~ msgid ""
+#~ "If you are already a racer at typing, Keypunch still has something for "
+#~ "you. Try practicing with numbers and punctuation, or choose your own text "
+#~ "to type out as fast as you can."
+#~ msgstr ""
+#~ "אם כבר רכשת מיומנות בהקלדה עיוורת, ליישום זה עדיין יש מה להציע לך. ניתן "
+#~ "לתרגל הקלדה עיוורת עם מספרים, סימני פיסוק ואף להזין טקסט לבחירתך ולבחון "
+#~ "את מהירות ההקלדה שלך עליו."
+
+#~ msgid "Get ready to accelerate your typing!"
+#~ msgstr "היכונו לשיפור ההקלדה שלכם!"
+
+#~ msgid ""
+#~ "Keypunch is proudly part of GNOME Circle, an initiative that champions "
+#~ "the great software that is available for the GNOME platform. For more "
+#~ "information, visit the GNOME Circle website."
+#~ msgstr ""
+#~ "מיזם „הקלדה עיוורת” גאה להיות חלק מ־GNOME Circle, יוזמה שמרימה לתוכנות "
+#~ "המדהימות שזמינות לפלטפורמת GNOME. למידע נוסף, מומלץ לבקר באתר של GNOME "
+#~ "Circle ."
+
+#~ msgid "In the middle of a session"
+#~ msgstr "באמצע ההקלדה"
+
+#~ msgid "Ready for typing"
+#~ msgstr "מוכן להקלדה"
+
+#~ msgid "Session results"
+#~ msgstr "תוצאות ההקלדה"
+
+#~ msgid "Language selection"
+#~ msgstr "בחירת שפה"
+
+#~ msgid "Custom text entry"
+#~ msgstr "הזנת טקסט מותאם אישית"
+
+#~ msgid "Window Width"
+#~ msgstr "רוחב חלון"
+
+#~ msgid "Window Height"
+#~ msgstr "גובה חלון"
+
+#~ msgid "Window Maximization"
+#~ msgstr "האם החלון מוגדל"
+
+#~ msgid "Session Type"
+#~ msgstr "סוג הפעלה"
+
+#~ msgid "Session Duration"
+#~ msgstr "משך הפעלה"
+
+#~ msgid "The duration of time-based sessions"
+#~ msgstr "משך זמן של הפעלה מבוססת זמן"
+
+#~ msgid "The code of the language used for automatically generated text"
+#~ msgstr "קוד השפה שבשימוש לטקסט שנוצר באופן אוטומטי"
+
+#~ msgid "Recent Languages"
+#~ msgstr "שפות בשימוש לאחרונה"
+
+#~ msgid ""
+#~ "Languages shown in the list of recent ones in the text language dialog"
+#~ msgstr "שפות מוצגות ברשימה בשימוש לאחרונה הן שפות בדו שיח של טקסט השפה"
+
+#~ msgid "Text displayed when “Custom” is chosen from the session menu"
+#~ msgstr "טקסט שמוצג כאשר „מותאם אישית” נבחר מתפריט ההפעלה"
+
+#~ msgid "Personal Best"
+#~ msgstr "שיא אישי"
+
+#~ msgid ""
+#~ "The current highest amount of WPM received for each session type / "
+#~ "duration and language"
+#~ msgstr "מספר המילים לדקה הגבוה ביותר שהתקבל עבור כל סוג או משך הפעלה ושפה"
+
+#~ msgid "Search Results"
+#~ msgstr "תוצאות חיפוש"
+
+#~ msgid "Text View"
+#~ msgstr "תצוגת טקסט"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Text Language"
+#~ msgstr "שפת הטקסט"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Quit"
+#~ msgstr "יציאה"
+
+#~ msgid "Frustration Relief"
+#~ msgstr "הקלה בתסכול"
+
+#~ msgid "Frustration Detected"
+#~ msgstr "זוהה תסכול"
+
+#~ msgid ""
+#~ "You learn faster in a calm state of mind. Consider taking a break. The "
+#~ "test has been cancelled, and will not affect your typing statistics."
+#~ msgstr ""
+#~ "שקט נפשי מאיץ את הלימוד. כדאי לנוח קצת. הבחינה בוטלה ולא תשפיע על "
+#~ "סטטיסטיקת ההקלדה שלך."
+
+#~ msgid "Correctness"
+#~ msgstr "דיוק"

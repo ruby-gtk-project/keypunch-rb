@@ -1,0 +1,10 @@
+lib/about_dialog.rb
+lib/custom_text_dialog.rb
+lib/primary_menu.rb
+lib/results_view.rb
+lib/settings.rb
+lib/shortcuts_dialog.rb
+lib/text_language_dialog.rb
+lib/typing_test_session.rb
+lib/typing_test_utils.rb
+lib/window.rb

@@ -1,0 +1,449 @@
+# Kazakh translation for Keypunch.
+# Copyright (C) 2026 Keypunch's COPYRIGHT HOLDER
+# This file is distributed under the same license as the Keypunch package.
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>,  2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Keypunch main\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-03 00:11+0000\n"
+"PO-Revision-Date: 2026-07-27 16:38+0500\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
+"Language-Team: Kazakh <Kazakh>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
+
+#: lib/about_dialog.rb:24 lib/window.rb:119
+msgid "Keypunch"
+msgstr "Keypunch"
+
+#: lib/about_dialog.rb:27
+msgid "Practice your typing skills"
+msgstr "Теру дағдыларын жаттықтыру"
+
+#: lib/about_dialog.rb:57
+msgid "Fretboard"
+msgstr "Fretboard"
+
+#: lib/about_dialog.rb:58
+msgid "Look up guitar chords"
+msgstr "Гитара аккордтарын іздеу"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: lib/about_dialog.rb:61
+msgid "translator-credits"
+msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
+
+#: lib/about_dialog.rb:84
+msgid "Donate"
+msgstr "Демеушілік ету"
+
+#: lib/about_dialog.rb:85
+msgid "Orthography by"
+msgstr "Орфография авторы:"
+
+#: lib/about_dialog.rb:86
+msgid "Special thanks to"
+msgstr "Ерекше алғыс:"
+
+#: lib/custom_text_dialog.rb:35 lib/custom_text_dialog.rb:116
+msgid "Custom Text"
+msgstr "Пайдаланушылық мәтін"
+
+#: lib/custom_text_dialog.rb:125
+msgid "Insert custom text…"
+msgstr "Таңдаулы мәтінді кірістіру…"
+
+#: lib/custom_text_dialog.rb:154
+msgid "_Save"
+msgstr "_Сақтау"
+
+#: lib/primary_menu.rb:19
+msgid "Text _Language"
+msgstr "Мәтін _тілі"
+
+#: lib/primary_menu.rb:20
+msgid "_Keyboard Shortcuts"
+msgstr "_Пернетақта жарлықтары"
+
+#: lib/primary_menu.rb:21
+msgid "_About Keypunch"
+msgstr "Keypunch _туралы"
+
+#. Translators: The percentage label format of the results page. The `{}`
+#. block will be replaced with the percentage number, do not translate it!
+#: lib/results_view.rb:116
+msgid "{}%"
+msgstr "{}%"
+
+#: lib/results_view.rb:126 lib/window.rb:47
+msgid "Custom"
+msgstr "Таңдаулы"
+
+#. Translators: The `{}` blocks will be replaced with the number of
+#. minutes and seconds. Do not translate them!
+#: lib/results_view.rb:140
+msgid "{}m {}s"
+msgstr "{}м {}с"
+
+#. Translators: The `{}` block will be replaced with the number of
+#. minutes. Do not translate it!
+#: lib/results_view.rb:144
+msgid "{} minute"
+msgid_plural "{} minutes"
+msgstr[0] "{} минут"
+
+#. Translators: The `{}` block will be replaced with the number of
+#. seconds. Do not translate it!
+#: lib/results_view.rb:148
+msgid "{} second"
+msgid_plural "{} seconds"
+msgstr[0] "{} секунд"
+
+#: lib/results_view.rb:195
+msgid "New Personal Best for Configuration"
+msgstr "Конфигурация үшін жаңа жеке рекорд"
+
+#: lib/results_view.rb:202
+msgid "Words per Minute"
+msgstr "Минутына сөздер"
+
+#: lib/results_view.rb:222
+msgid "Accuracy"
+msgstr "Дәлдік"
+
+#: lib/results_view.rb:237 lib/window.rb:195
+msgid "Test Type"
+msgstr "Тест түрі"
+
+#: lib/results_view.rb:248 lib/window.rb:203
+msgid "Test Duration"
+msgstr "Тест ұзақтығы"
+
+#: lib/results_view.rb:259 lib/text_language_dialog.rb:52
+#: lib/text_language_dialog.rb:102 lib/text_language_dialog.rb:137
+msgid "Text Language"
+msgstr "Мәтін тілі"
+
+#. Translators: Insert the language code of your language here, for example "nb" for Norwegian Bokmaal. Do not remove the quotation marks. It's doesn't matter if there isn't a word list for the language in `data/word_lists` right now, the app will fall back to English in that case and start using the list if it becomes available in the future.
+#: lib/settings.rb:51
+msgid "\"en\""
+msgstr "\"kk\""
+
+#. Translators: This is the default text for custom typing sessions. Do not translate it literally, and do not remove the quotation marks. Replace it with an appropriate "sample sentence" from your language instead. The original text is an English pangram, so you can e.g. find a pangram in your language: https://clagnut.com/blog/2380
+#: lib/settings.rb:54
+msgid "\"The quick brown fox jumps over the lazy dog.\""
+msgstr "\"Жүйрік қоңыр түлкі жалқау иттің үстінен секіріп өтеді.\""
+
+#: lib/shortcuts_dialog.rb:33
+msgctxt "shortcut dialog"
+msgid "General"
+msgstr "Жалпы"
+
+#: lib/shortcuts_dialog.rb:51
+msgctxt "shortcut dialog"
+msgid "Open Menu"
+msgstr "Мәзірді ашу"
+
+#: lib/shortcuts_dialog.rb:52 lib/shortcuts_dialog.rb:56
+msgctxt "shortcut dialog"
+msgid "Text Language"
+msgstr "Мәтін тілі"
+
+#: lib/shortcuts_dialog.rb:53
+msgctxt "shortcut dialog"
+msgid "Cancel Test"
+msgstr "Сынақтан бас тарту"
+
+#: lib/shortcuts_dialog.rb:54
+msgctxt "shortcut dialog"
+msgid "Keyboard Shortcuts"
+msgstr "Пернетақта жарлықтары"
+
+#: lib/shortcuts_dialog.rb:55
+msgctxt "shortcut dialog"
+msgid "Close Window"
+msgstr "Терезені жабу"
+
+#: lib/text_language_dialog.rb:39
+msgid ""
+"You can help add a new text language to Keypunch by submitting a language "
+"request on GitHub. A GitHub account and some language knowledge is required."
+msgstr ""
+"GitHub-та тілге сұраныс жіберу арқылы Keypunch-қа жаңа мәтін тілін қосуға "
+"көмектесе аласыз. Ол үшін GitHub тіркелгісі мен тіл білімі қажет."
+
+#: lib/text_language_dialog.rb:114 lib/text_language_dialog.rb:234
+#: lib/text_language_dialog.rb:277
+msgid "Add Language"
+msgstr "Тілді қосу"
+
+#: lib/text_language_dialog.rb:151
+msgid "Search languages…"
+msgstr "Тілдерді іздеу…"
+
+#. Translators: Recent languages in text languages list
+#: lib/text_language_dialog.rb:176
+msgid "Recent"
+msgstr "Соңғылар"
+
+#. Translators: Other languages in text languages list
+#: lib/text_language_dialog.rb:184
+msgid "Other"
+msgstr "Басқа"
+
+#: lib/text_language_dialog.rb:226
+msgid "No Matches"
+msgstr "Сәйкестіктер табылмады"
+
+#: lib/text_language_dialog.rb:231
+msgid "Try a different search"
+msgstr "Басқаша іздеп көріңіз"
+
+#: lib/text_language_dialog.rb:307
+msgid "_Create Request"
+msgstr "Сұраныс _жасау"
+
+#. Translators: This is shown as a warning by GNOME Shell before logging out
+#. or shutting off the system in the middle of a typing test
+#: lib/typing_test_session.rb:46
+msgid "Ongoing typing test"
+msgstr "Ағымдағы теру тесті"
+
+#. Translators: The format of the word counter. The `{}` blocks will be
+#. replaced with the number of the word being typed and the number of
+#. words in the text. Do not translate them. The `⁄` sign is a fraction
+#. slash, not the ASCII slash it resembles; if your language doesn't
+#. use something completely different, you should probably copy and
+#. paste it from the original string.
+#: lib/typing_test_session.rb:355
+msgid "{} ⁄ {}"
+msgstr ""
+
+#: lib/typing_test_session.rb:407
+msgid "Changes discarded"
+msgstr ""
+
+#: lib/typing_test_session.rb:408
+#, fuzzy
+msgid "Restore"
+msgstr "Қайта іске қосу"
+
+#. Translators: The format of the timer. The first `{}` block will be
+#. replaced with the minutes passed, and the second one will be replaced
+#. with the seconds passed. Do not translate the `{}` blocks. Note that
+#. the `∶` sign is a special Unicode character; if your language doesn't
+#. use something completely different, you should probably copy and paste
+#. it from the original string.
+#: lib/typing_test_session.rb:462
+msgid "{}∶{}"
+msgstr "{}∶{}"
+
+#: lib/typing_test_utils.rb:31 lib/window.rb:47
+msgid "Simple"
+msgstr "Қарапайым"
+
+#: lib/typing_test_utils.rb:32 lib/window.rb:47
+msgid "Advanced"
+msgstr "Кеңейтілген"
+
+#: lib/typing_test_utils.rb:68 lib/window.rb:50
+msgid "15 seconds"
+msgstr "15 секунд"
+
+#: lib/typing_test_utils.rb:69 lib/window.rb:51
+msgid "30 seconds"
+msgstr "30 секунд"
+
+#: lib/typing_test_utils.rb:70 lib/window.rb:52
+msgid "1 minute"
+msgstr "1 минут"
+
+#: lib/typing_test_utils.rb:71 lib/window.rb:53
+msgid "5 minutes"
+msgstr "5 минут"
+
+#: lib/typing_test_utils.rb:72 lib/window.rb:54
+msgid "10 minutes"
+msgstr "10 минут"
+
+#: lib/window.rb:57
+msgid ""
+"The test has been cancelled due to an excessive amount of invalid "
+"keystrokes. This will not affect your typing statistics."
+msgstr ""
+"Жарамсыз пернелердің шамадан тыс көп басылуына байланысты сынақ "
+"болдырылмады. Бұл теру статистикаңызға әсер етпейді."
+
+#: lib/window.rb:180
+msgid "Restart"
+msgstr "Қайта іске қосу"
+
+#: lib/window.rb:218
+msgid "_Edit Text"
+msgstr "Мәтінді _түзету"
+
+#: lib/window.rb:234
+msgid "Main Menu"
+msgstr "Негізгі мәзір"
+
+#: lib/window.rb:256
+msgid "Just Start Typing"
+msgstr "Теруді бастаңыз"
+
+#. Translators: "Entry" here is the act of entering text
+#: lib/window.rb:263
+msgid "_Enable Entry"
+msgstr "_Енгізуді іске қосу"
+
+#: lib/window.rb:278
+msgid "Results"
+msgstr "Нәтижелер"
+
+#: lib/window.rb:307
+msgid "Test Cancelled"
+msgstr "Сынақ болдырылмады"
+
+#: lib/window.rb:362
+msgid "_Continue"
+msgstr "_Жалғастыру"
+
+#~ msgid ""
+#~ "typing;trainer;touch typing;keyboard;speed;wpm;words per "
+#~ "minute;accuracy;test;"
+#~ msgstr ""
+#~ "теру;жаттықтырғыш;соқыр теру;пернетақта;жылдамдық;жми;минутына "
+#~ "сөздер;дәлдік;тест;"
+
+#~ msgid ""
+#~ "There is no doubt that typing on a keyboard is an essential skill in the "
+#~ "digital age. Typing fast and accurately gives you more opportunities, "
+#~ "more time for what matters to you, and a sense of self-accomplishment."
+#~ msgstr ""
+#~ "Цифрлық дәуірде пернетақтада теру маңызды дағды екеніне күмән жоқ. Жылдам "
+#~ "және дәл теру сізге көбірек мүмкіндіктер, сіз үшін маңызды нәрселерге "
+#~ "көбірек уақыт және өзіңізге деген сенімділік береді."
+
+#~ msgid ""
+#~ "Keypunch lets you practice typing. Thanks to fast-paced sessions with "
+#~ "instant feedback afterwards and a plethora of available languages, you "
+#~ "might even have a little fun doing so. With determination, proper "
+#~ "technique and some time, you will observe a noticeable increase in both "
+#~ "the speed and the accuracy of which your thoughts and ideas are put into "
+#~ "words on the screen."
+#~ msgstr ""
+#~ "Keypunch теруді жаттықтыруға мүмкіндік береді. Соңынан жедел кері "
+#~ "байланыс берілетін қарқынды сеанстар мен көптеген қолжетімді тілдердің "
+#~ "арқасында сіз тіпті бұл процестен ләззат ала аласыз. Табандылық, дұрыс "
+#~ "техника және біраз уақыт жұмсасаңыз, ойларыңыз бен идеяларыңыздың экранда "
+#~ "сөзбен бейнелену жылдамдығы мен дәлдігінің айтарлықтай артқанын байқайсыз."
+
+#~ msgid ""
+#~ "If you are already a racer at typing, Keypunch still has something for "
+#~ "you. Try practicing with numbers and punctuation, or choose your own text "
+#~ "to type out as fast as you can."
+#~ msgstr ""
+#~ "Егер сіз теру шебері болсаңыз да, Keypunch-та сіз үшін қызықты нәрселер "
+#~ "бар. Сандармен және тыныс белгілерімен жаттығып көріңіз немесе өз "
+#~ "мәтініңізді таңдап, оны мүмкіндігінше жылдам теріңіз."
+
+#~ msgid "Get ready to accelerate your typing!"
+#~ msgstr "Теру жылдамдығын арттыруға дайын болыңыз!"
+
+#~ msgid ""
+#~ "Keypunch is proudly part of GNOME Circle, an initiative that champions "
+#~ "the great software that is available for the GNOME platform. For more "
+#~ "information, visit the GNOME Circle website."
+#~ msgstr ""
+#~ "Keypunch - GNOME платформасына арналған тамаша бағдарламалық қамтаманы "
+#~ "қолдайтын GNOME Circle бастамасының мүшесі. Қосымша ақпарат алу үшін "
+#~ "GNOME Circle веб-сайтына кіріңіз."
+
+#~ msgid "In the middle of a session"
+#~ msgstr "Сеанс ортасында"
+
+#~ msgid "Ready for typing"
+#~ msgstr "Теруге дайын"
+
+#~ msgid "Session results"
+#~ msgstr "Сеанс нәтижелері"
+
+#~ msgid "Language selection"
+#~ msgstr "Тілді таңдау"
+
+#~ msgid "Custom text entry"
+#~ msgstr "Таңдаулы мәтінді енгізу"
+
+#~ msgid "Window Width"
+#~ msgstr "Терезе ені"
+
+#~ msgid "Window Height"
+#~ msgstr "Терезе биіктігі"
+
+#~ msgid "Window Maximization"
+#~ msgstr "Терезені жаймалау"
+
+#~ msgid "Session Type"
+#~ msgstr "Сеанс түрі"
+
+#~ msgid "Session Duration"
+#~ msgstr "Сеанс ұзақтығы"
+
+#~ msgid "The duration of time-based sessions"
+#~ msgstr "Уақытқа негізделген сеанстардың ұзақтығы"
+
+#~ msgid "The code of the language used for automatically generated text"
+#~ msgstr "Автоматты түрде жасалатын мәтін үшін қолданылатын тіл коды"
+
+#~ msgid "Recent Languages"
+#~ msgstr "Соңғы тілдер"
+
+#~ msgid ""
+#~ "Languages shown in the list of recent ones in the text language dialog"
+#~ msgstr ""
+#~ "Мәтін тілі сұхбат терезесіндегі соңғы тілдер тізімінде көрсетілетін тілдер"
+
+#~ msgid "Text displayed when “Custom” is chosen from the session menu"
+#~ msgstr "Сеанс мәзірінен \"Пайдаланушылық\" таңдалғанда көрсетілетін мәтін"
+
+#~ msgid "Personal Best"
+#~ msgstr "Жеке рекорд"
+
+#~ msgid ""
+#~ "The current highest amount of WPM received for each session type / "
+#~ "duration and language"
+#~ msgstr ""
+#~ "Әрбір сеанс түрі / ұзақтығы және тілі үшін алынған ағымдағы ең жоғары ЖМИ "
+#~ "мәні"
+
+#~ msgid "Search Results"
+#~ msgstr "Іздеу нәтижелері"
+
+#~ msgid "Text View"
+#~ msgstr "Мәтінді көру"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Text Language"
+#~ msgstr "Мәтін тілі"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Quit"
+#~ msgstr "Шығу"
+
+#~ msgid "Frustration Relief"
+#~ msgstr "Ашуды басу"
+
+#~ msgid "Frustration Detected"
+#~ msgstr "Ашуланғаныңыз байқалды"
+
+#~ msgid ""
+#~ "You learn faster in a calm state of mind. Consider taking a break. The "
+#~ "test has been cancelled, and will not affect your typing statistics."
+#~ msgstr ""
+#~ "Сабырлы күйде тезірек үйренесіз. Үзіліс жасауды қарастырыңыз. Тесттен бас "
+#~ "тартылды және ол теру статистикаңызға әсер етпейді."
