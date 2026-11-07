@@ -20,8 +20,17 @@ rescue LoadError => error
 end
 
 # External RSpec & related config
-require "kettle/test/rspec"
-# `kettle/test/rspec` installs harness helpers documented in spec/README.md.
+begin
+  require "kettle/test/rspec"
+  # `kettle/test/rspec` installs harness helpers documented in spec/README.md.
+rescue LoadError => error
+  # The dev shell's RUBYLIB does not carry kettle-test (see spec/README.md for
+  # the helpers this costs). Specs still run under plain RSpec without it;
+  # anything genuinely missing only shows up as a NoMethodError inside an
+  # example that tried to use one of those helpers, not as a load failure for
+  # the whole suite.
+  raise error unless error.message.include?("kettle")
+end
 
 # This library
 require "keypunch/rb"
