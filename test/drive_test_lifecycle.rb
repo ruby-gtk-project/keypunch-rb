@@ -17,9 +17,16 @@ $LOAD_PATH.unshift(File.expand_path("../lib", __dir__))
 require "keypunch"
 require_relative "gtk_driver"
 
-# Comfortably more than the twenty-two mistakes in 2.2 seconds that
-# TypingTestSession::FRUSTRATION_THRESHOLD works out to.
-MASHED_KEYS = 40
+# Each mistake needs more than ten per second of
+# TypingTestSession::FRUSTRATION_THRESHOLD to cancel the test, but every
+# keystroke here forces a real text-view layout pass (for the caret position)
+# on top of the Ruby call overhead, and under headless/software rendering
+# that single pass alone can run into the hundreds of milliseconds — slower,
+# some runs, than the rate the threshold needs. There is no way to mash fast
+# enough to guarantee hitting the window on every run, so this keeps mashing,
+# checking after every key, until the test actually cancels or a generous cap
+# is reached, rather than firing a fixed count and hoping it was enough.
+MAX_MASHED_KEYS = 300
 
 SHOTS = File.expand_path("../tmp/shots", __dir__)
 
@@ -48,7 +55,11 @@ GtkDriver.drive(application, shots: SHOTS) do |driver, app|
   end
 
   driver.step("mash the keyboard") do
-    MASHED_KEYS.times { window.call.text_view.input_context.signal_emit("commit", "~") }
+    MAX_MASHED_KEYS.times do
+      break unless window.call.running?
+
+      window.call.text_view.input_context.signal_emit("commit", "~")
+    end
   end
 
   driver.step("the test was cancelled") do
