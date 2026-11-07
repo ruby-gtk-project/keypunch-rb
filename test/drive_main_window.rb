@@ -91,7 +91,49 @@ GtkDriver.drive(application, shots: SHOTS) do |driver, app|
   driver.step("the custom text dialog is up") do
     driver.check("a dialog is showing") { !window.call.window.visible_dialog.nil? }
     driver.check("it holds the stored text") { window.call.window.visible_dialog.text == CUSTOM_TEXT }
+    driver.check("save is sensitive with real text") { window.call.window.visible_dialog.save_button.sensitive? }
     driver.shot("05-custom-text", window.call.window.visible_dialog)
+  end
+
+  driver.step("clear the text to nothing but whitespace") do
+    window.call.window.visible_dialog.buffer.text = "   "
+  end
+
+  driver.step("whitespace-only text is rejected but keeps its placeholder hidden") do
+    driver.check("the placeholder stays hidden (the field is not truly empty)") do
+      !window.call.window.visible_dialog.placeholder.visible?
+    end
+    driver.check("save is insensitive with only whitespace") { !window.call.window.visible_dialog.save_button.sensitive? }
+  end
+
+  driver.step("clear the text completely") do
+    window.call.window.visible_dialog.buffer.text = ""
+  end
+
+  driver.step("the empty state is showing") do
+    driver.check("the placeholder reappears") { window.call.window.visible_dialog.placeholder.visible? }
+    driver.check("save is insensitive when empty") { !window.call.window.visible_dialog.save_button.sensitive? }
+    driver.shot("05a-custom-text-empty", window.call.window.visible_dialog)
+  end
+
+  driver.step("type something different instead of saving") do
+    window.call.window.visible_dialog.buffer.text = "a different line"
+  end
+
+  driver.step("close without saving") { window.call.window.visible_dialog.close }
+
+  driver.step("the unsaved change was discarded, not saved") do
+    driver.check("the stored custom text is unchanged") { app.settings["custom-text"] == CUSTOM_TEXT }
+    driver.shot("05b-discard-toast")
+  end
+
+  driver.step("reopen the custom text dialog") do
+    window.call.custom_button.signal_emit("clicked")
+  end
+
+  driver.step("it is back to the stored text, not the discarded one") do
+    driver.check("a dialog is showing") { !window.call.window.visible_dialog.nil? }
+    driver.check("the discarded text was not kept") { window.call.window.visible_dialog.text == CUSTOM_TEXT }
   end
 
   driver.step("close it") { window.call.window.visible_dialog.close }
@@ -125,6 +167,17 @@ GtkDriver.drive(application, shots: SHOTS) do |driver, app|
       window.call.window.visible_dialog.stack.visible_child_name == "no-results"
     end
     driver.shot("08-language-empty", window.call.window.visible_dialog)
+  end
+
+  driver.step("open the add-language page") do
+    window.call.window.visible_dialog.add_language_button.signal_emit("clicked")
+  end
+
+  driver.step("the add-language page is showing") do
+    driver.check("the navigation moved to the add-language page") do
+      window.call.window.visible_dialog.navigation_view.visible_page.tag == "add-language"
+    end
+    driver.shot("08a-add-language", window.call.window.visible_dialog)
   end
 
   driver.step("close it") { window.call.window.visible_dialog.close }
