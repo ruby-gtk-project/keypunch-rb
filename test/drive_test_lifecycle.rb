@@ -90,4 +90,29 @@ GtkDriver.drive(application, shots: SHOTS) do |driver, app|
     end
     driver.shot("23-wide")
   end
+
+  driver.step("focus the text view, then take focus away from the window entirely") do
+    window.call.focus_text_view
+    window.call.window.set_focus(nil)
+  end
+
+  # WindowFocus debounces for WindowFocus::UNFOCUSED_TIMEOUT_MILLIS (2000ms)
+  # before blurring, so a handful of empty ticks have to pass first.
+  4.times { |n| driver.step("waiting for the unfocus timeout (#{n})") {} }
+
+  driver.step("the unfocused affordance showed up") do
+    driver.check("the enable-entry button replaced the prompt") do
+      window.call.bottom_stack.visible_child == window.call.focus_button
+    end
+    driver.check("the text view is blurred") { window.call.text_view.root.css_classes.include?("unfocused") }
+    driver.shot("24-unfocused")
+  end
+
+  driver.step("click the enable-entry button") { window.call.focus_button.signal_emit("clicked") }
+
+  driver.step("focus came back") do
+    driver.check("the text view lost the blur") { !window.call.text_view.root.css_classes.include?("unfocused") }
+    driver.check("the prompt is back") { window.call.bottom_stack.visible_child == window.call.just_start_typing }
+    driver.shot("25-refocused")
+  end
 end
