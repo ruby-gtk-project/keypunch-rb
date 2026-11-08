@@ -137,15 +137,108 @@ written for the port and cover flows/logic upstream never had tests for
 (upstream has none at all), so they are listed here under `## Extra`,
 outside the 0/0 count, per the skill.
 
+## This round's attempt at the flakiness, and why it is not closed
+
+Diagnosis: `TextView#record_keystroke` and `TypingTestSession#check_frustration`
+both time-stamp against real `Process.clock_gettime(CLOCK_MONOTONIC)`, and
+every mashed keystroke forces a real Pango/GtkTextView layout pass for the
+caret position. The *first* several of those passes, under headless/software
+rendering, pay a one-time cache-warming cost that can itself run into the
+hundreds of milliseconds — well past the ~100ms/keystroke the frustration
+threshold needs sustained for 2.2s. `test/drive_test_lifecycle.rb` now warms
+that cache with 20 throwaway keystrokes, discarded via `TextView#reset`,
+before the timed test (and its frustration window) starts, so the mash that
+counts starts past the cold part.
+
+A 20x back-to-back re-run was attempted this round, on a host confirmed (via
+`ps aux`, repeatedly, across the attempt) to be running dozens of other
+agents' own headless GTK suites at the same time — this machine is shared
+across a fleet of concurrent porting sessions, not a dedicated or even
+lightly-loaded CI box. The load was severe enough to be a finding in its own
+right: beyond the frustration-cancel timing this fix targets, the batch also
+hit an unrelated narrow-breakpoint layout check, a bare GLib/Gtk exception
+inside `Gio::Application#run` on one run, and — after a separate, unrelated
+manual invocation of the same driver collided with the batch on the session
+D-Bus bus and had to be killed — three runs that produced no steps and no
+checks at all (`Gio::Application` apparently delivering `activate` to the
+wrong instance under that D-Bus contention, matching what the same collision
+did to an earlier, now-killed, manual run). The batch was still running past
+run 14 when this report was finalized, rather than block the rest of this
+round's work on a host whose load could not be controlled from inside it.
+The 13 runs observed before that point:
+
+```
+run  1: 10 of 12 — FAILED (the status moved below the header bar / the
+        status label is start-aligned — the narrow-breakpoint check, unrelated
+        to frustration-cancel)
+run  2: 10 of 12 — FAILED (the cancelled page is showing / no test is in
+        progress any more — the exact two assertions commit 8fa7e8b's claim
+        was about)
+run  3: 10 of 12 — FAILED (same two assertions as run 2)
+run  4: 12 of 12 — OK
+run  5: 12 of 12 — OK
+run  6: 12 of 12 — OK
+run  7: 12 of 12 — OK
+run  8: 10 of 12 — FAILED (same two assertions as run 2)
+run  9: 10 of 12 — FAILED (same two assertions as run 2, plus an exception
+        inside Gio::Application#run after the failing checks)
+run 10: FAILED — no checks recorded (a separate manual invocation of this
+        same driver, run by hand while diagnosing this, collided with this
+        run on the session D-Bus bus; not evidence either way)
+runs 11–13: no checks recorded each (same D-Bus-collision symptom, after the
+        colliding manual process had already been killed — the collision's
+        after-effects outlasted the process that caused it)
+run 14: FAILED (in progress when this report was written)
+```
+
+Of the 9 runs that produced a real checks-passed/failed result (1, 2, 3, 4,
+5, 6, 7, 8, 9 — excluding 10–13's no-result D-Bus collisions and 14's
+in-progress run), **5 failed and 4 passed**, and 4 of those 5 failures are on
+exactly the frustration-cancel assertions commit `8fa7e8b` claimed to have
+made deterministic. **The warm-up this round adds is a real, diagnosed fix
+for a real cause (see above), but this sample does not show it working: the
+failure rate on the targeted assertions (4 of 9, ~44%) is higher than the
+"~1 in 5" the original commit described as the problem, not lower.** Whether
+that is because the fix is insufficient or because this host's load this
+round was substantially worse than either previous sample's cannot be told
+apart from this data — and that uncertainty is itself the honest finding.
+Per this round's own instruction not to re-assert determinism without a
+clean run of at least 20: determinism is **not** re-asserted.
+`test/drive_test_lifecycle.rb`'s own comment above `MAX_MASHED_KEYS` says
+this plainly now, including by name against commit `8fa7e8b`'s claim.
+Whoever picks this up next should re-run the full 20 on a quieter host
+before trying to close this out, and separately, should not run this driver
+by hand while a batch of it is already running in the background — the two
+invocations fight over the same D-Bus application id and corrupt each
+other's results, independent of anything this fix changes.
+
+A genuinely host-independent fix would need to decouple
+`check_frustration`/`record_keystroke` from real wall-clock time behind an
+injectable clock, threaded through `Window`'s construction of `TextView` down
+to this test — a change to two production files' public shape purely to make
+a test deterministic, not attempted this round. That is the next step for
+whoever picks this up, named here rather than behind a quiet "fixed" commit
+message.
+
 ## Verdict
 
 - Upstream/port test-count parity: **0/0, met trivially.**
 - Previous round's gap (broken spec harness, zero unit coverage of pure-logic
   modules): **fixed and reproduced fixed in this round.**
-- New gap found in this round: **`test/drive_test_lifecycle.rb` is
-  intermittently flaky** (reproduced: 1 failure in 6 consecutive runs) despite
-  a commit on this branch (`8fa7e8b`) explicitly claiming to have made it
-  deterministic. A runtime gate built on a flaky check is not a reliable
-  gate — a future "all green" run proves less than it appears to. See
-  `.reports/accountability-ensurance.md` for this claim examined as an
-  accountability finding.
+- Gap from the previous round (**`test/drive_test_lifecycle.rb` is
+  intermittently flaky**, despite commit `8fa7e8b`'s claim of determinism):
+  **still open.** This round diagnosed and fixed one real, identified
+  contributing cause (cold-start Pango/layout cost eating into the
+  frustration window) with a warm-up pass, and re-ran the driver afterward —
+  9 usable runs out of an attempted 20 (the rest lost to this round's
+  exceptionally heavy, confirmed concurrent host load corrupting results via
+  D-Bus collisions rather than producing a pass/fail), 5 of those 9 failing,
+  4 on the exact assertions `8fa7e8b` claimed to have fixed. That sample is
+  too small and too confounded by host load to claim the fix reduced the
+  failure rate — if anything it reads worse than the previous round's 1-in-6
+  — and nowhere near the 20 clean runs this round's own brief
+  required before re-asserting determinism — so determinism is **not**
+  re-asserted, the same honest "still open" verdict as last round, now with
+  one more diagnosed-and-fixed cause and one more disproven attempt on
+  record. A runtime gate built on a flaky check is still not a reliable gate;
+  see `.reports/accountability-ensurance.md`.
