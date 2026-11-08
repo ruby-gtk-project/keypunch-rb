@@ -193,6 +193,15 @@ GtkDriver.drive(application, shots: SHOTS) do |driver, app|
 
   driver.step("close it") { window.call.window.visible_dialog.close }
 
+  driver.step("the header bar's menu button carries upstream's three-item menu") do
+    driver.check("it is a Gtk::MenuButton") { window.call.menu_button.is_a?(Gtk::MenuButton) }
+    driver.check("its icon is the hamburger") { window.call.menu_button.icon_name == "open-menu-symbolic" }
+    window.call.menu_button.menu_model.then do |model|
+      driver.check("the model is a Gio::Menu") { model.is_a?(Gio::Menu) }
+      driver.check("it carries one section") { model.n_items == 1 }
+    end
+  end
+
   driver.step("open the shortcuts dialog") do
     app.app.activate_action("shortcuts", nil)
   end
