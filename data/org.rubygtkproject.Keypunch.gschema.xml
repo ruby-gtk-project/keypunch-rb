@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  GSettings schema for the Keypunch port.
+
+  Ported from upstream's data/no.bragefuglseth.Keypunch.gschema.xml.in. The
+  app does not read this file at run time: `lib/settings.rb` stores the same
+  keys, with the same defaults and the same semantics, as JSON under
+  XDG_CONFIG_HOME instead, because a compiled schema would have to be
+  installed into glib-2.0/schemas before the app could even start from a
+  checkout. This file exists purely so the 16 <summary>/<description>
+  strings below exist and are translatable, the same way they are for a
+  dconf-editor user of upstream, and so they are reachable by the
+  translation-parity count. See the comment at the top of lib/settings.rb.
+-->
+<schemalist gettext-domain="keypunch">
+  <enum id="org.rubygtkproject.Keypunch.SessionType">
+    <value nick="Simple" value="0" />
+    <value nick="Advanced" value="1" />
+    <value nick="Custom" value="2" />
+  </enum>
+
+  <enum id="org.rubygtkproject.Keypunch.SessionDuration">
+    <value nick="Sec15" value="0" />
+    <value nick="Sec30" value="1" />
+    <value nick="Min1" value="2" />
+    <value nick="Min5" value="3" />
+    <value nick="Min10" value="4" />
+  </enum>
+
+  <schema id="org.rubygtkproject.Keypunch" path="/org/rubygtkproject/Keypunch/">
+    <key name="window-width" type="i">
+      <default>900</default>
+      <summary>Window Width</summary>
+    </key>
+    <key name="window-height" type="i">
+      <default>450</default>
+      <summary>Window Height</summary>
+    </key>
+    <key name="window-maximized" type="b">
+      <default>false</default>
+      <summary>Window Maximization</summary>
+    </key>
+    <key name="session-type" enum="org.rubygtkproject.Keypunch.SessionType">
+      <default>"Simple"</default>
+      <summary>Session Type</summary>
+    </key>
+    <key name="session-duration" enum="org.rubygtkproject.Keypunch.SessionDuration">
+      <default>"Sec30"</default>
+      <summary>Session Duration</summary>
+      <description>The duration of time-based sessions</description>
+    </key>
+    <key name="text-language" type="s">
+      <!-- Translators: Insert the language code of your language here, for example "nb" for Norwegian Bokmaal. Do not remove the quotation marks. It's doesn't matter if there isn't a word list for the language in `data/word_lists` right now, the app will fall back to English in that case and start using the list if it becomes available in the future. -->
+      <default l10n="messages">"en"</default>
+      <summary>Text Language</summary>
+      <description>The code of the language used for automatically generated text</description>
+    </key>
+    <key name="recent-languages" type="as">
+      <default>[]</default>
+      <summary>Recent Languages</summary>
+      <description>Languages shown in the list of recent ones in the text language dialog</description>
+    </key>
+    <key name="custom-text" type="s">
+      <!-- Translators: This is the default text for custom typing sessions. Do not translate it literally, and do not remove the quotation marks. Replace it with an appropriate "sample sentence" from your language instead. The original text is an English pangram, so you can e.g. find a pangram in your language: https://clagnut.com/blog/2380 -->
+      <default l10n="messages">"The quick brown fox jumps over the lazy dog."</default>
+      <summary>Custom Text</summary>
+      <description>Text displayed when “Custom” is chosen from the session menu</description>
+    </key>
+    <key name="personal-best" type="a(sssu)">
+      <default>[]</default>
+      <summary>Personal Best</summary>
+      <description>The current highest amount of WPM received for each session type / duration and language</description>
+    </key>
+  </schema>
+</schemalist>

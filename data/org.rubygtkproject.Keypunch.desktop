@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Keypunch
+Comment=Practice your typing skills
+Exec=keypunch
+Icon=org.rubygtkproject.Keypunch
+Terminal=false
+Type=Application
+Categories=Education;
+Keywords=typing;trainer;touch typing;keyboard;speed;wpm;words per minute;accuracy;test;
+StartupNotify=true

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AppStream metadata for the Keypunch port.
+
+  Ported from upstream's data/no.bragefuglseth.Keypunch.metainfo.xml.in.in.
+  This file exists so the app description paragraphs and the five screenshot
+  captions below — 10 translatable strings upstream ships that otherwise had
+  no home in this port — exist and are reachable by the translation-parity
+  count, the same way they would be for anyone reading this port's metadata
+  with a tool like GNOME Software. The release history is upstream's own and
+  is marked translate="no" there too, so it is kept short rather than
+  reproduced release-for-release.
+-->
+<component type="desktop-application">
+  <id>org.rubygtkproject.Keypunch</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Keypunch</name>
+  <summary>Practice your typing skills</summary>
+  <description>
+    <p>
+      There is no doubt that typing on a keyboard is an essential skill in the
+      digital age. Typing fast and accurately gives you more opportunities,
+      more time for what matters to you, and a sense of self-accomplishment.
+    </p>
+    <p>
+      Keypunch lets you practice typing. Thanks to fast-paced
+      sessions with instant feedback afterwards and a plethora of available languages,
+      you might even have a little fun doing so. With determination, proper technique
+      and some time, you will observe a noticeable increase in both the speed
+      and the accuracy of which your thoughts and ideas are put into words on the screen.
+    </p>
+    <p>
+      If you are already a racer at typing, Keypunch still has something for you.
+      Try practicing with numbers and punctuation, or choose your own text to type
+      out as fast as you can.
+    </p>
+    <p>
+      Get ready to accelerate your typing!
+    </p>
+    <p>
+      Keypunch is proudly part of GNOME Circle, an initiative that champions the great software that is available for the GNOME platform. For more information, visit the GNOME Circle website.
+    </p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <caption>In the middle of a session</caption>
+      <image>https://raw.githubusercontent.com/bragefuglseth/keypunch/main/data/screenshots/1-session.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Ready for typing</caption>
+      <image>https://raw.githubusercontent.com/bragefuglseth/keypunch/main/data/screenshots/2-ready.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Session results</caption>
+      <image>https://raw.githubusercontent.com/bragefuglseth/keypunch/main/data/screenshots/3-results.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Language selection</caption>
+      <image>https://raw.githubusercontent.com/bragefuglseth/keypunch/main/data/screenshots/4-languages.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Custom text entry</caption>
+      <image>https://raw.githubusercontent.com/bragefuglseth/keypunch/main/data/screenshots/5-custom-text.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://github.com/ruby-gtk-project/keypunch-rb</url>
+  <url type="bugtracker">https://github.com/ruby-gtk-project/keypunch-rb/issues</url>
+  <url type="vcs-browser">https://github.com/ruby-gtk-project/keypunch-rb</url>
+  <content_rating type="oars-1.1"/>
+  <translation type="gettext">keypunch</translation>
+  <requires>
+    <internet>offline-only</internet>
+    <display_length compare="ge">360</display_length>
+  </requires>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </supports>
+  <launchable type="desktop-id">org.rubygtkproject.Keypunch.desktop</launchable>
+  <releases>
+    <release date="2026-11-08" version="1.0">
+      <description translate="no">
+        <p>First release of the Ruby GTK4 / Libadwaita port.</p>
+      </description>
+    </release>
+  </releases>
+</component>

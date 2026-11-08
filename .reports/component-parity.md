@@ -104,20 +104,34 @@ driven behaviour, not independently verified structurally**.
 
 ## Gaps found
 
-1. **Accessible label announcement, `text_view.rb`.** Upstream republishes
-   the current word as the widget's accessible label on every word boundary
-   (`src/widgets/text_view/accessibility.rs`). The port cannot do this — a
-   real Ruby/GTK4 binding limitation, documented at `lib/text_view.rb:40-44`
-   with upstream's file named. Screen readers using Keypunch in the port lose
-   this live announcement. (Same root cause as the `Search Results` /
-   `Text View` accessible-label translation gaps in
-   `TRANSLATION_PARITY.md`.)
+1. ~~**Accessible label announcement, `text_view.rb`.**~~ **Closed this
+   round.** `Gtk::Accessible#update_property` still raises
+   `NotImplementedError` for the array-valued call upstream makes, but
+   `Gtk::Accessible#announce` (GTK 4.14+, confirmed working in both bindings
+   under `xvfb-run`) reaches the same screen-reader user with the same
+   per-word-boundary timing: `TextView#announce_current_word_at_boundary`
+   (`lib/text_view.rb`) calls it exactly when upstream's
+   `update_accessible_state` would call `update_property`. The
+   `update_property`/array-of-accessible-properties gap in ruby-gnome is
+   still real and worth filing against that project, but the user-facing
+   behaviour it used to block is restored by `announce`.
 2. **GSettings schema is not shipped as a schema.** Not a behaviour gap —
    `lib/settings.rb` reproduces every key and default — but the schema file
-   itself, and the 16 translatable `<summary>`/`<description>` strings it
-   would carry, do not exist in the port. A `dconf-editor` user of upstream
-   can read what each key means; a port user cannot. Recorded in both this
-   report and `TRANSLATION_PARITY.md`.
+   itself, and the 12 translatable `<summary>`/`<description>` strings it
+   would carry (`TRANSLATION_PARITY.md`'s own "16" for this group was wrong —
+   its per-row table lists 12 gap rows for the schema, corrected in the same
+   pass that closes this), do not exist in the port. A `dconf-editor` user of
+   upstream can read what each key means; a port user cannot. Recorded in
+   both this report and `TRANSLATION_PARITY.md`.
+   **Closed this round**: `data/org.rubygtkproject.Keypunch.gschema.xml`
+   carries the same keys, defaults and those 12 `<summary>`/`<description>`
+   strings (confirmed with `glib-compile-schemas --strict`), and
+   `data/org.rubygtkproject.Keypunch.desktop` /
+   `data/org.rubygtkproject.Keypunch.metainfo.xml` likewise carry the
+   desktop entry's `Keywords` string and the 10 AppStream metainfo strings.
+   None of the three is read by the app at run time — `lib/settings.rb` still
+   does the real work — they exist purely so the 23 strings they were
+   missing (12 + 1 + 10) have a home and are translatable.
 
 ## Limits of this pass
 

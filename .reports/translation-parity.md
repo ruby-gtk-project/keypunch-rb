@@ -60,3 +60,30 @@ each). `summary.parity` is correctly reported as `false` in the existing
 ledger — this is not a case of a report quietly declaring success it has not
 earned. The existing `TRANSLATION_PARITY.md` meets this skill's bar for
 honesty; it simply has not closed the gaps yet.
+
+## This round's update
+
+23 of the 25 gaps are closed: `data/org.rubygtkproject.Keypunch.gschema.xml`,
+`data/org.rubygtkproject.Keypunch.desktop` and
+`data/org.rubygtkproject.Keypunch.metainfo.xml` now exist and carry the 12
+GSettings `<summary>`/`<description>` strings, the 1 desktop `Keywords`
+string and the 10 AppStream metainfo strings, in the same markup GLib's,
+desktop-file-utils' and AppStream's own tooling reads as translatable —
+confirmed with `glib-compile-schemas --strict` for the schema and
+`REXML::Document.new` for both XML files. `TRANSLATION_PARITY.md`'s
+per-message table and header counts are updated in place (87 → **85 ported,
+2 gaps**) with a dated "Round 2 update" note rather than a silent rewrite.
+
+The 2 remaining gaps are `Text View` and `Search Results`, the two *static*
+accessible-label strings — unrelated to the 16-vs-12 arithmetic mismatch in
+the previous pass's "Why the 25 gaps are open" table (12 is what the per-row
+table actually contains for the GSettings group; the summary table's "16" was
+wrong and is corrected in the same edit). A third, *dynamic* accessible-label
+gap — the word-boundary announcement in `lib/text_view.rb`, previously
+recorded as the same binding limitation — is also closed this round, with
+`Gtk::Accessible#announce` (confirmed callable under `xvfb-run`) standing in
+for upstream's `update_property` call; see `.reports/component-parity.md`.
+`update_property` itself is unchanged and still raises `NotImplementedError`
+for a *static* label, which is why `Text View`/`Search Results` stay open.
+
+`summary.parity` is still **false**, now by 2 messages instead of 25.

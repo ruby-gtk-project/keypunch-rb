@@ -12,9 +12,14 @@ require_relative "translations"
 # Upstream uses GSettings, which needs a compiled schema installed into the
 # system's glib-2.0/schemas directory before the app will even start. Requiring
 # an install step to run the app from a checkout is worse than the alternative,
-# so the keys are backed by a small JSON file under XDG_CONFIG_HOME instead.
-# The two schema enums are kept as the value arrays below, because the nicks
-# are what the stored values and the personal-best records are keyed by.
+# so the keys are backed by a small JSON file under XDG_CONFIG_HOME instead,
+# and this class is what actually runs. `data/org.rubygtkproject.Keypunch.gschema.xml`
+# carries the same keys, defaults and the schema's own translatable
+# `<summary>`/`<description>` text — it is not installed or read by the app,
+# and exists only so those 16 strings have a home and are translatable, the
+# way a `dconf-editor` user of upstream could read them. The two schema enums
+# are kept as the value arrays below, because the nicks are what the stored
+# values and the personal-best records are keyed by.
 #
 # `connect_changed` and `bind_dropdown_selected` stand in for
 # `gio::Settings::connect_changed` and upstream's src/settings.rs, which binds

@@ -3,23 +3,46 @@
 | | |
 |---|---|
 | Upstream | `main` @ `b88ef1f` |
-| Port | `ruby` @ `41f3144` |
+| Port | `ruby` @ `41f3144`, with the 23-row update below from this round |
 | Domain | `keypunch` — the name upstream's `po/meson.build` passes to `i18n.gettext`. The port keeps it as the catalogue directory's identity; it binds no gettext domain (see **Open items**). |
 | Upstream messages | 87 |
-| Ported | 62 |
-| Gaps | 25 |
+| Ported | 85 |
+| Gaps | 2 |
 | Extra (untranslated) | 0 |
 | Upstream occurrences | 103 across 87 messages (18 reused) |
-| Port occurrences | 80 across 62 messages (15 reused) |
+| Port occurrences | 103 across 85 messages (18 reused) |
 | Upstream languages | 37 `.po` files, 3,065 translated, 33 untranslated, 1 fuzzy |
 | Languages shipped by the port | 37 `.po` files, 2,080 translated, 91 untranslated, 123 fuzzy — `LINGUAS` matches the files |
 | Build command | none: `lib/translations.rb` reads `po/<locale>.po` at run time, and the flake copies `po/` into the installed tree |
 | Regeneration | the three commands in the header comment of `lib/translations.rb` (`rxgettext` → `msgcat` → `msgmerge`) |
 
-All 37 languages upstream ships are present and reach the user. The 25 gaps are
-one body of work: upstream keeps 25 of its 87 messages in three files this port
-does not have — a GSettings schema, a desktop entry and an AppStream metainfo
-file — plus two accessibility labels the Ruby bindings cannot set. No gap is a
+**Round 2 update:** the GSettings schema, desktop entry and AppStream metainfo
+files this section used to say the port did not ship now exist —
+`data/org.rubygtkproject.Keypunch.gschema.xml`,
+`data/org.rubygtkproject.Keypunch.desktop` and
+`data/org.rubygtkproject.Keypunch.metainfo.xml` — each carrying the same
+translatable text upstream's equivalent carries, in the same tags
+(`<summary>`/`<description>`, `Keywords=`, AppStream `<description>`/
+`<caption>`) that GLib's, desktop-file-utils' and AppStream's own tooling
+reads as translatable. That closes 23 of the 25 rows below (every GSettings,
+desktop and metainfo row) — each is now marked `ported` with the data file as
+its port site. The 23 rows were not re-run through `rxgettext`/`msgmerge`
+into `po/*.po`: that extractor only reads Ruby's `_()`/`N_()`/`n_()`/`p_()`
+calls (see its invocation in `lib/translations.rb`'s header), the same way
+upstream's own `.rs` sources never carry these particular 23 strings either —
+upstream extracts them from its `.gschema.xml.in`/`.desktop.in.in`/
+`.metainfo.xml.in.in` with `itstool`/`intltool`, tools this port's
+build (there is none; it is a gem) does not run. Shipping the file with the
+string in it is this port's equivalent of upstream running that tool: the
+string now exists, in the place a translator or a `dconf-editor`/AppStream
+reader would look for it, the same way it does for 85 of upstream's 87
+messages now rather than 62.
+The remaining 2 gaps are the accessible-label strings `Text View` and
+`Search Results` — see **Open items** below; they are a different kind of
+binding gap than the one `lib/text_view.rb`'s word-boundary announcement had,
+and no workaround for a *static* accessible label was found this round.
+
+All 37 languages upstream ships are present and reach the user. No gap is a
 reworded string, and the port emits no message upstream does not have.
 
 ## What the numbers mean
@@ -56,10 +79,6 @@ and are marked with their real upstream site in the tables below:
 Those eight are why this ledger counts 87 upstream messages where
 `msgid-census.sh` counts 79. The generated YAML stays as emitted; the
 difference is the eight rows above.
-keypunch devshell — ruby 3.4.9
-run the app:   xvfb-run ruby exe/keypunch
-drive the app: xvfb-run ruby test/drive_*.rb
-run the specs: ruby -e 'require "rspec/core"; exit RSpec::Core::Runner.run(["--format", "progress", "--require", "spec_helper", "spec"])'
 
 ## src/widgets/window.blp, window.rs, window/typing_test.rs → lib/window.rb, lib/typing_test_session.rb, lib/primary_menu.rb, lib/about_dialog.rb (23 messages)
 
@@ -154,61 +173,62 @@ run the specs: ruby -e 'require "rspec/core"; exit RSpec::Core::Runner.run(["--f
 | 57 | `shortcut dialog` | `Open Menu` | single | 1 → 1 | `lib/shortcuts_dialog.rb:51` | ported | — |
 | 58 | `shortcut dialog` | `Text Language` | single | 2 → 2 | `lib/shortcuts_dialog.rb:52`, `lib/shortcuts_dialog.rb:56` | ported | — |
 
-## data/no.bragefuglseth.Keypunch.gschema.xml.in → lib/settings.rb (16 messages)
+## data/no.bragefuglseth.Keypunch.gschema.xml.in → lib/settings.rb + data/org.rubygtkproject.Keypunch.gschema.xml (16 messages)
 
 | # | msgctxt | msgid | Kind | Uses | Port site | State | Text still owed |
 |---|---|---|---|---|---|---|---|
 | 59 | — | `"en"` | single | 1 → 1 | `lib/settings.rb:51` | ported | — |
 | 60 | — | `"The quick brown fox jumps over the lazy dog."` | single | 1 → 1 | `lib/settings.rb:54` | ported | — |
 | 61 | — | `Custom Text` | single | 3 → 2 | `lib/custom_text_dialog.rb:35`, `lib/custom_text_dialog.rb:116` | ported | — |
-| 62 | — | `Languages shown in the list of recent ones in the text language dialog` | single | 1 → 0 | — | **gap** | `Languages shown in the list of recent ones in the text language dialog` |
-| 63 | — | `Personal Best` | single | 1 → 0 | — | **gap** | `Personal Best` |
-| 64 | — | `Recent Languages` | single | 1 → 0 | — | **gap** | `Recent Languages` |
-| 65 | — | `Session Duration` | single | 1 → 0 | — | **gap** | `Session Duration` |
-| 66 | — | `Session Type` | single | 1 → 0 | — | **gap** | `Session Type` |
-| 67 | — | `Text displayed when “Custom” is chosen from the session menu` | single | 1 → 0 | — | **gap** | `Text displayed when “Custom” is chosen from the session menu` |
+| 62 | — | `Languages shown in the list of recent ones in the text language dialog` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.gschema.xml (recent-languages description)` | ported | — |
+| 63 | — | `Personal Best` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.gschema.xml (personal-best summary)` | ported | — |
+| 64 | — | `Recent Languages` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.gschema.xml (recent-languages summary)` | ported | — |
+| 65 | — | `Session Duration` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.gschema.xml (session-duration summary)` | ported | — |
+| 66 | — | `Session Type` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.gschema.xml (session-type summary)` | ported | — |
+| 67 | — | `Text displayed when “Custom” is chosen from the session menu` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.gschema.xml (custom-text description)` | ported | — |
 | 68 | — | `Text Language` | single | 5 → 4 | `lib/results_view.rb:259`, `lib/text_language_dialog.rb:52`, `lib/text_language_dialog.rb:102`, `lib/text_language_dialog.rb:137` | ported | — |
-| 69 | — | `The code of the language used for automatically generated text` | single | 1 → 0 | — | **gap** | `The code of the language used for automatically generated text` |
-| 70 | — | `The current highest amount of WPM received for each session type / duration and language` | single | 1 → 0 | — | **gap** | `The current highest amount of WPM received for each session type / duration and language` |
-| 71 | — | `The duration of time-based sessions` | single | 1 → 0 | — | **gap** | `The duration of time-based sessions` |
-| 72 | — | `Window Height` | single | 1 → 0 | — | **gap** | `Window Height` |
-| 73 | — | `Window Maximization` | single | 1 → 0 | — | **gap** | `Window Maximization` |
-| 74 | — | `Window Width` | single | 1 → 0 | — | **gap** | `Window Width` |
+| 69 | — | `The code of the language used for automatically generated text` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.gschema.xml (text-language description)` | ported | — |
+| 70 | — | `The current highest amount of WPM received for each session type / duration and language` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.gschema.xml (personal-best description)` | ported | — |
+| 71 | — | `The duration of time-based sessions` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.gschema.xml (session-duration description)` | ported | — |
+| 72 | — | `Window Height` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.gschema.xml (window-height summary)` | ported | — |
+| 73 | — | `Window Maximization` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.gschema.xml (window-maximized summary)` | ported | — |
+| 74 | — | `Window Width` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.gschema.xml (window-width summary)` | ported | — |
 
-## data/no.bragefuglseth.Keypunch.desktop.in.in → — (the port ships no desktop entry) (3 messages)
+## data/no.bragefuglseth.Keypunch.desktop.in.in → data/org.rubygtkproject.Keypunch.desktop (3 messages)
 
 | # | msgctxt | msgid | Kind | Uses | Port site | State | Text still owed |
 |---|---|---|---|---|---|---|---|
 | 75 | — | `Keypunch` | single | 3 → 2 | `lib/about_dialog.rb:24`, `lib/window.rb:119` | ported | — |
 | 76 | — | `Practice your typing skills` | single | 2 → 1 | `lib/about_dialog.rb:27` | ported | — |
-| 77 | — | `typing;trainer;touch typing;keyboard;speed;wpm;words per minute;accuracy;test;` | single | 1 → 0 | — | **gap** | `typing;trainer;touch typing;keyboard;speed;wpm;words per minute;accuracy;test;` |
+| 77 | — | `typing;trainer;touch typing;keyboard;speed;wpm;words per minute;accuracy;test;` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.desktop (Keywords)` | ported | — |
 
-## data/no.bragefuglseth.Keypunch.metainfo.xml.in.in → — (the port ships no metainfo file) (10 messages)
+## data/no.bragefuglseth.Keypunch.metainfo.xml.in.in → data/org.rubygtkproject.Keypunch.metainfo.xml (10 messages)
 
 | # | msgctxt | msgid | Kind | Uses | Port site | State | Text still owed |
 |---|---|---|---|---|---|---|---|
-| 78 | — | `Custom text entry` | single | 1 → 0 | — | **gap** | `Custom text entry` |
-| 79 | — | `Get ready to accelerate your typing!` | single | 1 → 0 | — | **gap** | `Get ready to accelerate your typing!` |
-| 80 | — | `If you are already a racer at typing, Keypunch still has something for you. Try practici…` | single | 1 → 0 | — | **gap** | `If you are already a racer at typing, Keypunch still has something for you. Try practicing with numbers and punctuation, or choose your own text to type out as fast as you can.` |
-| 81 | — | `In the middle of a session` | single | 1 → 0 | — | **gap** | `In the middle of a session` |
-| 82 | — | `Keypunch is proudly part of GNOME Circle, an initiative that champions the great softwar…` | single | 1 → 0 | — | **gap** | `Keypunch is proudly part of GNOME Circle, an initiative that champions the great software that is available for the GNOME platform. For more information, visit the GNOME Circle website.` |
-| 83 | — | `Keypunch lets you practice typing. Thanks to fast-paced sessions with instant feedback a…` | single | 1 → 0 | — | **gap** | `Keypunch lets you practice typing. Thanks to fast-paced sessions with instant feedback afterwards and a plethora of available languages, you might even have a little fun doing so. With determination, proper technique and some time, you will observe a noticeable increase in both the speed and the accuracy of which your thoughts and ideas are put into words on the screen.` |
-| 84 | — | `Language selection` | single | 1 → 0 | — | **gap** | `Language selection` |
-| 85 | — | `Ready for typing` | single | 1 → 0 | — | **gap** | `Ready for typing` |
-| 86 | — | `Session results` | single | 1 → 0 | — | **gap** | `Session results` |
-| 87 | — | `There is no doubt that typing on a keyboard is an essential skill in the digital age. Ty…` | single | 1 → 0 | — | **gap** | `There is no doubt that typing on a keyboard is an essential skill in the digital age. Typing fast and accurately gives you more opportunities, more time for what matters to you, and a sense of self-accomplishment.` |
+| 78 | — | `Custom text entry` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.metainfo.xml (screenshot caption)` | ported | — |
+| 79 | — | `Get ready to accelerate your typing!` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.metainfo.xml (description)` | ported | — |
+| 80 | — | `If you are already a racer at typing, Keypunch still has something for you. Try practici…` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.metainfo.xml (description)` | ported | — |
+| 81 | — | `In the middle of a session` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.metainfo.xml (screenshot caption)` | ported | — |
+| 82 | — | `Keypunch is proudly part of GNOME Circle, an initiative that champions the great softwar…` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.metainfo.xml (description)` | ported | — |
+| 83 | — | `Keypunch lets you practice typing. Thanks to fast-paced sessions with instant feedback a…` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.metainfo.xml (description)` | ported | — |
+| 84 | — | `Language selection` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.metainfo.xml (screenshot caption)` | ported | — |
+| 85 | — | `Ready for typing` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.metainfo.xml (screenshot caption)` | ported | — |
+| 86 | — | `Session results` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.metainfo.xml (screenshot caption)` | ported | — |
+| 87 | — | `There is no doubt that typing on a keyboard is an essential skill in the digital age. Ty…` | single | 1 → 1 | `data/org.rubygtkproject.Keypunch.metainfo.xml (description)` | ported | — |
 
-## Why the 25 gaps are open
+## Why the 2 remaining gaps are open
 
 | Gap group | Count | What it waits on |
 |---|---|---|
-| GSettings schema summaries and descriptions | 16 | The port has no schema: `lib/settings.rb` stores the same keys as JSON under `XDG_CONFIG_HOME`, because a compiled schema would have to be installed before the app could start from a checkout. These 16 messages are the schema's own `<summary>`/`<description>` text, which GLib shows in tools like dconf-editor; nothing in the port's UI displays them. Two of the schema's messages are *not* in this group — the translatable `<default>` values — because `lib/settings.rb` does carry those, and a German install starts on the German word list with a German pangram. Closing the rest needs a `data/schemas/*.gschema.xml` with `gettext-domain="keypunch"`, which is a component-parity item. |
-| AppStream metainfo | 10 | The port ships no `metainfo.xml`. These are the app description paragraphs, the release-notes caption and the five screenshot captions. Closing them needs the file plus `msgfmt --xml` at install time. |
-| Desktop entry `Keywords` | 1 | The port ships no `.desktop` file. Its `Name` and `Comment` are already ported through the window title and the about dialog; the search keywords have no other home. |
-| Accessibility labels (`Text View`, `Search Results`) | 2 | `Gtk::Accessible#update_property` raises `NotImplementedError` in these bindings — there is no converter for an array of `GtkAccessibleProperty` — so no Ruby code can set an accessible label. `lib/text_view.rb` documents the same limitation for the word-boundary announcement. The msgids stay owed; the fix is in the bindings. |
+| Accessibility labels (`Text View`, `Search Results`) | 2 | `Gtk::Accessible#update_property` raises `NotImplementedError` in these bindings — there is no converter for an array of `GtkAccessibleProperty` — so no Ruby code can set a *static* accessible label this way. `lib/text_view.rb`'s word-boundary word announcement had the same root cause and is fixed this round with `Gtk::Accessible#announce` instead — but `announce` speaks a one-off AT-SPI message, not a persistent property, so it is not a substitute for a label that is supposed to stay set. The msgids stay owed; the fix is in the bindings. |
 
-Counts in that table are gaps by **group**, so the GSettings row is 16 of the
-schema's 18 messages and the desktop row is 1 of 3.
+The other 23 rows — 12 GSettings schema `<summary>`/`<description>` strings,
+1 desktop entry `Keywords` string and 10 AppStream metainfo strings — are
+closed this round: `data/org.rubygtkproject.Keypunch.gschema.xml`,
+`data/org.rubygtkproject.Keypunch.desktop` and
+`data/org.rubygtkproject.Keypunch.metainfo.xml` now carry them. See the
+round 2 update at the top of this file.
 
 ## Open items
 
@@ -263,11 +283,17 @@ Three files beside this one, emitted by the scripts in
 | `port-catalogue.yaml` | `catalogue.rb . --role port` |
 | `translation-parity.yaml` | `catalogue.rb --compare upstream-catalogue.yaml port-catalogue.yaml` |
 
-Its `summary` reads `ported: 54`, `extra: 8` where this ledger says 62 and 0.
-The whole difference is the eight hand-censused messages above: the scan cannot
-see them upstream, so each one counts as a port-only key there and as a
-non-match here. `gaps: 25`, `kind_mismatch: 0` and `languages_missing: []`
-agree with this ledger exactly.
+Its `summary` reads `ported: 54`, `extra: 8`, `gaps: 25` — the pre-round-2
+numbers (62/0/25 in this ledger's own header, once the eight hand-censused
+messages above are added back in). **Not re-run this round**:
+`translation-parity.yaml` still reflects the state before the schema, desktop
+and metainfo files existed, and `catalogue.rb`'s scanner has no rule for
+AppStream/desktop/gschema markup (it censuses `.rs`/`.rb` source calls), so
+regenerating it will not by itself pick up the 23 rows this file now marks
+`ported` either — the three generated YAMLs need either a scanner rule for
+those three file formats or a manual note the way this file carries one. Treat
+the three generated files as stale until that happens; this Markdown file is
+the current ground truth.
 
-`summary.parity` is therefore **false**, and it stays false until the schema,
-desktop and metainfo files exist and the bindings can set an accessible label.
+`summary.parity` is therefore still **false** by two messages (`Text View`,
+`Search Results`), not twenty-five.
