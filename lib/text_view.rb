@@ -38,12 +38,17 @@ require_relative "text_view_colors"
 # `value`, exactly as upstream does.
 #
 # Upstream's accessibility.rs republishes the word being typed as the widget's
-# accessible label on every word boundary. `Gtk::Accessible#update_property`
-# raises NotImplementedError in these bindings, which have no converter for
-# an array of accessible properties, so that announcement cannot be made from
-# Ruby; the accessible roles the
+# accessible label on every word boundary, via
+# `update_property(&[Property::Label(word)])`. `Gtk::Accessible#update_property`
+# raises NotImplementedError in these bindings, which have no converter for an
+# array of accessible properties, so that specific call cannot be made from
+# Ruby. The behaviour it exists for — a screen reader speaking the current
+# word as a test is typed — is restored here with `Gtk::Accessible#announce`
+# instead (GTK 4.14+; both bindings expose it), which speaks a one-off
+# AT-SPI announcement rather than republishing a static property, and reaches
+# the same screen-reader user upstream's call does. The accessible roles the
 # Blueprint sets — text_box on the root, presentation on the inner text view —
-# are set here, and `current_word` exposes the word upstream would announce.
+# are set here, and `current_word` exposes the word that gets announced.
 #
 class TextView
   include TextViewColors
@@ -403,6 +408,7 @@ class TextView
       update_colors(comparison)
       update_caret_position(!@running)
       update_scroll_position(!@running)
+      announce_current_word_at_boundary
 
       @on_typed_text_changed&.call(self)
     end
@@ -620,6 +626,19 @@ class TextView
     end
 
     # Accessibility — upstream's src/widgets/text_view/accessibility.rs
+
+    # Upstream's `update_accessible_state`: speaks the word currently being
+    # typed to a screen reader, the moment the caret lands on its first
+    # character. `root.announce` is this binding's stand-in for upstream's
+    # `update_property(&[Property::Label(word)])` — see the class comment.
+    def announce_current_word_at_boundary
+      typed_length = @typed_text.chars.length
+      start = word_start_before(typed_length)
+
+      if typed_length == start
+        root.announce(current_word, Gtk::AccessibleAnnouncementPriority::MEDIUM)
+      end
+    end
 
     # The character index the word containing `position` starts at.
     def word_start_before(position)

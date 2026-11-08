@@ -31,7 +31,7 @@ One component split by upstream across five files, unioned here.
 | `src/widgets/window/focus.rs` | focus-follow behavior for the text entry | `lib/window_focus.rb` | Yes |
 | `src/widgets/window/inhibit.rs` | session-inhibit (logout) cookie while a test is running | `lib/session_inhibitor.rb` | Yes |
 | `src/widgets/window/typing_test.rs` | the typing-test state machine: start/cancel/finish, excessive-invalid-keystrokes cancellation, countdown/elapsed timer, results handoff | `lib/typing_test_session.rb` | Yes |
-| `src/widgets/window/ui_state.rs` | **empty file** (0 bytes) — no logic, no component | — | N/A, nothing upstream to port |
+| `src/widgets/window/ui_state.rs` | **empty file** (0 bytes) — no logic, no component | — | The upstream file has 0 bytes in it; there is no behaviour in it to port |
 
 ## Dialog units
 

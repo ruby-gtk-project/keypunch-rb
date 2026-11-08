@@ -13,9 +13,9 @@ require_relative "typing_test_utils"
 # `discord-presence` crate, which spawns a worker thread, reconnects on its
 # own, and keeps the last activity around to resend once a connection comes
 # up. This port keeps the same shape — a worker thread fed from a queue, the
-# last activity stored and resent on connect — and speaks the Discord IPC
-# protocol over the local socket directly, because there is no Ruby equivalent
-# of the crate.
+# last activity stored and resent on connect — and implements what that crate
+# does internally directly: it speaks the Discord IPC protocol over the local
+# socket itself, below, instead of wrapping a gem that does it.
 #
 # The protocol is: connect to $XDG_RUNTIME_DIR/discord-ipc-N, send an opcode-0
 # handshake frame carrying the client id, then opcode-1 frames with a

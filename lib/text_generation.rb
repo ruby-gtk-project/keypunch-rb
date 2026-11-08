@@ -34,8 +34,9 @@ module TextGeneration
   # Builds a punctuation set out of rows of
   # [prefix, suffix, ends_sentence, weight]. Upstream writes each one as a
   # `Punctuation::suffix` or `Punctuation::wrapping` call; the house style caps
-  # a call at three arguments, so the sets are data here and the two
-  # convenience constructors are not needed.
+  # a call at three arguments, so each set is written here as row literals,
+  # and this one method builds a `Punctuation` from every row directly,
+  # standing in for both of upstream's constructors at once.
   def self.punctuation_set(rows)
     rows.map do |prefix, suffix, ends_sentence, weight|
       Punctuation.new(
