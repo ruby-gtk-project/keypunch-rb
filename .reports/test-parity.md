@@ -2,11 +2,19 @@
 
 | | |
 |---|---|
-| Upstream | `main` @ `b88ef1f` |
-| Port | `ruby` @ `de7f6a3` |
+| Upstream | `main` @ `b88ef1f` (unchanged since the previous round) |
+| Port | `ruby` @ `8fa7e8b` |
 | Upstream tests | 0 |
 | Ported | 0 |
 | Gaps | 0 |
+
+This round re-verifies the previous `test-parity.md` (written at `de7f6a3`)
+against four commits made since: `fb672c1`..`c079b5d` (unit specs + a fixed
+spec harness), `f30b681` (lifecycle driver extension) and `8fa7e8b` (a claimed
+flakiness fix). The previous round's headline gap — "the devshell's advertised
+RSpec command does not run" — **has been fixed and is verified fixed below.**
+A new gap was found in its place: a commit on this very branch claims to have
+made a driver check deterministic, and that claim is false on re-run.
 
 ## Upstream has no test suite
 
@@ -25,77 +33,119 @@ protecting, because upstream pinned none.
 
 ## What the port's own suite is, and what it actually proved
 
-The `ruby` branch has no RSpec example files. `spec/spec_helper.rb` and
-`spec/README.md` are scaffolding from the `kettle-test`/`kettle-jem`
-gem-template tooling, not app tests — there is not one `*_spec.rb` under
-`spec/` for `text_generation.rb`, `text_utils.rb`, `typing_test_utils.rb`,
-`settings.rb` or `translations.rb`, even though every one of those is pure
-Ruby, needs no display, and is exactly the kind of logic upstream would have
-unit-tested if it unit-tested anything.
+**Fixed since the last round, and re-verified by executing it in this
+round, not by reading the commit message.** `spec/spec_helper.rb` required
+`kettle/test/rspec` (not present in this fork's `RUBYLIB`) and `keypunch/rb`
+(`lib/keypunch/rb.rb` did not exist), so the harness failed before any
+example ran. Commit `c079b5d` adds `lib/keypunch/rb.rb` (the missing gem
+entrypoint) and makes `spec_helper.rb` tolerate a missing `kettle/test/rspec`
+the same way it already tolerated a missing `kettle-soup-cover`, and adds
+five spec files — `text_utils_spec.rb`, `typing_test_utils_spec.rb`,
+`settings_spec.rb`, `translations_spec.rb`, `text_generation_spec.rb` —
+covering the five pure-Ruby logic modules the two GTK driver scripts only
+exercise indirectly.
 
-**The devshell's advertised RSpec command does not run.** The flake banner
-prints:
-
-```
-run the specs: ruby -e 'require "rspec/core"; exit RSpec::Core::Runner.run(["--format", "progress", "--require", "spec_helper", "spec"])'
-```
-
-Running it (verified, under `nix develop --command xvfb-run -a ruby -e ...`)
-fails to even load `spec_helper.rb`:
+Running the devshell's own advertised command, verbatim, in this round:
 
 ```
-LoadError: cannot load such file -- kettle/test/rspec
-0 examples, 0 failures, 2 errors occurred outside of examples
+$ nix develop --command xvfb-run -a ruby -e 'require "rspec/core"; exit RSpec::Core::Runner.run(["--format", "progress", "--require", "spec_helper", "spec"])'
+............................................................
+Finished in 0.17356 seconds (files took 1.74 seconds to load)
+60 examples, 0 failures
 ```
 
-`bundle exec rspec spec` also fails in the same devshell
-(`rspec-core is not currently included in the bundle`). So the one command
-the project's own tooling names as "run the specs" has never successfully
-executed in this environment, and even if it did, it would run zero examples
-against zero spec files. **This is a gap in its own right, independent of
-the 0/0 upstream parity number**: a command printed in the devshell banner as
-if it works, that does not run, is exactly the kind of false-green surface
-the accountability pass looks for. It is called out there too.
+This is a real, reproduced pass — the exact gap the previous round of this
+report flagged is closed, and closed by making the advertised command work
+rather than by rewording the banner.
+
+## New gap found this round: a "deterministic" test is not deterministic
+
+Commit `8fa7e8b` ("test: make the frustration-cancel mash deterministic, not
+a fixed count") rewrites `test/drive_test_lifecycle.rb`'s mash step to mash
+up to 300 keys, checking after every key whether the test has cancelled,
+instead of firing a fixed 40-key mash. Its own message states the old fixed
+count was "observed ~1 in 5 runs failing to cancel within 2.2s" and that the
+new approach fixes this ("deterministic, not a fixed count").
+
+Re-running `test/drive_test_lifecycle.rb` six times in this round, back to
+back, under the same devshell and the same `xvfb-run` display:
+
+```
+run 1: 10 of 12 checks passed — DRIVE FAILED (2)
+  failed check: the cancelled page is showing
+  failed check: no test is in progress any more
+run 2: 12 of 12 checks passed — DRIVE OK
+run 3: 12 of 12 checks passed — DRIVE OK
+run 4: 12 of 12 checks passed — DRIVE OK
+run 5: 12 of 12 checks passed — DRIVE OK
+run 6: 12 of 12 checks passed — DRIVE OK
+```
+
+One failure in six runs (~1 in 6) — the same order of magnitude as the "~1 in
+5" the commit describes as the *problem it fixed*. Raising the mash cap from
+a fixed 40 to a fixed 300-with-early-break narrows the window but does not
+close it: on a slow enough layout pass the test can still exhaust its
+budget (300 keys mashed, or the test's own timing window) without the
+cancellation firing, and the commit's own two new assertions
+("the cancelled page is showing", "no test is in progress any more") then
+fail exactly as the old fixed-40 version's did. **The commit's claim of
+"deterministic" is false, reproduced in this round.** This is not a
+hypothetical risk — it reproduced live in the first of six runs made for
+this audit.
+
+The consequence for the runtime gate this round (`drive_ok=true, 45 checks
+passed, 0 failed`): that result is real for the run it was taken from, but it
+is not a stable property of the suite. A reader who takes one green run as
+proof the suite "passes" is taking a coin flip's outcome as a certificate.
+This is reported here, under test-parity, because it bears directly on
+whether "the suite actually runs" is enough — a suite that runs and
+sometimes fails on correct code is not yet trustworthy, and claiming
+otherwise in a commit message is the kind of false-green claim the
+accountability pass is built to catch. It is cross-filed there.
 
 ## Extra — the port's real test coverage
 
 The port's actual verification is two headless GTK driver scripts under
-`test/`, run with `nix develop --command xvfb-run -a ruby test/drive_*.rb`.
-Both were executed in this round, not just read:
+`test/`, plus (since `c079b5d`) a real RSpec unit suite.
 
-- `test/drive_main_window.rb` — **33 of 33 checks passed, DRIVE OK.** Drives
-  a full custom-text session end to end (ready → typing → results →
-  back-to-ready), then each of the custom-text, text-language and about/
-  shortcuts dialogs, including the custom-text empty/whitespace-only/discard
-  states and the language dialog's search/no-results/add-language states.
-- `test/drive_test_lifecycle.rb` — **8 of 8 checks passed, DRIVE OK.** Drives
-  the timed-session countdown, the frustration-cancellation path (40 mashed
-  keystrokes against the `FRUSTRATION_THRESHOLD`), and the narrow/wide
-  adaptive layout switch.
+- `test/drive_main_window.rb` — **33 of 33 checks passed, DRIVE OK**, every
+  one of three re-runs this round. Drives a full custom-text session end to
+  end (ready → typing → results → back-to-ready), then each of the
+  custom-text, text-language and about/shortcuts dialogs, including the
+  custom-text empty/whitespace-only/discard states and the language dialog's
+  search/no-results/add-language states. **Stable across re-runs.**
+- `test/drive_test_lifecycle.rb` — **12 of 12 checks when it passes**, but
+  **failed 1 of 6 re-runs this round** (see above). Drives the timed-session
+  countdown, the frustration-cancellation path, the unfocus/blur affordance,
+  and the narrow/wide adaptive layout switch. **Not stable across re-runs.**
+- `spec/*_spec.rb` (new since `c079b5d`) — **60 examples, 0 failures**,
+  reproduced. Real unit coverage of `text_utils.rb` (grapheme/word
+  segmentation), `typing_test_utils.rb` (WPM/accuracy math), `settings.rb`
+  (persistence and JSON-parse-failure fallback), `translations.rb` (the PO
+  parser and plural-expression evaluator), and `text_generation.rb`
+  (word-list generation) — closing exactly the "pure-logic modules have zero
+  test coverage" gap the previous round of this report named.
 
-Combined: **41 checks, 0 failed, both runs reporting `DRIVE OK`** — this
-matches the runtime gate this round reported (`drive_ok=true`, 41 checks, 0
-failed). Both numbers were independently reproduced in this audit, not taken
-on faith.
+Combined driver total: **45 checks** (33 + 12), matching the runtime gate's
+component count for this round. Whether that gate reads 45/45 or 43/45 on
+any given invocation depends on which side of the lifecycle driver's
+intermittent failure that invocation landed on — see above.
 
-**These 41 checks are real and executed, and they are also not test
-parity.** They were written for the port, cover UI/behavioural flows upstream
-never had tests for (upstream has none at all), and are listed here under
-`## Extra`, outside the 0/0 count, per the skill. They do not substitute for
-unit tests of the pure-Ruby logic modules, which remain completely
-unexercised by any automated check — `text_generation.rb`'s word-list
-selection and punctuation weighting, `typing_test_utils.rb`'s WPM/accuracy
-math, `settings.rb`'s JSON parse-failure fallback, and `translations.rb`'s
-plural-form evaluator have no test of any kind, upstream or ported, driver or
-unit.
+**The 45 driver checks plus the 60 spec examples are real and executed, and
+the driver checks are also not test parity** in the skill's sense: they were
+written for the port and cover flows/logic upstream never had tests for
+(upstream has none at all), so they are listed here under `## Extra`,
+outside the 0/0 count, per the skill.
 
 ## Verdict
 
 - Upstream/port test-count parity: **0/0, met trivially.**
-- Runtime gate (the 41-check driver suite): **real, reproduced, green.**
-- Gap: the port's nominal unit-test harness (`spec/`, `rake spec`) is empty
-  and its advertised run command is broken in the dev shell; the pure-logic
-  modules have zero test coverage of any kind. Treat the 41 driven checks as
-  what they are — UI/integration coverage of 17 components, not unit
-  coverage of the logic the UI depends on — and treat "spec/ exists" as
-  scaffolding, not evidence of tests.
+- Previous round's gap (broken spec harness, zero unit coverage of pure-logic
+  modules): **fixed and reproduced fixed in this round.**
+- New gap found in this round: **`test/drive_test_lifecycle.rb` is
+  intermittently flaky** (reproduced: 1 failure in 6 consecutive runs) despite
+  a commit on this branch (`8fa7e8b`) explicitly claiming to have made it
+  deterministic. A runtime gate built on a flaky check is not a reliable
+  gate — a future "all green" run proves less than it appears to. See
+  `.reports/accountability-ensurance.md` for this claim examined as an
+  accountability finding.

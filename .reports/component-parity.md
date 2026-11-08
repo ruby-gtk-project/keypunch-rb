@@ -3,8 +3,14 @@
 | | |
 |---|---|
 | Upstream | `main` @ `b88ef1f` |
-| Port | `ruby` @ `de7f6a3` |
+| Port | `ruby` @ `8fa7e8b` |
 | Method | Manual four-axis reading per unit (count / CSS / behaviour / text), cross-checked against the file union in `.reports/component-inventory.md`. No automated `component-scan.sh` pass was run over both trees in this round — see **Limits of this pass** below. |
+
+Re-checked this round: the four commits since the previous pass
+(`de7f6a3`..`8fa7e8b`) touch `test/`, `spec/` and one gem-infrastructure file
+(`lib/keypunch/rb.rb`); none changes a widget, dialog, action, shortcut or
+style rule, so none of the findings below needed re-derivation. The two
+gaps found previously are unchanged.
 
 This report builds on `.reports/component-inventory.md` (the
 `component-identification` pass), which found a port file for every upstream

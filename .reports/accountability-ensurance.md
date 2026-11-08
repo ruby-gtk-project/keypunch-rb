@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | Upstream | `main` @ `b88ef1f` |
-| Port | `ruby` @ `de7f6a3` |
+| Port | `ruby` @ `8fa7e8b` |
 | Scan | `.claude/skills/accountability-ensurance/scripts/find-excuses.sh .` over the whole tree, plus a manual `grep -rniE 'TODO|FIXME|not implemented|for now|in a future|placeholder|stub'` over `lib/`, `exe/`, `.reports/` and the repo root (no `PORTING.md` exists on this branch). |
 
 ## Scanner hits
@@ -68,14 +68,44 @@ future`, `placeholder`, or `stub` anywhere in the port's code or reports.
    this"), and should be reworded to name the refactor rather than use that
    phrase.
 
+## New finding this round: a false "deterministic" claim in a committed message
+
+`find-excuses.sh` and the plain-TODO grep scan text, not commit messages, so
+this finding came from re-running the suite rather than from the scanner.
+Commit `8fa7e8b` is titled "test: make the frustration-cancel mash
+deterministic, not a fixed count" and its body asserts the rewritten mash
+step fixes an observed "~1 in 5 runs failing" flakiness. Re-running
+`test/drive_test_lifecycle.rb` six times, back to back, in this round: **one
+of the six runs failed** (`10 of 12 checks passed`, the two cancellation
+assertions the commit itself added), the same order of magnitude as the
+flakiness rate the commit describes as the problem it fixes. The claim of
+"deterministic" is false, reproduced live in this audit, not inferred from
+reading the diff.
+
+This is a materially different kind of finding from the three hits below: it
+is not a banned phrase describing a true statement, it is a **true-looking
+claim, stated as fact in a permanent commit message on this branch, that
+does not hold up when the exact command it describes is re-run** — the kind
+of false-green surface this skill exists to catch, sitting in git history
+rather than in a report or a code comment. It is filed here, not resolved,
+per this skill's instruction to report rather than fix. See
+`.reports/test-parity.md` for the reproduction detail and its effect on this
+round's runtime gate.
+
 ## Verdict
 
-No instance found in this scan is laundering an actual missing feature as a
-decision — each of the three was checked against upstream's actual behaviour
-and the behaviour is present. That is a materially different finding from
-`console-rb`'s "Dropped deliberately" section, which sat on top of 40 unported
-tests and multiple real behavioural regressions. **This port has not done
-that.**
+No instance found by the scanner is laundering an actual missing feature as
+a decision — each of the three flagged sentences was checked against
+upstream's actual behaviour and the behaviour is present. That is a
+materially different finding from `console-rb`'s "Dropped deliberately"
+section, which sat on top of 40 unported tests and multiple real
+behavioural regressions. **This port has not done that.**
+
+It has, however, done something the scanner cannot catch: shipped a commit
+whose message makes a factual claim about test behaviour ("deterministic")
+that is false on re-execution. That finding, above, is the more serious one
+in this round — a reader trusting the commit message, rather than re-running
+the command, would believe a flaky check is now solid.
 
 That said, this is not "clean" by the letter of the skill: three sentences
 exist, today, in committed files, that use constructions the skill

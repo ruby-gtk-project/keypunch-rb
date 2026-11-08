@@ -7,9 +7,19 @@ it against the current tips of both branches rather than duplicating it.
 | | |
 |---|---|
 | Upstream | `main` @ `b88ef1f` |
-| Port | `ruby` @ `de7f6a3` |
+| Port | `ruby` @ `8fa7e8b` |
 
 ## Re-check performed this round
+
+Four commits landed on `ruby` since the previous round
+(`fb672c1`..`8fa7e8b`): `bf0d79d` (gettext catalogue — covered in
+`translation-parity.md`), `de7f6a3`/`f30b681` (driver script extensions,
+test-only), `c079b5d` (new `spec/` unit suite plus `lib/keypunch/rb.rb`, the
+gem entrypoint — covered in `test-parity.md`), and `8fa7e8b` (driver timing
+fix — covered in `test-parity.md` and `accountability-ensurance.md`). Only
+`lib/keypunch/rb.rb` is a new `lib/` file, and it is gem-infrastructure
+(`Keypunch::Rb` namespace for `spec_helper.rb`'s `require "keypunch/rb"`),
+not a port of any upstream widget. No upstream-facing component changed.
 
 - Re-ran `git ls-tree -r --name-only origin/main` and confirmed the file list
   the inventory is built from is unchanged in shape: `src/application.rs`,

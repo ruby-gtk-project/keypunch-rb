@@ -8,7 +8,7 @@ duplicating the 87-row table.
 | | |
 |---|---|
 | Upstream | `main` @ `b88ef1f` |
-| Port | `ruby` @ `de7f6a3` |
+| Port | `ruby` @ `8fa7e8b` |
 | Upstream messages | 87 |
 | Ported | 62 |
 | Gaps | 25 |
@@ -17,6 +17,12 @@ duplicating the 87-row table.
 | `summary.parity` | **false** |
 
 ## What was re-checked this round
+
+No commit since the previous pass touches `po/`, `lib/translations.rb` or
+`lib/settings.rb` (the four intervening commits are `test/`/`spec/`/gem
+infrastructure only), so the 87/62/25 counts and the gap breakdown below are
+unchanged and are not re-derived from scratch — just confirmed still
+current against `origin/main` @ `b88ef1f` (also unchanged).
 
 - `po/LINGUAS` vs. the actual `.po` files present: `diff <(ls po/*.po | xargs
   -n1 basename -s .po | sort) <(sort po/LINGUAS)` — confirmed empty, no
